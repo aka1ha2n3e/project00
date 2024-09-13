@@ -1,0 +1,17 @@
+# ビルドディレクトリ 
+build/  
+# huyoufairu
+googletest/
+cmake-build-debug/
+.vs/
+.lsp/
+.clj-kondo/
+# 一時ファイル 
+*.swp 
+*.swo 
+*.tmp  
+# バイナリファイル 
+*.exe 
+*.out
+# 資料
+*.md
