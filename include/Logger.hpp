@@ -34,7 +34,7 @@ namespace loging {
         /*
         * @todo 派生クラスをクラスに問わず持たせられるようにする
         */
-        LogData log;
+        //LogData log;
         /* 問題なければ消してください*/
         //Logger(const Logger &) = delete;
         Logger &operator=(const Logger &) = delete;

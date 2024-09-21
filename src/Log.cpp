@@ -12,7 +12,7 @@ namespace loging
 auto LogData::CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>>
 {
 };
-
+/*
 auto Logger::logUserAction (const String& message) -> void
 {
   log.AppendData(LogLevel::USER_ACTION, message);
@@ -37,6 +37,6 @@ auto Logger::logDebug      (const String& message) -> void
 {
   log.AppendData(LogLevel::DEBUG, message);
 };
-
+*/
 
 }
