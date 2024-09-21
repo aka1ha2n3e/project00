@@ -1,6 +1,7 @@
 #ifndef ITERATOR_HPP
 #define ITERATOR_HPP
 
+#include "commonType.hpp"
 #include "generalType.hpp"
 
 namespace iterator
@@ -68,16 +69,15 @@ private:
          auto CanAdvance( ) const -> bool override;
          auto CanRetreat( ) const -> bool override;
          auto CurrentItem() const -> T& override{};
-private:
+    private:
   };
 
-template <typename Item> class AbstractArry
-{
-public:
-  virtual ~AbstractArry() = 0;
-  virtual auto CreateIterator() const -> std::unique_ptr<Iterator<Item>> = 0;
-  virtual auto CreateIterator(int category) const -> std::unique_ptr<Iterator<Item>> = 0;
-};
+  template <typename Item> class AbstractArry
+  {
+  public:
+    virtual ~AbstractArry() = 0;
+    virtual auto CreateIterator() const -> std::unique_ptr<Iterator<Item>> = 0;
+  };
 }; // namespace iterator
 
-#endif
+#endif // ITERATOR_HPP

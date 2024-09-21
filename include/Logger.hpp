@@ -2,26 +2,19 @@
 #define LOGGER_HPP
 
 #include <fstream>
-#include <map>
 #include <memory>
 #include <mutex>
 #include <vector>
+#include <map>
 #include "common.hpp"
 #include "iterator.hpp"
 #include "type.hpp"
+#include "LogData.hpp"
 
 namespace loging {
 
     class Logger {
     public:
-        enum class LogLevel {
-            INFO,
-            WARNING,
-            ERROR,
-            DEBUG,
-            USER_ACTION,
-        };
-
         static auto LeaveLog(LogLevel level, const String &message) -> void;
         static auto getLogger() -> Logger &;
 
@@ -35,15 +28,15 @@ namespace loging {
 
     private:
         Logger() = default;
-        ~Logger() {
-            if (logFile_.is_open()) {
-                logFile_.close();
-            }
-        };
+        ~Logger()= default;
 
 
+        /*
+        * @todo 派生クラスをクラスに問わず持たせられるようにする
+        */
         LogData log;
-        Logger(const Logger &) = delete;
+        /* 問題なければ消してください*/
+        //Logger(const Logger &) = delete;
         Logger &operator=(const Logger &) = delete;
 
 
@@ -51,22 +44,7 @@ namespace loging {
 
         mutable std::mutex mut;
     };
-/*
-* @todo サブクラスをカテゴリ別に作る
-* */
-    class LogData : public iterator::AbstractArry<loging::String> {
-    public:
-        ~LogData() = 0;
-        auto AppendData(Logger::LogLevel type, loging::String input) -> void {
-            data[type].push_buck(std::move(input));
-        };
 
-    private:
-        auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>>;
-        std::map<Logger::LogLevel, std::vector<loging::String>> data;
-    };
-
-    class
 
 } // namespace loging
 

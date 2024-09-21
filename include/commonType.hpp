@@ -11,6 +11,13 @@ namespace data
 namespace loging
 {
   using String = std::string;
+  enum class LogLevel {
+      INFO,
+      WARNING,
+      ERROR,
+      DEBUG,
+      USER_ACTION,
+  };
 };
 
 namespace fileSystem

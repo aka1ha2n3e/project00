@@ -3,6 +3,7 @@
 
 #include <memory>
 #include "commonType.hpp"
+#include "FileType.hpp"
 #include "type.hpp"
 
 namespace data

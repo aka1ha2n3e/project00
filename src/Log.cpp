@@ -1,40 +1,41 @@
 #include "type.hpp"
+#include "LogData.hpp"
 #include "Logger.hpp"
 
 namespace loging
 {
 
- auto LogData::AppendData(loging::Logger::LogLevel type, loging::String input) -> void
+ auto LogData::AppendData(LogLevel type, loging::String input) -> void
  {
-   this->data[type].second.push_buck(input);
+   this->data[type].push_back(input);
  };
-auto LogData::CreateIterator() const -> iterator::BrowseIterator<loging::String>*
+auto LogData::CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>>
 {
 };
 
 auto Logger::logUserAction (const String& message) -> void
 {
-  log.AppendData(USER_ACTION, message);
+  log.AppendData(LogLevel::USER_ACTION, message);
 };
 
 auto Logger::logInfo       (const String& message) -> void
 {
-  log.AppendData(INFO, message);
+  log.AppendData(LogLevel::INFO, message);
 };
 
 auto Logger::logWarning    (const String& message) -> void
 {
-  log.AppendData(WARNING, message);
+  log.AppendData(LogLevel::WARNING, message);
 };
 
 auto Logger::logError      (const String& message) -> void
 {
-  log.AppendData(ERROR, message);
+  log.AppendData(LogLevel::ERROR, message);
 };
 
 auto Logger::logDebug      (const String& message) -> void
 {
-  log.AppendData(DEBUG, message);
+  log.AppendData(LogLevel::DEBUG, message);
 };
 
 

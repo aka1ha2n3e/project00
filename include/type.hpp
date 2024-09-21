@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include "FileType.hpp"
 #include "commonType.hpp"
 #include "iterator.hpp"
 #include "generalType.hpp"
@@ -18,20 +19,7 @@ namespace loging
 {
 };
 
-namespace fileSystem
-{
-      class TxtData : public iterator::AbstractArry<Line>
-    {
-      public:
-        auto AppendLine(const Line input) -> void;
-        auto GetFirestLine() -> Line&{return data.front();};
-        auto CreateIterator() const -> std::unique_ptr<Iterator<Line>> override;
-
-        auto operator[](int idx) -> Line&;
-      private:
-        std::vector<Line> data;
-        
-    };
+namespace fileSystem{
 
   class TxtFile : public FileContents<TxtData>
   {
