@@ -22,8 +22,9 @@ namespace inputHandler
     {
         public:
             virtual ~InputAdapter();
-           auto InputParser() -> InputFormat;
             virtual auto CommandDispatcher() -> ResultCode = 0;
+           auto InputParser() -> InputFormat
+           {};
     };
 
     class KeyInputHandler: public InputAdapter<String>
