@@ -78,6 +78,8 @@ private:
     virtual ~AbstractArry() = 0;
     virtual auto CreateIterator() const -> std::unique_ptr<Iterator<Item>> = 0;
   };
+  template <typename Item>
+AbstractArry<Item>::~AbstractArry() {}
 }; // namespace iterator
 
 #endif // ITERATOR_HPP

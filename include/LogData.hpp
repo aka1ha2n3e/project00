@@ -8,35 +8,47 @@ namespace loging {
 * */
     class LogData : public iterator::AbstractArry<loging::String> {
     public:
-        ~LogData() = 0;
-        auto AppendData(LogLevel type, loging::String input) -> void;
-    private:
-        auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>>;
+        virtual auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> = 0;
+        virtual auto AppendData(loging::String input) -> void = 0;
+    protected:
+        virtual ~LogData() = 0;
         std::map<LogLevel, std::vector<loging::String>> data;
     };
 
+
+
     class UserAction : public LogData{
     public:
+        auto AppendData(loging::String input) -> void override;
+        auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override;
     private:
     };
    
     class Info : public LogData{
     public:
+        auto AppendData(loging::String input) -> void override;
+        auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override;
     private:
     };
    
     class Warning : public LogData{
     public:
+        auto AppendData(loging::String input) -> void override;
+        auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override;
     private:
     };
    
     class Error : public LogData{
     public:
+        auto AppendData(loging::String input) -> void override;
+        auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override;
     private:
     };
    
     class Debug : public LogData{
     public:
+        auto AppendData(loging::String input) -> void override;
+        auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override;
     private:
     };
     
