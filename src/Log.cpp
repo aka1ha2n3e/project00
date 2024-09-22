@@ -1,42 +1,53 @@
+#include "commonType.hpp"
 #include "type.hpp"
 #include "LogData.hpp"
 #include "Logger.hpp"
 
 namespace loging
 {
+   LogData::~LogData(){};
 
- auto LogData::AppendData(LogLevel type, loging::String input) -> void
- {
-   this->data[type].push_back(input);
- };
-auto LogData::CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>>
-{
-};
 /*
-auto Logger::logUserAction (const String& message) -> void
-{
-  log.AppendData(LogLevel::USER_ACTION, message);
-};
-
-auto Logger::logInfo       (const String& message) -> void
-{
-  log.AppendData(LogLevel::INFO, message);
-};
-
-auto Logger::logWarning    (const String& message) -> void
-{
-  log.AppendData(LogLevel::WARNING, message);
-};
-
-auto Logger::logError      (const String& message) -> void
-{
-  log.AppendData(LogLevel::ERROR, message);
-};
-
-auto Logger::logDebug      (const String& message) -> void
-{
-  log.AppendData(LogLevel::DEBUG, message);
-};
+* @todo イテレーターの実装
 */
+auto UserAction::CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> {
+   return nullptr;
+}
+auto UserAction::AppendData( loging::String input) -> void
+{
+   this->data[LogLevel::USER_ACTION].push_back(input);
+};
+
+auto Info::CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> {
+   return nullptr;
+}
+auto Info::AppendData( loging::String input) -> void
+{
+   this->data[LogLevel::INFO].push_back(input);
+};
+
+auto Warning::CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> {
+   return nullptr;
+}
+auto Warning::AppendData( loging::String input) -> void
+{
+   this->data[LogLevel::WARNING].push_back(input);
+};
+
+auto Error::CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> {
+   return nullptr;
+}
+auto Error::AppendData( loging::String input) -> void
+{
+   this->data[LogLevel::ERROR].push_back(input);
+};
+
+auto Debug::CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> {
+   return nullptr;
+}
+auto Debug::AppendData( loging::String input) -> void
+{
+   this->data[LogLevel::DEBUG].push_back(input);
+};
 
 }
