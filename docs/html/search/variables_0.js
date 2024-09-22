@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data_37',['data',['../structFileSystem_1_1TxtFile.html#a10a6fbbaab14a325d38b619d22c8148e',1,'FileSystem::TxtFile']]]
+  ['data_83',['data',['../classfileSystem_1_1FileContents.html#afbb8c4ed2e69070d58376c18d8ce559c',1,'fileSystem::FileContents']]]
 ];

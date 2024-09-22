@@ -8,14 +8,8 @@ namespace fileManager
     class FileManager
     {
         public:
-        virtual ~FileManager();
-        virtual auto CreateFileIO() -> std::unique_ptr<FileIO> = 0;
+        auto CreateFileIO(fileSystem::FileType extension) -> std::unique_ptr<FileIO>;
     };
 
-    class TxtFileManager
-    {
-        public:
-        auto CreateFileIO() -> std::unique_ptr<FileIO>;
-    };
 }
 #endif

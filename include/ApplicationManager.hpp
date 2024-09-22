@@ -17,6 +17,7 @@ namespace ApplicationManager
         public:
             inputManager::InputManager input;
             LogManager logger;
+            fileManager::FileManager file;
         private:
     };
 };

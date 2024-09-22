@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['inputadapter_26',['InputAdapter',['../classinputHandler_1_1InputAdapter.html',1,'inputHandler']]],
-  ['inputadapter_3c_20string_20_3e_27',['InputAdapter&lt; String &gt;',['../classinputHandler_1_1InputAdapter.html',1,'inputHandler']]]
+  ['datalist_50',['DataList',['../classdata_1_1DataList.html',1,'data']]],
+  ['debug_51',['Debug',['../classloging_1_1Debug.html',1,'loging']]]
 ];

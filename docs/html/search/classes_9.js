@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['usrinput_35',['UsrInput',['../classinputHandler_1_1UsrInput.html',1,'inputHandler']]]
+  ['logdata_69',['LogData',['../classloging_1_1LogData.html',1,'loging']]],
+  ['logger_70',['Logger',['../classloging_1_1Logger.html',1,'loging']]]
 ];
