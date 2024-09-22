@@ -36,6 +36,7 @@ namespace UI
     auto DisplayText(const String& text, Coordinate xCoord, Coordinate yCoord) -> void override;
     auto GetInput() -> int override;
   };
+  using UI = NcursesUI;
 } // namespace UI
 // namespace UI
 #endif // UI_HPP_

@@ -24,9 +24,8 @@ TEST_F(ContextPtrTest, ConstructorWithInstance) {
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
-    UI::NcursesUI sample;
+    UI::UI sample;
     sample.InitializeUI();
-    sample.DisplayText("abcd", 10, 10);
     while (true) {
     int ch = sample.GetInput();
         if (ch == 'q') break;

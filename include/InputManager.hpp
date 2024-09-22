@@ -2,15 +2,16 @@
 #define INPUTMANAGER_HPP
 
 #include "inputHandler.hpp"
+#include "inputData.hpp"
 
-class InputManager
+namespace inputManager
 {
 
     class InputManager{
         public:
         private:
-        inputHandler::KeyInputHandler key;
-        textEditor::TextBuffer kyeBuf; /**<文字データの保管場所 */
+        inputHandler::KeyInput keyInput;
+        textEditor::TextBuffer keyBuf; /**<文字データの保管場所 */
     };
 }
 

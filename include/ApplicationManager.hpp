@@ -3,15 +3,20 @@
 
 #include "UI.hpp"
 #include "Logger.hpp"
+#include "inputManager.hpp"
+#include "FileManager.hpp"
 namespace wrap
 {
-    using UI = UI::NcursesUI;
-    using Logger = loging::logger;
+    using LogManager = loging::Logger;
 };
 namespace ApplicationManager
 {
+    using namespace wrap;
 
     class ApplicationManager{
+        public:
+            inputManager::InputManager input;
+            LogManager logger;
         private:
     };
 };

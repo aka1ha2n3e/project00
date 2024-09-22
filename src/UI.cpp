@@ -28,4 +28,5 @@ namespace UI
   {
     return getch();
   }
+
 }; // namespace UI

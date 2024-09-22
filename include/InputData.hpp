@@ -8,6 +8,6 @@ namespace textEditor
         auto TakeData() -> String;
      private:
         std::vector<String> data; /**< 文字データの保管場所 */
-    } 
+    }; 
 };
 #endif
