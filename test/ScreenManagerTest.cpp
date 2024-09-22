@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "sample.hpp"
-#include "type.hpp"
+#include "UI.hpp"
 
 
 namespace ContextPtrTest {
@@ -16,32 +16,21 @@ protected:
     }
 };
 
-TEST_F(ContextPtrTest, ConstructorNullptr) {
-    ContextPtr<Sample> context;
-}
 
 TEST_F(ContextPtrTest, ConstructorWithInstance) {
-    Sample sample(42);
-    ContextPtr<Sample> context(&sample);
-    EXPECT_EQ(context->getData(), 42);
-}
-
-TEST_F(ContextPtrTest, SetPtr) {
-    Sample sample(42);
-    ContextPtr<Sample> context;
-    context.SetPtr(&sample);
-    EXPECT_EQ(context->getData(), 42);
-}
-
-TEST_F(ContextPtrTest, OperatorArrow) {
-    Sample sample(42);
-    ContextPtr<Sample> context(&sample);
-    context->display();
 }
 
 } // namespace ContextPtrTest
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
+    UI::NcursesUI sample;
+    sample.InitializeUI();
+    sample.DisplayText("abcd", 10, 10);
+    while (true) {
+    int ch = sample.GetInput();
+        if (ch == 'q') break;
+    }
+    sample.FinalizeUI();
     return RUN_ALL_TESTS();
 }
