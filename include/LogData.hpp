@@ -1,3 +1,4 @@
+
 #ifndef LOGDATA_HPP
 #define LOGDATA_HPP
 
@@ -54,3 +55,4 @@ namespace loging {
     
 } // loging
 #endif // LOGDATA_HPP
+
