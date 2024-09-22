@@ -39,7 +39,6 @@ namespace utils
 namespace textEditor
 {
   using String = std::string;
-  //using TextBuffer = std::vector<String>; /**< 文字データの保管場所 */
   using Key = int;                        /**< ユーザーが入力したデータ */
 };
 

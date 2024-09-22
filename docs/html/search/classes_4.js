@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['keyinputhandler_28',['KeyInputHandler',['../classinputHandler_1_1KeyInputHandler.html',1,'inputHandler']]]
+  ['elementptr_52',['ElementPtr',['../classElementPtr.html',1,'']]],
+  ['error_53',['Error',['../classloging_1_1Error.html',1,'loging']]]
 ];

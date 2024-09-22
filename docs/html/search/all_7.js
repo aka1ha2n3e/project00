@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['name_12',['name',['../structFileSystem_1_1TxtFile.html#a1bc88e742ae4683c576677409670037b',1,'FileSystem::TxtFile']]],
-  ['ncursesui_13',['NcursesUI',['../classUI_1_1NcursesUI.html',1,'UI']]]
+  ['info_21',['Info',['../classloging_1_1Info.html',1,'loging']]],
+  ['inputadapter_22',['InputAdapter',['../classinputHandler_1_1InputAdapter.html',1,'inputHandler']]],
+  ['inputadapter_3c_20string_20_3e_23',['InputAdapter&lt; String &gt;',['../classinputHandler_1_1InputAdapter.html',1,'inputHandler']]],
+  ['inputmanager_24',['InputManager',['../classinputManager_1_1InputManager.html',1,'inputManager']]],
+  ['iterator_25',['Iterator',['../classiterator_1_1Iterator.html',1,'iterator']]]
 ];

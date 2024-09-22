@@ -6,11 +6,15 @@
 
 namespace fileSystem
 {
+    enum class FileType
+    {
+        TXT,
+    };
     class TxtData : public iterator::AbstractArry<Line>
     {
         public:
         auto AppendLine(const Line input) -> void;
-        auto GetFirestLine() -> Line&{return data.front();};
+        auto GetFirstLine() -> Line&{return data.front();};
         auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<Line>> override;
 
         auto operator[](int idx) -> Line&;

@@ -30,7 +30,6 @@ var menudata={children:[
 {text:"クラス階層",url:"inherits.html"},
 {text:"クラスメンバ",url:"functions.html",children:[
 {text:"全て",url:"functions.html"},
-{text:"関数",url:"functions_func.html"},
 {text:"変数",url:"functions_vars.html"}]}]},
 {text:"ファイル",url:"files.html",children:[
 {text:"ファイル一覧",url:"files.html"}]}]}

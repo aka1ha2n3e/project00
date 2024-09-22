@@ -8,10 +8,12 @@ namespace inputHandler
 
     class UsrInput
     {
-        auto HandleKey() -> Key;
+        public:
+        auto InputKey() -> Key;
     };
     /*
-     * コマンド経由で入力を受け取るクラス
+     * @todo 実装
+     * @brief コマンド経由で入力を受け取るクラス
      */
     class CommandInput
     {
@@ -22,13 +24,24 @@ namespace inputHandler
     {
         public:
             virtual ~InputAdapter();
-           auto InputParser() -> InputFormat;
             virtual auto CommandDispatcher() -> ResultCode = 0;
+           auto InputParser() -> InputFormat {
+                return Input();
+           };
+        protected:
+            virtual auto Input() -> InputFormat = 0;
+
     };
 
-    class KeyInputHandler: public InputAdapter<String>
+    class KeyInput: public InputAdapter<String>
     {
        public:
+    /*
+    * @todo 実装まだ
+    * @brief なんのメソッドかわからん．
+    */
+            auto CommandDispatcher() -> ResultCode ;
+            auto Input() -> String;
         private:
             UsrInput keyInput;
     };

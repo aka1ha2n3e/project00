@@ -75,19 +75,19 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Logger.hpp&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;type.hpp&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>FileDriver</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>fileDriver</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">using namespace </span>FileSystem;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keyword">using namespace </span>fileSystem;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">using</span> OutputStream = std::ofstream;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keyword">using</span> InputStream  = std::ifstream;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="comment">//抽象クラス</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classFileDriver_1_1FileReader.html">   16</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classFileDriver_1_1FileReader.html">FileReader</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classfileDriver_1_1FileReader.html">   16</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classfileDriver_1_1FileReader.html">FileReader</a></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classFileDriver_1_1FileReader.html">FileReader</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classfileDriver_1_1FileReader.html">FileReader</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">auto</span> ReadFile(<span class="keyword">const</span> Path&amp; filePath, DataType&amp; inputData) -&gt; ResultCode</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      InputStream file(filePath);</div>
@@ -114,10 +114,10 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DataType&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classFileDriver_1_1FileWriter.html">   46</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classFileDriver_1_1FileWriter.html">FileWriter</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classfileDriver_1_1FileWriter.html">   46</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classfileDriver_1_1FileWriter.html">FileWriter</a></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classFileDriver_1_1FileWriter.html">FileWriter</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classfileDriver_1_1FileWriter.html">FileWriter</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">auto</span> SaveFile(<span class="keyword">const</span> DataType outputData, <span class="keyword">const</span> Path&amp; filePath) -&gt; ResultCode</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">return</span> SaveFileImpl(outputData,filePath);</div>
@@ -147,24 +147,25 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  };</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">//実装クラス</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classFileDriver_1_1TxtFileReader.html">   79</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classFileDriver_1_1TxtFileReader.html">TxtFileReader</a> : <span class="keyword">public</span> <a class="code" href="classFileDriver_1_1FileReader.html">FileReader</a>&lt;TxtData&gt;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classfileDriver_1_1TxtFileReader.html">   79</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classfileDriver_1_1TxtFileReader.html">TxtFileReader</a> : <span class="keyword">public</span> <a class="code" href="classfileDriver_1_1FileReader.html">FileReader</a>&lt;TxtData&gt;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  {</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">auto</span> FormatData(InputStream&amp; file, TxtData&amp; data) -&gt; ResultCode <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">auto</span> FormatData(InputStream&amp; file, <a class="code" href="classfileSystem_1_1TxtData.html">TxtData</a>&amp; data) -&gt; ResultCode <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  };</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classFileDriver_1_1TxtFileWriter.html">   85</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classFileDriver_1_1TxtFileWriter.html">TxtFileWriter</a> : <span class="keyword">public</span> <a class="code" href="classFileDriver_1_1FileWriter.html">FileWriter</a>&lt;TxtData&gt;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classfileDriver_1_1TxtFileWriter.html">   85</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classfileDriver_1_1TxtFileWriter.html">TxtFileWriter</a> : <span class="keyword">public</span> <a class="code" href="classfileDriver_1_1FileWriter.html">FileWriter</a>&lt;TxtData&gt;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">auto</span> WriteData(<span class="keyword">const</span> TxtData&amp; outputData, OutputStream&amp; file) -&gt; ResultCode <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">auto</span> WriteData(<span class="keyword">const</span> <a class="code" href="classfileSystem_1_1TxtData.html">TxtData</a>&amp; outputData, OutputStream&amp; file) -&gt; ResultCode <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  };</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;} <span class="comment">// namespace FileDriver</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassFileDriver_1_1FileReader_html"><div class="ttname"><a href="classFileDriver_1_1FileReader.html">FileDriver::FileReader</a></div><div class="ttdef"><b>Definition:</b> FileDriver.hpp:17</div></div>
-<div class="ttc" id="aclassFileDriver_1_1FileWriter_html"><div class="ttname"><a href="classFileDriver_1_1FileWriter.html">FileDriver::FileWriter</a></div><div class="ttdef"><b>Definition:</b> FileDriver.hpp:47</div></div>
-<div class="ttc" id="aclassFileDriver_1_1TxtFileReader_html"><div class="ttname"><a href="classFileDriver_1_1TxtFileReader.html">FileDriver::TxtFileReader</a></div><div class="ttdef"><b>Definition:</b> FileDriver.hpp:80</div></div>
-<div class="ttc" id="aclassFileDriver_1_1TxtFileWriter_html"><div class="ttname"><a href="classFileDriver_1_1TxtFileWriter.html">FileDriver::TxtFileWriter</a></div><div class="ttdef"><b>Definition:</b> FileDriver.hpp:86</div></div>
+<div class="ttc" id="aclassfileDriver_1_1FileReader_html"><div class="ttname"><a href="classfileDriver_1_1FileReader.html">fileDriver::FileReader</a></div><div class="ttdef"><b>Definition:</b> FileDriver.hpp:17</div></div>
+<div class="ttc" id="aclassfileDriver_1_1FileWriter_html"><div class="ttname"><a href="classfileDriver_1_1FileWriter.html">fileDriver::FileWriter</a></div><div class="ttdef"><b>Definition:</b> FileDriver.hpp:47</div></div>
+<div class="ttc" id="aclassfileDriver_1_1TxtFileReader_html"><div class="ttname"><a href="classfileDriver_1_1TxtFileReader.html">fileDriver::TxtFileReader</a></div><div class="ttdef"><b>Definition:</b> FileDriver.hpp:80</div></div>
+<div class="ttc" id="aclassfileDriver_1_1TxtFileWriter_html"><div class="ttname"><a href="classfileDriver_1_1TxtFileWriter.html">fileDriver::TxtFileWriter</a></div><div class="ttdef"><b>Definition:</b> FileDriver.hpp:86</div></div>
+<div class="ttc" id="aclassfileSystem_1_1TxtData_html"><div class="ttname"><a href="classfileSystem_1_1TxtData.html">fileSystem::TxtData</a></div><div class="ttdef"><b>Definition:</b> FileType.hpp:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,5 +1,7 @@
 #include <iostream>
 #include "UI.hpp"
+#include "InputHandler.hpp"
+#include "ApplicationManager.hpp"
 
 int main()
 {

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['inputadapter_7',['InputAdapter',['../classinputHandler_1_1InputAdapter.html',1,'inputHandler']]],
-  ['inputadapter_3c_20string_20_3e_8',['InputAdapter&lt; String &gt;',['../classinputHandler_1_1InputAdapter.html',1,'inputHandler']]]
+  ['elementptr_10',['ElementPtr',['../classElementPtr.html',1,'']]],
+  ['error_11',['Error',['../classloging_1_1Error.html',1,'loging']]]
 ];

@@ -130,4 +130,5 @@ private:
   };
   std::unique_ptr<T> curPtr;
 };
+
 #endif // GENERALTYPE_HPP

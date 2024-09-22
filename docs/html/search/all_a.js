@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['txtfile_16',['TxtFile',['../structFileSystem_1_1TxtFile.html',1,'FileSystem']]],
-  ['txtfilereader_17',['TxtFileReader',['../classFileDriver_1_1TxtFileReader.html',1,'FileDriver']]],
-  ['txtfilewriter_18',['TxtFileWriter',['../classFileDriver_1_1TxtFileWriter.html',1,'FileDriver']]]
+  ['name_29',['name',['../classfileSystem_1_1FileContents.html#a43dbef329061a2bbafbffeb6ce326395',1,'fileSystem::FileContents']]],
+  ['ncursesui_30',['NcursesUI',['../classUI_1_1NcursesUI.html',1,'UI']]]
 ];
