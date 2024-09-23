@@ -9,9 +9,11 @@ namespace inputManager
 
     class InputManager{
         public:
+        //検索機能の呼び出し enter 確定
+        //ファイルの編集 enter 改行
         private:
-        inputHandler::KeyInput keyInput;
-        textEditor::TextBuffer keyBuf; /**<文字データの保管場所 */
+        inputHandler::KeyInput inputer;
+        textEditor::TextBuffer txtData; /**<文字データの保管場所 */
     };
 }
 

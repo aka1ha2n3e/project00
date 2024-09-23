@@ -2,7 +2,10 @@
 #define INPUTDATA_HPP
 namespace textEditor
 {
-    class TextBuffer{
+    class Buffer{
+
+    };
+    class TextBuffer : public Buffer{
      public:
         auto AddData(String Data) -> void;
         auto TakeData() -> String;
