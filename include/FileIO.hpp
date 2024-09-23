@@ -15,10 +15,16 @@ namespace fileIO
     {
         public:
             virtual ~FileIO();
-            virtual auto CreateFileWriter(fileSystem::FileType extension) -> File;
-            virtual auto CreateFileReader(fileSystem::FileType extension) -> File;
+            virtual auto CreateFileWriter() -> File;
+            virtual auto CreateFileReader() -> File;
     };
 
+    class TxtFileIO : public FileIO
+    {
+        public:
+            auto CreateFileWriter() -> File;
+            auto CreateFileReader() -> File;
+    };
 
 };
 #endif
