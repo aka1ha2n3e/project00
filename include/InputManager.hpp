@@ -9,11 +9,14 @@ namespace inputManager
 
     class InputManager{
         public:
-        //検索機能の呼び出し enter 確定
-        //ファイルの編集 enter 改行
+
+            InputManager(textEditor::TextBuffer& buffer);
+            void processInput();
         private:
         inputHandler::KeyInput inputer;
         textEditor::TextBuffer txtData; /**<文字データの保管場所 */
+        auto CommandDispatcher() -> ResultCode;
+        std::unique_ptr<Command> interpretCommand(const String& input);
     };
 }
 

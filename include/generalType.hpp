@@ -72,9 +72,9 @@ public:
       return (curPtr.get() + 1);
     }
     else
-{
-return nullptr;
-}
+    {
+    return nullptr;
+    }
   };
 
   /*
@@ -87,9 +87,9 @@ return nullptr;
       return (curPtr.get() - 1);
     }
     else
-{
-return nullptr;
-}
+    {
+    return nullptr;
+    }
   };
 private:
   std::unique_ptr<T> curPtr;

@@ -1,8 +1,7 @@
 #ifndef ITERATOR_HPP
 #define ITERATOR_HPP
 
-#include "commonType.hpp"
-#include "generalType.hpp"
+#include "ElementPtr.hpp"
 
 namespace iterator
 {
@@ -11,75 +10,118 @@ namespace iterator
   public:
     virtual ~Iterator() = default;
     Iterator(T* element) : curItem{element} {};
-    virtual auto Advance() -> T = 0;
-    virtual auto Retreat() -> T = 0;
+    virtual auto Advance() -> T& = 0;
+    virtual auto Retreat() -> T& = 0;
     virtual auto CanAdvance() const -> bool = 0;
     virtual auto CanRetreat() const -> bool = 0;
     virtual auto CurrentItem() const -> T& = 0;
-    virtual auto GetItem(int hash) const -> T& = 0;
+    virtual auto GetItem(int index) const -> T& = 0;
   protected:
-    /* custom ptr */
     ElementPtr<T> curItem;
     int idx = 0;
   };
 
-/*
- * @brief イテレーターの具体的な実装．まだ張りぼて.
- * @todo  実装
-*/
   template <typename T> class BrowseIterator : public Iterator<T>
   {
-      public:
-         auto Advance( ) -> T override
-         {
-             return this->curItem.GetNext();
-         };
-         auto Retreat( ) -> T override
-         {
-             return this->curItem.GetPrev();
-         };
+  public:
+    BrowseIterator(T* element) : Iterator<T>(element) {}
 
-         auto CanAdvance( ) const -> bool override
-         {
-           return this->GetNext() != nullptr;
-         };
-         auto CanRetreat( ) const -> bool override
-         {
-           return this->GetPvev() != nullptr;
-         };
+    auto Advance() -> T& override
+    {
+      if (this->CanAdvance())
+      {
+        this->curItem.SetPtr(this->curItem.GetNext());
+        ++this->idx;
+      }
+      return this->curItem.getPtr();
+    }
 
-         auto CurrentItem() const -> T& override
-         {
-         return this->curItem.getPtr();
-         };
-private:
-         
+    auto Retreat() -> T& override
+    {
+      if (this->CanRetreat())
+      {
+        this->curItem.SetPtr(this->curItem.GetPrev());
+        --this->idx;
+      }
+      return this->curItem.getPtr();
+    }
+
+    auto CanAdvance() const -> bool override
+    {
+      return this->curItem.GetNext() != nullptr;
+    }
+
+    auto CanRetreat() const -> bool override
+    {
+      return this->curItem.GetPrev() != nullptr;
+    }
+
+    auto CurrentItem() const -> T& override
+    {
+      return this->curItem.getPtr();
+    }
+
+    auto GetItem(int index) const -> T& override
+    {
+      // 実装
+    }
   };
 
-/*
- * @brief イテレーターの具体的な実装．まだ張りぼて.
- * @todo  実装
-*/
   template <typename T> class OperateIterator : public Iterator<T>
   {
-      public:
-         using Iterator<T>::Iterator;
-         auto Advance( ) -> T override;
-         auto Retreat( ) -> T override;
-         auto CanAdvance( ) const -> bool override;
-         auto CanRetreat( ) const -> bool override;
-         auto CurrentItem() const -> T& override{};
-    private:
+  public:
+    using Iterator<T>::Iterator;
+
+    auto Advance() -> T& override
+    {
+      if (this->CanAdvance())
+      {
+        this->curItem.SetPtr(this->curItem.GetNext());
+        ++this->idx;
+      }
+      return this->curItem.getPtr();
+    }
+
+    auto Retreat() -> T& override
+    {
+      if (this->CanRetreat())
+      {
+        this->curItem.SetPtr(this->curItem.GetPrev());
+        --this->idx;
+      }
+      return this->curItem.getPtr();
+    }
+
+    auto CanAdvance() const -> bool override
+    {
+      return this->idx < this->curItem.GetSize() - 1;
+    }
+
+    auto CanRetreat() const -> bool override
+    {
+      return this->idx > 0;
+    }
+
+    auto CurrentItem() const -> T& override
+    {
+      return this->curItem.getPtr();
+    }
+
+    auto GetItem(int index) const -> T& override
+    {
+      // 実装
+    }
   };
 
-  template <typename Item> class AbstractArry
+  template <typename Item> class AbstractArray
   {
   public:
-    virtual ~AbstractArry() = 0;
+    virtual ~AbstractArray() = 0;
     virtual auto CreateIterator() const -> std::unique_ptr<Iterator<Item>> = 0;
   };
+
   template <typename Item>
-AbstractArry<Item>::~AbstractArry() {}
+  AbstractArray<Item>::~AbstractArray() {}
 }; // namespace iterator
 
 #endif // ITERATOR_HPP

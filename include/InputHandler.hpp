@@ -24,7 +24,6 @@ namespace inputHandler
     {
         public:
             virtual ~InputAdapter();
-            virtual auto CommandDispatcher() -> ResultCode = 0;
            auto InputParser() -> InputFormat {
                 return Input();
            };

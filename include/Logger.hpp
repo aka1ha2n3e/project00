@@ -1,21 +1,16 @@
 #ifndef LOGGER_HPP
 #define LOGGER_HPP
 
-#include <fstream>
-#include <memory>
 #include <mutex>
-#include <vector>
-#include <map>
 #include "common.hpp"
-#include "iterator.hpp"
 #include "type.hpp"
 #include "LogData.hpp"
+#include "generalType.hpp"  
 
 namespace loging {
 
     class Logger {
     public:
-        static auto LeaveLog(LogLevel level, const String &message) -> void;
         static auto getLogger() -> Logger &;
 
         auto setLogFile(const fileSystem::Path &logFilePath) -> void;
@@ -25,26 +20,24 @@ namespace loging {
         auto logError(const String &message) -> void;
         auto logDebug(const String &message) -> void;
 
-
     private:
-        Logger() = default;
-        ~Logger()= default;
+        Logger();
+        ~Logger() = default;
 
-
-        /*
-        * @todo 派生クラスをクラスに問わず持たせられるようにする
-        */
-        LogData* log;
-        /* 問題なければ消してください*/
-        //Logger(const Logger &) = delete;
+        Logger(const Logger &) = delete;
         Logger &operator=(const Logger &) = delete;
 
-
+        auto leaveLog(LogLevel level, const String &message) -> void;
         auto getTag(LogLevel level) const -> String;
+
+        ContextPtr<UserAction> userActionLog;
+        ContextPtr<Info> infoLog;
+        ContextPtr<Warning> warningLog;
+        ContextPtr<Error> errorLog;
+        ContextPtr<Debug> debugLog;
 
         mutable std::mutex mut;
     };
-
 
 } // namespace loging
 
