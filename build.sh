@@ -1,9 +1,19 @@
 #!/bin/sh
 
-if [ ! -d $"build/" ]; then
+if [ -d $"build/" ]; then
+    cd build
+    if [ ! -f .debug ];then
+        cd ..
+        rm -r build
+        mkdir build
+        cd build
+        cmake ..
+    fi
+else
     mkdir build
+    cd build
+    cmake ..
 fi
-cd build
-cmake ..
 make
+touch .debug
 cd ..
