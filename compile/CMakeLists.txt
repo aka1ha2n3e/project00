@@ -18,7 +18,7 @@ file(GLOB_RECURSE SOURCES
     "${PROJECT_SOURCE_DIR}/../src/*.cpp"
 )
 
-list(REMOVE_ITEM SOURCES "${PROJECT_SOURCE_DIR}/../src/main.cpp")
+list(REMOVE_ITEM SOURCES "${PROJECT_SOURCE_DIR}/compch.cpp")
 
 # ソースファイルが見つからなかった場合のチェック
 if (SOURCES STREQUAL "")
