@@ -1,0 +1,39 @@
+テスト内容
+
+
+
+inputHandler.hpp
+inputData.hpp
+inputManager.hpp
+
+include File
+
+
+#include "inputHandler.hpp"
+概要：ハードから入力されたデータを取得
+
+データ   
+        通常入力
+        改行できる．
+
+        コマンド入力
+        コントロールＶでペースト
+
+
+
+#include "inputData.hpp"
+概要：データの保存されている場所
+
+Buffer
+        Text 
+
+
+#include "inputManager.hpp"
+概要：入力に関しての一元管理
+
+・入力情報の状態を決定する　
+・データを出力する　
+
+
+
+
