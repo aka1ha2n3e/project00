@@ -1,19 +1,22 @@
+
 #!/bin/sh
+
 
 if [ -d $"build/" ]; then
     cd build
-    if [ ! -f .debug ];then
+    if [ ! -f .comp ];then
         cd ..
         rm -r build
         mkdir build
         cd build
-        cmake ..
+        cmake ../compile/
     fi
 else
     mkdir build
     cd build
-    cmake ..
+    cmake ../compile/
 fi
+touch .comp
 make
-touch .debug
 cd ..
+echo "リンクエラーは認識しないので注意してください"

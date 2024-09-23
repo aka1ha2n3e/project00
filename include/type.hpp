@@ -21,9 +21,6 @@ namespace loging
 
 namespace fileSystem{
 
-  class TxtFile : public FileContents<TxtData>
-  {
-  };
 
   enum class ResultCode
   {

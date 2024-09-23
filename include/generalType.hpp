@@ -3,7 +3,7 @@
 
 #include <memory>
 #include "commonType.hpp"
-#include "FileType.hpp"
+#include "FileData.hpp"
 #include "type.hpp"
 
 namespace data
@@ -26,7 +26,7 @@ namespace fileSystem
   class FileContents
   {
     public:
-      virtual ~FileContents() = 0;
+      virtual ~FileContents();
       FileName name; /**< ファイル名 */
       Path    path;     /**< パス */
       T     data;        /**< data */

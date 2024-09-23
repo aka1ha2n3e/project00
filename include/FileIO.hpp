@@ -15,8 +15,8 @@ namespace fileIO
     {
         public:
             virtual ~FileIO();
-            virtual auto CreateFileWriter(fileSystem::FileType extension) -> void;
-            virtual auto CreateFileReader(fileSystem::FileType extension) -> void;
+            virtual auto CreateFileWriter(fileSystem::FileType extension) -> File;
+            virtual auto CreateFileReader(fileSystem::FileType extension) -> File;
     };
 
 
