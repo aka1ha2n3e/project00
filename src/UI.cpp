@@ -18,9 +18,15 @@ namespace UI
     endwin();
   }
 
+  auto NcursesUI::ClearScreen() -> void
+  {
+    clear();
+    refresh();
+  }
+
   auto NcursesUI::DisplayText(const String& text, Coordinate xCoord, Coordinate yCoord) -> void
   {
-    mvprintw(yCoord, xCoord, text.c_str());
+    mvprintw(yCoord, xCoord, "%s", text.c_str());
     refresh();
   }
 

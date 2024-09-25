@@ -10,7 +10,7 @@ namespace fileSystem
     {
         TXT,
     };
-    class TxtData : public iterator::AbstractArry<Line>
+    class TxtData : public iterator::AbstractArray<Line>
     {
         public:
         auto AppendLine(const Line input) -> void;

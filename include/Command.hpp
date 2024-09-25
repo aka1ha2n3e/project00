@@ -1,7 +1,7 @@
 #ifndef COMMAND_HPP
 #define COMMAND_HPP
 
-#include "typeName::StackWrapper.hpp"
+#include "StackWrapper.hpp"
 #include "TextBuffer.hpp"
 
 namespace command

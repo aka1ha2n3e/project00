@@ -1,7 +1,8 @@
 #ifndef ITERATOR_HPP
 #define ITERATOR_HPP
 
-#include "ElementPtr.hpp"
+#include "commonType.hpp"
+#include "generalType.hpp"
 
 namespace iterator
 {

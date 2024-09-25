@@ -10,6 +10,7 @@
 namespace UI
 {
 
+  using UI = NcursesUI;
   /*
    * 抽象クラス
    */
@@ -19,7 +20,7 @@ namespace UI
     virtual ~GeneralUI() = default;
     virtual auto InitializeUI() -> void = 0;
     virtual auto FinalizeUI() -> void = 0;
-
+    virtual auto ClearScreen() -> void = 0;
     virtual auto DisplayText(const String& text, Coordinate xCoord, Coordinate yCoord) -> void = 0;
     virtual auto GetInput() -> int = 0;
   };
@@ -32,11 +33,20 @@ namespace UI
   public:
     auto InitializeUI() -> void override;
     auto FinalizeUI() -> void override;
-
+    auto ClearScreen() -> void override;
     auto DisplayText(const String& text, Coordinate xCoord, Coordinate yCoord) -> void override;
+  /*
+    * @brief ユーザーからの入力を取得する
+     * @return 入力されたキーのコード
+     * 
+     * @note キーマッピング:
+     * * 英数 アルファベット順 + 96.例）a は 97が出力
+     * * ctrl アルファベット順.例）ctrl + a は 1が出力
+     * * shift アルファベット順 + 64.例）shift + a は 64が出力
+     * @todo キーマッピングを変更する
+   */
     auto GetInput() -> int override;
   };
-  using UI = NcursesUI;
 } // namespace UI
 // namespace UI
 #endif // UI_HPP_
