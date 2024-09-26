@@ -1,0 +1,59 @@
+\hypertarget{commonType_8hpp}{}\doxysection{include/common\+Type.hpp File Reference}
+\label{commonType_8hpp}\index{include/commonType.hpp@{include/commonType.hpp}}
+{\ttfamily \#include $<$filesystem$>$}\newline
+Include dependency graph for common\+Type.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacedata}{data}}
+\begin{DoxyCompactList}\small\item\em データ関連の型や定数を定義する名前空間 \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespaceloging}{loging}}
+\begin{DoxyCompactList}\small\item\em ロギング関連の型や定数を定義する名前空間 \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespacefileSystem}{file\+System}}
+\begin{DoxyCompactList}\small\item\em ファイルシステム関連の型や定数を定義する名前空間 \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespaceutils}{utils}}
+\begin{DoxyCompactList}\small\item\em ユーティリティ関連の型や定数を定義する名前空間 \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespacetextEditor}{text\+Editor}}
+\begin{DoxyCompactList}\small\item\em テキストエディタ関連 \end{DoxyCompactList}\item 
+ \mbox{\hyperlink{namespaceUI}{UI}}
+\begin{DoxyCompactList}\small\item\em ユーザーインターフェース関連の型や定数を定義する名前空間 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}} = std\+::string
+\begin{DoxyCompactList}\small\item\em 文字列型の別名 \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacefileSystem_acaf1fdc2b37b2cb6615d4cdc55020e5f}{file\+System\+::\+Path}} = std\+::filesystem\+::path
+\begin{DoxyCompactList}\small\item\em ファイルパス型の別名 \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacefileSystem_a1c330ee5ce8e2eb82da872fedd0c5333}{file\+System\+::\+Directory}} = std\+::string
+\begin{DoxyCompactList}\small\item\em ディレクトリ \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacefileSystem_afa29fd8af6468a4228bc5f2193bd0982}{file\+System\+::\+File\+Name}} = std\+::string
+\begin{DoxyCompactList}\small\item\em ファイル名 \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacefileSystem_a007eea44cf260810f38970d82b8c4f57}{file\+System\+::\+Byte}} = std\+::byte
+\begin{DoxyCompactList}\small\item\em バイト型の別名 \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacefileSystem_a8e8134c7ebf642c477cb6b07a9d70cf8}{file\+System\+::\+Line}} = std\+::string
+\begin{DoxyCompactList}\small\item\em 1行のテキスト \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceutils_a73d287c18dd29682f8f663865a298da8}{utils\+::\+String}} = std\+::string
+\begin{DoxyCompactList}\small\item\em 文字 \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacetextEditor_a3d036cc7d1a7a70b2d787af5f57f0806}{text\+Editor\+::\+String}} = std\+::string
+\begin{DoxyCompactList}\small\item\em 文字列名 \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}{text\+Editor\+::\+Key}} = int
+\begin{DoxyCompactList}\small\item\em ユーザーが入力したデータ \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceUI_a0080fba5cd4f3110c923a2332e958bac}{UI\+::\+String}} = std\+::string
+\begin{DoxyCompactList}\small\item\em 文字列 \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespaceUI_ad1020610fe737da5df29653c5f32201a}{UI\+::\+Coordinate}} = int
+\begin{DoxyCompactList}\small\item\em 表示座標 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespaceloging_acbbdd5545f34c51401a02d4f98adbabd}{loging\+::\+Log\+Level}} \{ \newline
+\mbox{\hyperlink{namespaceloging_acbbdd5545f34c51401a02d4f98adbabda551b723eafd6a31d444fcb2f5920fbd3}{loging\+::\+INFO}}
+, \mbox{\hyperlink{namespaceloging_acbbdd5545f34c51401a02d4f98adbabda059e9861e0400dfbe05c98a841f3f96b}{loging\+::\+WARNING}}
+, \mbox{\hyperlink{namespaceloging_acbbdd5545f34c51401a02d4f98adbabdabb1ca97ec761fc37101737ba0aa2e7c5}{loging\+::\+ERROR}}
+, \mbox{\hyperlink{namespaceloging_acbbdd5545f34c51401a02d4f98adbabdadc30ec20708ef7b0f641ef78b7880a15}{loging\+::\+DEBUG}}
+, \newline
+\mbox{\hyperlink{namespaceloging_acbbdd5545f34c51401a02d4f98adbabda236a22d537f543151664e538d60227a8}{loging\+::\+USER\+\_\+\+ACTION}}
+ \}
+\begin{DoxyCompactList}\small\item\em ログレベルを定義する列挙型 \end{DoxyCompactList}\end{DoxyCompactItemize}

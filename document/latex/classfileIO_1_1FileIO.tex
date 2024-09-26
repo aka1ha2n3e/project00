@@ -1,0 +1,68 @@
+\hypertarget{classfileIO_1_1FileIO}{}\doxysection{file\+IO\+::File\+IO Class Reference}
+\label{classfileIO_1_1FileIO}\index{fileIO::FileIO@{fileIO::FileIO}}
+
+
+ファイルマネージャーに\+File\+IOの機能を提供する．使用する際になんの機能が欲しいか引数で選択できるようにする．  
+
+
+
+
+{\ttfamily \#include $<$File\+IO.\+hpp$>$}
+
+
+
+Inheritance diagram for file\+IO\+::File\+IO\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfileIO_1_1FileIO_a2f9621658339212a497bac0bb284d924}{$\sim$\+File\+IO}} ()
+\item 
+virtual auto \mbox{\hyperlink{classfileIO_1_1FileIO_a7a0a108a159a155f0c777a61b024d453}{Create\+File\+Writer}} () -\/$>$ \mbox{\hyperlink{classfileSystem_1_1File}{File}}
+\item 
+virtual auto \mbox{\hyperlink{classfileIO_1_1FileIO_a1d2093c66b7cab407fc29f398f28a265}{Create\+File\+Reader}} () -\/$>$ \mbox{\hyperlink{classfileSystem_1_1File}{File}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ファイルマネージャーに\+File\+IOの機能を提供する．使用する際になんの機能が欲しいか引数で選択できるようにする． 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]暫定的にvoidを入れたが，本来は戻り値が分からないといけない．参照元の\+File\+Driver.\+hppではテンプレートのため型が分からない． \end{DoxyRefDesc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfileIO_1_1FileIO_a2f9621658339212a497bac0bb284d924}\label{classfileIO_1_1FileIO_a2f9621658339212a497bac0bb284d924}} 
+\index{fileIO::FileIO@{fileIO::FileIO}!````~FileIO@{$\sim$FileIO}}
+\index{````~FileIO@{$\sim$FileIO}!fileIO::FileIO@{fileIO::FileIO}}
+\doxysubsubsection{\texorpdfstring{$\sim$FileIO()}{~FileIO()}}
+{\footnotesize\ttfamily virtual file\+IO\+::\+File\+IO\+::$\sim$\+File\+IO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfileIO_1_1FileIO_a1d2093c66b7cab407fc29f398f28a265}\label{classfileIO_1_1FileIO_a1d2093c66b7cab407fc29f398f28a265}} 
+\index{fileIO::FileIO@{fileIO::FileIO}!CreateFileReader@{CreateFileReader}}
+\index{CreateFileReader@{CreateFileReader}!fileIO::FileIO@{fileIO::FileIO}}
+\doxysubsubsection{\texorpdfstring{CreateFileReader()}{CreateFileReader()}}
+{\footnotesize\ttfamily virtual auto file\+IO\+::\+File\+IO\+::\+Create\+File\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classfileSystem_1_1File}{File}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classfileIO_1_1TxtFileIO_ad66cba2b5324ad4a3e7b48a2895bbf17}{file\+IO\+::\+Txt\+File\+IO}}.
+
+\mbox{\Hypertarget{classfileIO_1_1FileIO_a7a0a108a159a155f0c777a61b024d453}\label{classfileIO_1_1FileIO_a7a0a108a159a155f0c777a61b024d453}} 
+\index{fileIO::FileIO@{fileIO::FileIO}!CreateFileWriter@{CreateFileWriter}}
+\index{CreateFileWriter@{CreateFileWriter}!fileIO::FileIO@{fileIO::FileIO}}
+\doxysubsubsection{\texorpdfstring{CreateFileWriter()}{CreateFileWriter()}}
+{\footnotesize\ttfamily virtual auto file\+IO\+::\+File\+IO\+::\+Create\+File\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classfileSystem_1_1File}{File}}\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classfileIO_1_1TxtFileIO_a84566c1902421d07c0a82d6eca8449b1}{file\+IO\+::\+Txt\+File\+IO}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{FileIO_8hpp}{File\+IO.\+hpp}}\end{DoxyCompactItemize}
