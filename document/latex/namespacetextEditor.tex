@@ -1,0 +1,127 @@
+\hypertarget{namespacetextEditor}{}\doxysection{text\+Editor Namespace Reference}
+\label{namespacetextEditor}\index{textEditor@{textEditor}}
+
+
+テキストエディタ関連  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtextEditor_1_1Buffer}{Buffer}}
+\item 
+class \mbox{\hyperlink{classtextEditor_1_1TextBuffer}{Text\+Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacetextEditor_a3d036cc7d1a7a70b2d787af5f57f0806}{String}} = std\+::string
+\begin{DoxyCompactList}\small\item\em 文字列名 \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}{Key}} = int
+\begin{DoxyCompactList}\small\item\em ユーザーが入力したデータ \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacetextEditor_a17364ea4d1207688c8ab60a8ab95484f}{Coordinate}} = int
+\begin{DoxyCompactList}\small\item\em カーソル \end{DoxyCompactList}\item 
+using \mbox{\hyperlink{namespacetextEditor_ae7a0df29f8b36d3b80b109680cede372}{Line}} = std\+::string
+\begin{DoxyCompactList}\small\item\em 1行のテキスト \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9}{Result\+Code}} \{ \mbox{\hyperlink{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9ad0749aaba8b833466dfcbb0428e4f89c}{SUCCESS}}
+, \mbox{\hyperlink{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9a36fc6065a3e970bc3e6b2e59da52bf2a}{FAILURE}}
+, \mbox{\hyperlink{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9ade918d7abaea4c856c3c64720f3cbb7c}{INVALID\+\_\+\+OPERATION}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44d}{File\+Operation\+State}} \{ \mbox{\hyperlink{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44da16a66639d84e8aec30db7dd0516e7220}{EDITING}}
+, \mbox{\hyperlink{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44da4ab2b7759f2b20744b1e239e93c72f1b}{SAVING}}
+, \mbox{\hyperlink{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44daf9f6955ebca09a484157c05f80acd65e}{LOADING}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+テキストエディタ関連 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacetextEditor_a17364ea4d1207688c8ab60a8ab95484f}\label{namespacetextEditor_a17364ea4d1207688c8ab60a8ab95484f}} 
+\index{textEditor@{textEditor}!Coordinate@{Coordinate}}
+\index{Coordinate@{Coordinate}!textEditor@{textEditor}}
+\doxysubsubsection{\texorpdfstring{Coordinate}{Coordinate}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetextEditor_a17364ea4d1207688c8ab60a8ab95484f}{text\+Editor\+::\+Coordinate}} = typedef int}
+
+
+
+カーソル 
+
+\mbox{\Hypertarget{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}\label{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}} 
+\index{textEditor@{textEditor}!Key@{Key}}
+\index{Key@{Key}!textEditor@{textEditor}}
+\doxysubsubsection{\texorpdfstring{Key}{Key}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}{text\+Editor\+::\+Key}} = typedef int}
+
+
+
+ユーザーが入力したデータ 
+
+\mbox{\Hypertarget{namespacetextEditor_ae7a0df29f8b36d3b80b109680cede372}\label{namespacetextEditor_ae7a0df29f8b36d3b80b109680cede372}} 
+\index{textEditor@{textEditor}!Line@{Line}}
+\index{Line@{Line}!textEditor@{textEditor}}
+\doxysubsubsection{\texorpdfstring{Line}{Line}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetextEditor_ae7a0df29f8b36d3b80b109680cede372}{text\+Editor\+::\+Line}} = typedef std\+::string}
+
+
+
+1行のテキスト 
+
+\mbox{\Hypertarget{namespacetextEditor_a3d036cc7d1a7a70b2d787af5f57f0806}\label{namespacetextEditor_a3d036cc7d1a7a70b2d787af5f57f0806}} 
+\index{textEditor@{textEditor}!String@{String}}
+\index{String@{String}!textEditor@{textEditor}}
+\doxysubsubsection{\texorpdfstring{String}{String}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacetextEditor_a3d036cc7d1a7a70b2d787af5f57f0806}{text\+Editor\+::\+String}} = typedef std\+::string}
+
+
+
+文字列名 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44d}\label{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44d}} 
+\index{textEditor@{textEditor}!FileOperationState@{FileOperationState}}
+\index{FileOperationState@{FileOperationState}!textEditor@{textEditor}}
+\doxysubsubsection{\texorpdfstring{FileOperationState}{FileOperationState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44d}{text\+Editor\+::\+File\+Operation\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EDITING@{EDITING}!textEditor@{textEditor}}\index{textEditor@{textEditor}!EDITING@{EDITING}}}\mbox{\Hypertarget{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44da16a66639d84e8aec30db7dd0516e7220}\label{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44da16a66639d84e8aec30db7dd0516e7220}} 
+EDITING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAVING@{SAVING}!textEditor@{textEditor}}\index{textEditor@{textEditor}!SAVING@{SAVING}}}\mbox{\Hypertarget{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44da4ab2b7759f2b20744b1e239e93c72f1b}\label{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44da4ab2b7759f2b20744b1e239e93c72f1b}} 
+SAVING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOADING@{LOADING}!textEditor@{textEditor}}\index{textEditor@{textEditor}!LOADING@{LOADING}}}\mbox{\Hypertarget{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44daf9f6955ebca09a484157c05f80acd65e}\label{namespacetextEditor_a98fde9e4349ed31810e7b3dd2b67c44daf9f6955ebca09a484157c05f80acd65e}} 
+LOADING&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9}\label{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9}} 
+\index{textEditor@{textEditor}!ResultCode@{ResultCode}}
+\index{ResultCode@{ResultCode}!textEditor@{textEditor}}
+\doxysubsubsection{\texorpdfstring{ResultCode}{ResultCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9}{text\+Editor\+::\+Result\+Code}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SUCCESS@{SUCCESS}!textEditor@{textEditor}}\index{textEditor@{textEditor}!SUCCESS@{SUCCESS}}}\mbox{\Hypertarget{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9ad0749aaba8b833466dfcbb0428e4f89c}\label{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9ad0749aaba8b833466dfcbb0428e4f89c}} 
+SUCCESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FAILURE@{FAILURE}!textEditor@{textEditor}}\index{textEditor@{textEditor}!FAILURE@{FAILURE}}}\mbox{\Hypertarget{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9a36fc6065a3e970bc3e6b2e59da52bf2a}\label{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9a36fc6065a3e970bc3e6b2e59da52bf2a}} 
+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_OPERATION@{INVALID\_OPERATION}!textEditor@{textEditor}}\index{textEditor@{textEditor}!INVALID\_OPERATION@{INVALID\_OPERATION}}}\mbox{\Hypertarget{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9ade918d7abaea4c856c3c64720f3cbb7c}\label{namespacetextEditor_a3376f0f773b020263c768c5c2998d4b9ade918d7abaea4c856c3c64720f3cbb7c}} 
+INVALID\+\_\+\+OPERATION&\\
+\hline
+
+\end{DoxyEnumFields}

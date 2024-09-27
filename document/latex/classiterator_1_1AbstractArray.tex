@@ -1,0 +1,76 @@
+\hypertarget{classiterator_1_1AbstractArray}{}\doxysection{iterator\+::Abstract\+Array$<$ Item $>$ Class Template Reference}
+\label{classiterator_1_1AbstractArray}\index{iterator::AbstractArray$<$ Item $>$@{iterator::AbstractArray$<$ Item $>$}}
+
+
+抽象配列クラス  
+
+
+
+
+{\ttfamily \#include $<$iterator.\+hpp$>$}
+
+
+
+Inheritance diagram for iterator\+::Abstract\+Array$<$ Item $>$\+:
+% FIG 0
+
+
+Collaboration diagram for iterator\+::Abstract\+Array$<$ Item $>$\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classiterator_1_1AbstractArray_ad158964175b881c01b2d69bf8336c940}{$\sim$\+Abstract\+Array}} ()=0
+\item 
+virtual auto \mbox{\hyperlink{classiterator_1_1AbstractArray_a5a3b04799cb5020b6b8938b79f3f63ca}{Create\+Iterator}} () const -\/$>$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classiterator_1_1Iterator}{Iterator}}$<$ Item $>$$>$=0
+\begin{DoxyCompactList}\small\item\em イテレータを作成する \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Item$>$\newline
+class iterator\+::\+Abstract\+Array$<$ Item $>$}
+
+抽象配列クラス 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Item} & 配列の要素の型 \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classiterator_1_1AbstractArray_ad158964175b881c01b2d69bf8336c940}\label{classiterator_1_1AbstractArray_ad158964175b881c01b2d69bf8336c940}} 
+\index{iterator::AbstractArray$<$ Item $>$@{iterator::AbstractArray$<$ Item $>$}!````~AbstractArray@{$\sim$AbstractArray}}
+\index{````~AbstractArray@{$\sim$AbstractArray}!iterator::AbstractArray$<$ Item $>$@{iterator::AbstractArray$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$AbstractArray()}{~AbstractArray()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+virtual \mbox{\hyperlink{classiterator_1_1AbstractArray}{iterator\+::\+Abstract\+Array}}$<$ Item $>$\+::$\sim$\mbox{\hyperlink{classiterator_1_1AbstractArray}{Abstract\+Array}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classiterator_1_1AbstractArray_a5a3b04799cb5020b6b8938b79f3f63ca}\label{classiterator_1_1AbstractArray_a5a3b04799cb5020b6b8938b79f3f63ca}} 
+\index{iterator::AbstractArray$<$ Item $>$@{iterator::AbstractArray$<$ Item $>$}!CreateIterator@{CreateIterator}}
+\index{CreateIterator@{CreateIterator}!iterator::AbstractArray$<$ Item $>$@{iterator::AbstractArray$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{CreateIterator()}{CreateIterator()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+virtual auto \mbox{\hyperlink{classiterator_1_1AbstractArray}{iterator\+::\+Abstract\+Array}}$<$ Item $>$\+::Create\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classiterator_1_1Iterator}{Iterator}}$<$ Item $>$$>$\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+イテレータを作成する 
+
+\begin{DoxyReturn}{Returns}
+作成されたイテレータ 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classloging_1_1LogData_ab56073c9e2f023b0311264f8c3946df4}{loging\+::\+Log\+Data}}, \mbox{\hyperlink{classloging_1_1Debug_a2dd9b16978cfb07fc2ab22e887f13a94}{loging\+::\+Debug}}, \mbox{\hyperlink{classloging_1_1Error_a7f9df4b4c9f3a62de9f966db3119734a}{loging\+::\+Error}}, \mbox{\hyperlink{classloging_1_1Warning_afcffff722d52ad9acb14ae92f8cd1e79}{loging\+::\+Warning}}, \mbox{\hyperlink{classloging_1_1Info_a35cd2700a1c635d3f93b4f2031d02a1d}{loging\+::\+Info}}, \mbox{\hyperlink{classloging_1_1UserAction_a14cfa790e005b9cac928df99ceea9154}{loging\+::\+User\+Action}}, and \mbox{\hyperlink{classfileSystem_1_1TxtData_a98a7b26e5969c1a5c0b642544701ba93}{file\+System\+::\+Txt\+Data}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/iterator/\mbox{\hyperlink{iterator_8hpp}{iterator.\+hpp}}\end{DoxyCompactItemize}

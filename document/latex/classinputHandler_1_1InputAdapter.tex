@@ -1,0 +1,86 @@
+\hypertarget{classinputHandler_1_1InputAdapter}{}\doxysection{input\+Handler\+::Input\+Adapter$<$ Input\+Format $>$ Class Template Reference}
+\label{classinputHandler_1_1InputAdapter}\index{inputHandler::InputAdapter$<$ InputFormat $>$@{inputHandler::InputAdapter$<$ InputFormat $>$}}
+
+
+入力を処理する抽象基底クラス  
+
+
+
+
+{\ttfamily \#include $<$Input\+Handler.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classinputHandler_1_1InputAdapter_af885d89f926c5e0613efab3d79c25d64}{$\sim$\+Input\+Adapter}} ()
+\item 
+auto \mbox{\hyperlink{classinputHandler_1_1InputAdapter_acbea6a0a2e06cca66c66a9d8c5c7d07a}{Input\+Parser}} () -\/$>$ Input\+Format
+\begin{DoxyCompactList}\small\item\em 入力を解析するメソッド \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual auto \mbox{\hyperlink{classinputHandler_1_1InputAdapter_a6ceff070cb46212a2ad45b40001b8d76}{Input}} () -\/$>$ Input\+Format=0
+\begin{DoxyCompactList}\small\item\em 入力を受け取る純粋仮想関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Input\+Format$>$\newline
+class input\+Handler\+::\+Input\+Adapter$<$ Input\+Format $>$}
+
+入力を処理する抽象基底クラス 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Format} & 入力フォーマットの型 \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classinputHandler_1_1InputAdapter_af885d89f926c5e0613efab3d79c25d64}\label{classinputHandler_1_1InputAdapter_af885d89f926c5e0613efab3d79c25d64}} 
+\index{inputHandler::InputAdapter$<$ InputFormat $>$@{inputHandler::InputAdapter$<$ InputFormat $>$}!````~InputAdapter@{$\sim$InputAdapter}}
+\index{````~InputAdapter@{$\sim$InputAdapter}!inputHandler::InputAdapter$<$ InputFormat $>$@{inputHandler::InputAdapter$<$ InputFormat $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$InputAdapter()}{~InputAdapter()}}
+{\footnotesize\ttfamily template$<$typename Input\+Format $>$ \\
+virtual \mbox{\hyperlink{classinputHandler_1_1InputAdapter}{input\+Handler\+::\+Input\+Adapter}}$<$ Input\+Format $>$\+::$\sim$\mbox{\hyperlink{classinputHandler_1_1InputAdapter}{Input\+Adapter}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classinputHandler_1_1InputAdapter_a6ceff070cb46212a2ad45b40001b8d76}\label{classinputHandler_1_1InputAdapter_a6ceff070cb46212a2ad45b40001b8d76}} 
+\index{inputHandler::InputAdapter$<$ InputFormat $>$@{inputHandler::InputAdapter$<$ InputFormat $>$}!Input@{Input}}
+\index{Input@{Input}!inputHandler::InputAdapter$<$ InputFormat $>$@{inputHandler::InputAdapter$<$ InputFormat $>$}}
+\doxysubsubsection{\texorpdfstring{Input()}{Input()}}
+{\footnotesize\ttfamily template$<$typename Input\+Format $>$ \\
+virtual auto \mbox{\hyperlink{classinputHandler_1_1InputAdapter}{input\+Handler\+::\+Input\+Adapter}}$<$ Input\+Format $>$\+::Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  Input\+Format\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+入力を受け取る純粋仮想関数 
+
+\begin{DoxyReturn}{Returns}
+受け取った入力 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classinputHandler_1_1KeyInput_af6f67f7dd7c6ee31a6bb65db6343585e}{input\+Handler\+::\+Key\+Input}}.
+
+\mbox{\Hypertarget{classinputHandler_1_1InputAdapter_acbea6a0a2e06cca66c66a9d8c5c7d07a}\label{classinputHandler_1_1InputAdapter_acbea6a0a2e06cca66c66a9d8c5c7d07a}} 
+\index{inputHandler::InputAdapter$<$ InputFormat $>$@{inputHandler::InputAdapter$<$ InputFormat $>$}!InputParser@{InputParser}}
+\index{InputParser@{InputParser}!inputHandler::InputAdapter$<$ InputFormat $>$@{inputHandler::InputAdapter$<$ InputFormat $>$}}
+\doxysubsubsection{\texorpdfstring{InputParser()}{InputParser()}}
+{\footnotesize\ttfamily template$<$typename Input\+Format $>$ \\
+auto \mbox{\hyperlink{classinputHandler_1_1InputAdapter}{input\+Handler\+::\+Input\+Adapter}}$<$ Input\+Format $>$\+::Input\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ Input\+Format \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+入力を解析するメソッド 
+
+\begin{DoxyReturn}{Returns}
+解析された入力 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/input/\mbox{\hyperlink{InputHandler_8hpp}{Input\+Handler.\+hpp}}\end{DoxyCompactItemize}

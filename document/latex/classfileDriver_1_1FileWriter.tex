@@ -1,0 +1,96 @@
+\hypertarget{classfileDriver_1_1FileWriter}{}\doxysection{file\+Driver\+::File\+Writer$<$ Data\+Type $>$ Class Template Reference}
+\label{classfileDriver_1_1FileWriter}\index{fileDriver::FileWriter$<$ DataType $>$@{fileDriver::FileWriter$<$ DataType $>$}}
+
+
+ファイル書き込みの抽象基底クラス  
+
+
+
+
+{\ttfamily \#include $<$File\+Driver.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfileDriver_1_1FileWriter_a98f1b1a93c51c3dc8c841082ae0cce88}{$\sim$\+File\+Writer}} ()=default
+\item 
+auto \mbox{\hyperlink{classfileDriver_1_1FileWriter_a20d0f16ec4c762a3eec1f012b4d9fda6}{Save\+File}} (const Data\+Type output\+Data, const \mbox{\hyperlink{namespacefileSystem_acaf1fdc2b37b2cb6615d4cdc55020e5f}{Path}} \&file\+Path) -\/$>$ \mbox{\hyperlink{namespacefileSystem_a9a44b22d8283678956a3c3e5bb10e4f7}{Result\+Code}}
+\begin{DoxyCompactList}\small\item\em ファイルに保存するメソッド \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual auto \mbox{\hyperlink{classfileDriver_1_1FileWriter_a1a6ae6a3e9be44f34ee4160a5e8681de}{Write\+Data}} (const Data\+Type \&data, \mbox{\hyperlink{namespacefileDriver_a9ae1e5729cfb0bf13b3d72c49a1f4665}{Output\+Stream}} \&file) -\/$>$ \mbox{\hyperlink{namespacefileSystem_a9a44b22d8283678956a3c3e5bb10e4f7}{Result\+Code}}=0
+\begin{DoxyCompactList}\small\item\em データをファイルに書き込む純粋仮想関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Data\+Type$>$\newline
+class file\+Driver\+::\+File\+Writer$<$ Data\+Type $>$}
+
+ファイル書き込みの抽象基底クラス 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Data\+Type} & 書き込むデータの型 \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfileDriver_1_1FileWriter_a98f1b1a93c51c3dc8c841082ae0cce88}\label{classfileDriver_1_1FileWriter_a98f1b1a93c51c3dc8c841082ae0cce88}} 
+\index{fileDriver::FileWriter$<$ DataType $>$@{fileDriver::FileWriter$<$ DataType $>$}!````~FileWriter@{$\sim$FileWriter}}
+\index{````~FileWriter@{$\sim$FileWriter}!fileDriver::FileWriter$<$ DataType $>$@{fileDriver::FileWriter$<$ DataType $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$FileWriter()}{~FileWriter()}}
+{\footnotesize\ttfamily template$<$typename Data\+Type $>$ \\
+virtual \mbox{\hyperlink{classfileDriver_1_1FileWriter}{file\+Driver\+::\+File\+Writer}}$<$ Data\+Type $>$\+::$\sim$\mbox{\hyperlink{classfileDriver_1_1FileWriter}{File\+Writer}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfileDriver_1_1FileWriter_a20d0f16ec4c762a3eec1f012b4d9fda6}\label{classfileDriver_1_1FileWriter_a20d0f16ec4c762a3eec1f012b4d9fda6}} 
+\index{fileDriver::FileWriter$<$ DataType $>$@{fileDriver::FileWriter$<$ DataType $>$}!SaveFile@{SaveFile}}
+\index{SaveFile@{SaveFile}!fileDriver::FileWriter$<$ DataType $>$@{fileDriver::FileWriter$<$ DataType $>$}}
+\doxysubsubsection{\texorpdfstring{SaveFile()}{SaveFile()}}
+{\footnotesize\ttfamily template$<$typename Data\+Type $>$ \\
+auto \mbox{\hyperlink{classfileDriver_1_1FileWriter}{file\+Driver\+::\+File\+Writer}}$<$ Data\+Type $>$\+::Save\+File (\begin{DoxyParamCaption}\item[{const Data\+Type}]{output\+Data,  }\item[{const \mbox{\hyperlink{namespacefileSystem_acaf1fdc2b37b2cb6615d4cdc55020e5f}{Path}} \&}]{file\+Path }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{namespacefileSystem_a9a44b22d8283678956a3c3e5bb10e4f7}{Result\+Code}}     \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ファイルに保存するメソッド 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+Data} & 保存するデータ \\
+\hline
+{\em file\+Path} & 保存先のファイルパス \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+処理結果のコード 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfileDriver_1_1FileWriter_a1a6ae6a3e9be44f34ee4160a5e8681de}\label{classfileDriver_1_1FileWriter_a1a6ae6a3e9be44f34ee4160a5e8681de}} 
+\index{fileDriver::FileWriter$<$ DataType $>$@{fileDriver::FileWriter$<$ DataType $>$}!WriteData@{WriteData}}
+\index{WriteData@{WriteData}!fileDriver::FileWriter$<$ DataType $>$@{fileDriver::FileWriter$<$ DataType $>$}}
+\doxysubsubsection{\texorpdfstring{WriteData()}{WriteData()}}
+{\footnotesize\ttfamily template$<$typename Data\+Type $>$ \\
+virtual auto \mbox{\hyperlink{classfileDriver_1_1FileWriter}{file\+Driver\+::\+File\+Writer}}$<$ Data\+Type $>$\+::Write\+Data (\begin{DoxyParamCaption}\item[{const Data\+Type \&}]{data,  }\item[{\mbox{\hyperlink{namespacefileDriver_a9ae1e5729cfb0bf13b3d72c49a1f4665}{Output\+Stream}} \&}]{file }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{namespacefileSystem_a9a44b22d8283678956a3c3e5bb10e4f7}{Result\+Code}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+データをファイルに書き込む純粋仮想関数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & 書き込むデータ \\
+\hline
+{\em file} & 出力ストリーム \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+処理結果のコード 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/file/\mbox{\hyperlink{FileDriver_8hpp}{File\+Driver.\+hpp}}\end{DoxyCompactItemize}

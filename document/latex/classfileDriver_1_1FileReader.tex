@@ -1,0 +1,96 @@
+\hypertarget{classfileDriver_1_1FileReader}{}\doxysection{file\+Driver\+::File\+Reader$<$ Data\+Type $>$ Class Template Reference}
+\label{classfileDriver_1_1FileReader}\index{fileDriver::FileReader$<$ DataType $>$@{fileDriver::FileReader$<$ DataType $>$}}
+
+
+ファイル読み込みの抽象基底クラス  
+
+
+
+
+{\ttfamily \#include $<$File\+Driver.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classfileDriver_1_1FileReader_aecf8d80327796227b2aa99c3695854cd}{$\sim$\+File\+Reader}} ()=default
+\item 
+auto \mbox{\hyperlink{classfileDriver_1_1FileReader_a273aac9456a0cfd1059d6b47633dc2e6}{Read\+File}} (const \mbox{\hyperlink{namespacefileSystem_acaf1fdc2b37b2cb6615d4cdc55020e5f}{Path}} \&file\+Path, Data\+Type \&input\+Data) -\/$>$ \mbox{\hyperlink{namespacefileSystem_a9a44b22d8283678956a3c3e5bb10e4f7}{Result\+Code}}
+\begin{DoxyCompactList}\small\item\em ファイルを読み込むメソッド \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual auto \mbox{\hyperlink{classfileDriver_1_1FileReader_aa6e89dacbf902347d2e71034c177f548}{Format\+Data}} (\mbox{\hyperlink{namespacefileDriver_af5ec9e320535bf0648ac7637f69e5309}{Input\+Stream}} \&file, Data\+Type \&data) -\/$>$ \mbox{\hyperlink{namespacefileSystem_a9a44b22d8283678956a3c3e5bb10e4f7}{Result\+Code}}=0
+\begin{DoxyCompactList}\small\item\em ファイルデータを指定の型に変換する純粋仮想関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Data\+Type$>$\newline
+class file\+Driver\+::\+File\+Reader$<$ Data\+Type $>$}
+
+ファイル読み込みの抽象基底クラス 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Data\+Type} & 読み込むデータの型 \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfileDriver_1_1FileReader_aecf8d80327796227b2aa99c3695854cd}\label{classfileDriver_1_1FileReader_aecf8d80327796227b2aa99c3695854cd}} 
+\index{fileDriver::FileReader$<$ DataType $>$@{fileDriver::FileReader$<$ DataType $>$}!````~FileReader@{$\sim$FileReader}}
+\index{````~FileReader@{$\sim$FileReader}!fileDriver::FileReader$<$ DataType $>$@{fileDriver::FileReader$<$ DataType $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$FileReader()}{~FileReader()}}
+{\footnotesize\ttfamily template$<$typename Data\+Type $>$ \\
+virtual \mbox{\hyperlink{classfileDriver_1_1FileReader}{file\+Driver\+::\+File\+Reader}}$<$ Data\+Type $>$\+::$\sim$\mbox{\hyperlink{classfileDriver_1_1FileReader}{File\+Reader}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfileDriver_1_1FileReader_aa6e89dacbf902347d2e71034c177f548}\label{classfileDriver_1_1FileReader_aa6e89dacbf902347d2e71034c177f548}} 
+\index{fileDriver::FileReader$<$ DataType $>$@{fileDriver::FileReader$<$ DataType $>$}!FormatData@{FormatData}}
+\index{FormatData@{FormatData}!fileDriver::FileReader$<$ DataType $>$@{fileDriver::FileReader$<$ DataType $>$}}
+\doxysubsubsection{\texorpdfstring{FormatData()}{FormatData()}}
+{\footnotesize\ttfamily template$<$typename Data\+Type $>$ \\
+virtual auto \mbox{\hyperlink{classfileDriver_1_1FileReader}{file\+Driver\+::\+File\+Reader}}$<$ Data\+Type $>$\+::Format\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacefileDriver_af5ec9e320535bf0648ac7637f69e5309}{Input\+Stream}} \&}]{file,  }\item[{Data\+Type \&}]{data }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{namespacefileSystem_a9a44b22d8283678956a3c3e5bb10e4f7}{Result\+Code}}\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+ファイルデータを指定の型に変換する純粋仮想関数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & 入力ストリーム \\
+\hline
+{\em data} & 変換されたデータを格納する変数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+処理結果のコード 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfileDriver_1_1FileReader_a273aac9456a0cfd1059d6b47633dc2e6}\label{classfileDriver_1_1FileReader_a273aac9456a0cfd1059d6b47633dc2e6}} 
+\index{fileDriver::FileReader$<$ DataType $>$@{fileDriver::FileReader$<$ DataType $>$}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!fileDriver::FileReader$<$ DataType $>$@{fileDriver::FileReader$<$ DataType $>$}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}}
+{\footnotesize\ttfamily template$<$typename Data\+Type $>$ \\
+auto \mbox{\hyperlink{classfileDriver_1_1FileReader}{file\+Driver\+::\+File\+Reader}}$<$ Data\+Type $>$\+::Read\+File (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacefileSystem_acaf1fdc2b37b2cb6615d4cdc55020e5f}{Path}} \&}]{file\+Path,  }\item[{Data\+Type \&}]{input\+Data }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{namespacefileSystem_a9a44b22d8283678956a3c3e5bb10e4f7}{Result\+Code}}     \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ファイルを読み込むメソッド 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & 読み込むファイルのパス \\
+\hline
+{\em input\+Data} & 読み込んだデータを格納する変数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+処理結果のコード 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/file/\mbox{\hyperlink{FileDriver_8hpp}{File\+Driver.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,136 @@
+\hypertarget{classUI_1_1NcursesUI}{}\doxysection{UI\+::Ncurses\+UI Class Reference}
+\label{classUI_1_1NcursesUI}\index{UI::NcursesUI@{UI::NcursesUI}}
+
+
+ncursesライブラリをラップした\+UIクラス  
+
+
+
+
+{\ttfamily \#include $<$UI.\+hpp$>$}
+
+
+
+Inheritance diagram for UI\+::Ncurses\+UI\+:
+% FIG 0
+
+
+Collaboration diagram for UI\+::Ncurses\+UI\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{classUI_1_1NcursesUI_ad6ee1733c6f6c1b17a52291c15b5cb55}{Initialize\+UI}} () -\/$>$ void override
+\begin{DoxyCompactList}\small\item\em UIの初期化を行う \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classUI_1_1NcursesUI_a90e2c147ec7d7fdf46689050f2637072}{Finalize\+UI}} () -\/$>$ void override
+\begin{DoxyCompactList}\small\item\em UIの終了処理を行う \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classUI_1_1NcursesUI_afc3d67253ebaea58dcff61dd862b6cf8}{Clear\+Screen}} () -\/$>$ void override
+\begin{DoxyCompactList}\small\item\em 画面をクリアする \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classUI_1_1NcursesUI_afd7acc16829f3e52426525ce0cad57cb}{Display\+Text}} (const \mbox{\hyperlink{namespaceUI_a0080fba5cd4f3110c923a2332e958bac}{String}} \&text, \mbox{\hyperlink{namespaceUI_ad1020610fe737da5df29653c5f32201a}{Coordinate}} x\+Coord, \mbox{\hyperlink{namespaceUI_ad1020610fe737da5df29653c5f32201a}{Coordinate}} y\+Coord) -\/$>$ void override
+\begin{DoxyCompactList}\small\item\em 指定された位置にテキストを表示する \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classUI_1_1NcursesUI_a1034326949b2711b773d8d946788c9b8}{Get\+Input}} () -\/$>$ int override
+\begin{DoxyCompactList}\small\item\em ユーザーからの入力を取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ncursesライブラリをラップした\+UIクラス 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUI_1_1NcursesUI_afc3d67253ebaea58dcff61dd862b6cf8}\label{classUI_1_1NcursesUI_afc3d67253ebaea58dcff61dd862b6cf8}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!ClearScreen@{ClearScreen}}
+\index{ClearScreen@{ClearScreen}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{ClearScreen()}{ClearScreen()}}
+{\footnotesize\ttfamily auto UI\+::\+Ncurses\+UI\+::\+Clear\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  void\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+画面をクリアする 
+
+
+
+Implements \mbox{\hyperlink{classUI_1_1GeneralUI_a8f9de320f70996ed30fef6a1e920dd48}{UI\+::\+General\+UI}}.
+
+\mbox{\Hypertarget{classUI_1_1NcursesUI_afd7acc16829f3e52426525ce0cad57cb}\label{classUI_1_1NcursesUI_afd7acc16829f3e52426525ce0cad57cb}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!DisplayText@{DisplayText}}
+\index{DisplayText@{DisplayText}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{DisplayText()}{DisplayText()}}
+{\footnotesize\ttfamily auto UI\+::\+Ncurses\+UI\+::\+Display\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceUI_a0080fba5cd4f3110c923a2332e958bac}{String}} \&}]{text,  }\item[{\mbox{\hyperlink{namespaceUI_ad1020610fe737da5df29653c5f32201a}{Coordinate}}}]{x\+Coord,  }\item[{\mbox{\hyperlink{namespaceUI_ad1020610fe737da5df29653c5f32201a}{Coordinate}}}]{y\+Coord }\end{DoxyParamCaption}) -\/$>$  void\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+指定された位置にテキストを表示する 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & 表示するテキスト \\
+\hline
+{\em x\+Coord} & X座標 \\
+\hline
+{\em y\+Coord} & Y座標 \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUI_1_1GeneralUI_abdbabc72097a74968658ea752864c7ea}{UI\+::\+General\+UI}}.
+
+\mbox{\Hypertarget{classUI_1_1NcursesUI_a90e2c147ec7d7fdf46689050f2637072}\label{classUI_1_1NcursesUI_a90e2c147ec7d7fdf46689050f2637072}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!FinalizeUI@{FinalizeUI}}
+\index{FinalizeUI@{FinalizeUI}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{FinalizeUI()}{FinalizeUI()}}
+{\footnotesize\ttfamily auto UI\+::\+Ncurses\+UI\+::\+Finalize\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  void\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+UIの終了処理を行う 
+
+
+
+Implements \mbox{\hyperlink{classUI_1_1GeneralUI_a9b7e4ee95cb67c01a9b7f231502d9135}{UI\+::\+General\+UI}}.
+
+\mbox{\Hypertarget{classUI_1_1NcursesUI_a1034326949b2711b773d8d946788c9b8}\label{classUI_1_1NcursesUI_a1034326949b2711b773d8d946788c9b8}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!GetInput@{GetInput}}
+\index{GetInput@{GetInput}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{GetInput()}{GetInput()}}
+{\footnotesize\ttfamily auto UI\+::\+Ncurses\+UI\+::\+Get\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ int\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+ユーザーからの入力を取得する 
+
+\begin{DoxyReturn}{Returns}
+入力されたキーのコード
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+キーマッピング\+:
+\begin{DoxyItemize}
+\item 英数 アルファベット順 + 96.例）a は 97が出力
+\item ctrl アルファベット順.\+例）ctrl + a は 1が出力
+\item shift アルファベット順 + 64.例）shift + a は 64が出力 
+\end{DoxyItemize}
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]キーマッピングを変更する \end{DoxyRefDesc}
+
+
+Implements \mbox{\hyperlink{classUI_1_1GeneralUI_a8194fea6f25c222169b2af5a5ba153fe}{UI\+::\+General\+UI}}.
+
+\mbox{\Hypertarget{classUI_1_1NcursesUI_ad6ee1733c6f6c1b17a52291c15b5cb55}\label{classUI_1_1NcursesUI_ad6ee1733c6f6c1b17a52291c15b5cb55}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!InitializeUI@{InitializeUI}}
+\index{InitializeUI@{InitializeUI}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{InitializeUI()}{InitializeUI()}}
+{\footnotesize\ttfamily auto UI\+::\+Ncurses\+UI\+::\+Initialize\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  void\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+UIの初期化を行う 
+
+
+
+Implements \mbox{\hyperlink{classUI_1_1GeneralUI_a1e8200892aa050b31b42731191a75a6f}{UI\+::\+General\+UI}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/libwrap/\mbox{\hyperlink{UI_8hpp}{UI.\+hpp}}\item 
+src/\mbox{\hyperlink{UI_8cpp}{UI.\+cpp}}\end{DoxyCompactItemize}

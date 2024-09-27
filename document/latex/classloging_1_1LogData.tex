@@ -1,0 +1,89 @@
+\hypertarget{classloging_1_1LogData}{}\doxysection{loging\+::Log\+Data Class Reference}
+\label{classloging_1_1LogData}\index{loging::LogData@{loging::LogData}}
+
+
+{\ttfamily \#include $<$Log\+Data.\+hpp$>$}
+
+
+
+Inheritance diagram for loging\+::Log\+Data\+:
+% FIG 0
+
+
+Collaboration diagram for loging\+::Log\+Data\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual auto \mbox{\hyperlink{classloging_1_1LogData_ab56073c9e2f023b0311264f8c3946df4}{Create\+Iterator}} () const -\/$>$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ \mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}} $>$$>$=0
+\begin{DoxyCompactList}\small\item\em イテレータを作成する \end{DoxyCompactList}\item 
+virtual auto \mbox{\hyperlink{classloging_1_1LogData_a05b9d7f9729036d303b6333fbcae70a5}{Append\+Data}} (\mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}} input) -\/$>$ void=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classloging_1_1LogData_a844ec951e0e95f8aa92da2369f2ebd2c}{$\sim$\+Log\+Data}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \mbox{\hyperlink{namespaceloging_acbbdd5545f34c51401a02d4f98adbabd}{Log\+Level}}, std\+::vector$<$ \mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}} $>$ $>$ \mbox{\hyperlink{classloging_1_1LogData_a487ecc5c4712f2fbd13e10be00b0305e}{data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classloging_1_1LogData_a844ec951e0e95f8aa92da2369f2ebd2c}\label{classloging_1_1LogData_a844ec951e0e95f8aa92da2369f2ebd2c}} 
+\index{loging::LogData@{loging::LogData}!````~LogData@{$\sim$LogData}}
+\index{````~LogData@{$\sim$LogData}!loging::LogData@{loging::LogData}}
+\doxysubsubsection{\texorpdfstring{$\sim$LogData()}{~LogData()}}
+{\footnotesize\ttfamily loging\+::\+Log\+Data\+::$\sim$\+Log\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classloging_1_1LogData_a05b9d7f9729036d303b6333fbcae70a5}\label{classloging_1_1LogData_a05b9d7f9729036d303b6333fbcae70a5}} 
+\index{loging::LogData@{loging::LogData}!AppendData@{AppendData}}
+\index{AppendData@{AppendData}!loging::LogData@{loging::LogData}}
+\doxysubsubsection{\texorpdfstring{AppendData()}{AppendData()}}
+{\footnotesize\ttfamily virtual auto loging\+::\+Log\+Data\+::\+Append\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}}}]{input }\end{DoxyParamCaption}) -\/$>$  void\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classloging_1_1Debug_a9aa9b1266323b8c79ef7347e838beab5}{loging\+::\+Debug}}, \mbox{\hyperlink{classloging_1_1Error_ab5b546a27db06035ac2ea2586bda3506}{loging\+::\+Error}}, \mbox{\hyperlink{classloging_1_1Warning_af1dbfbcec752e20c34f5dd6cc6d3309b}{loging\+::\+Warning}}, \mbox{\hyperlink{classloging_1_1Info_a20155c8be0c094e979276ea7293adf3e}{loging\+::\+Info}}, and \mbox{\hyperlink{classloging_1_1UserAction_ad417211dddc72d46073f528e56cd8f6a}{loging\+::\+User\+Action}}.
+
+\mbox{\Hypertarget{classloging_1_1LogData_ab56073c9e2f023b0311264f8c3946df4}\label{classloging_1_1LogData_ab56073c9e2f023b0311264f8c3946df4}} 
+\index{loging::LogData@{loging::LogData}!CreateIterator@{CreateIterator}}
+\index{CreateIterator@{CreateIterator}!loging::LogData@{loging::LogData}}
+\doxysubsubsection{\texorpdfstring{CreateIterator()}{CreateIterator()}}
+{\footnotesize\ttfamily virtual auto loging\+::\+Log\+Data\+::\+Create\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$\mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}}$>$$>$\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+イテレータを作成する 
+
+\begin{DoxyReturn}{Returns}
+作成されたイテレータ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classiterator_1_1AbstractArray_a5a3b04799cb5020b6b8938b79f3f63ca}{iterator\+::\+Abstract\+Array$<$ loging\+::\+String $>$}}.
+
+
+
+Implemented in \mbox{\hyperlink{classloging_1_1Debug_a2dd9b16978cfb07fc2ab22e887f13a94}{loging\+::\+Debug}}, \mbox{\hyperlink{classloging_1_1Error_a7f9df4b4c9f3a62de9f966db3119734a}{loging\+::\+Error}}, \mbox{\hyperlink{classloging_1_1Warning_afcffff722d52ad9acb14ae92f8cd1e79}{loging\+::\+Warning}}, \mbox{\hyperlink{classloging_1_1Info_a35cd2700a1c635d3f93b4f2031d02a1d}{loging\+::\+Info}}, and \mbox{\hyperlink{classloging_1_1UserAction_a14cfa790e005b9cac928df99ceea9154}{loging\+::\+User\+Action}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classloging_1_1LogData_a487ecc5c4712f2fbd13e10be00b0305e}\label{classloging_1_1LogData_a487ecc5c4712f2fbd13e10be00b0305e}} 
+\index{loging::LogData@{loging::LogData}!data@{data}}
+\index{data@{data}!loging::LogData@{loging::LogData}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{namespaceloging_acbbdd5545f34c51401a02d4f98adbabd}{Log\+Level}}, std\+::vector$<$\mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}}$>$ $>$ loging\+::\+Log\+Data\+::data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/logging/\mbox{\hyperlink{LogData_8hpp}{Log\+Data.\+hpp}}\item 
+src/\mbox{\hyperlink{Log_8cpp}{Log.\+cpp}}\end{DoxyCompactItemize}

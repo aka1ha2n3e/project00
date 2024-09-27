@@ -1,0 +1,171 @@
+\hypertarget{classiterator_1_1Iterator}{}\doxysection{iterator\+::Iterator$<$ Item $>$ Class Template Reference}
+\label{classiterator_1_1Iterator}\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+
+
+イテレータの抽象基底クラス  
+
+
+
+
+{\ttfamily \#include $<$iterator.\+hpp$>$}
+
+
+
+Inheritance diagram for iterator\+::Iterator$<$ Item $>$\+:
+% FIG 0
+
+
+Collaboration diagram for iterator\+::Iterator$<$ Item $>$\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classiterator_1_1Iterator_a7f4c8ccf86c1f35507a3ff0692033c8e}{$\sim$\+Iterator}} ()=default
+\item 
+\mbox{\hyperlink{classiterator_1_1Iterator_afe66a0a3d474d157f82a47d522bd8dbc}{Iterator}} (Item $\ast$element)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator_a2b393a80520a7408aba1857f075d8856}{Advance}} () -\/$>$ Item \&=0
+\item 
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator_afb4def289e88d45c0a0b9248ebe87d83}{Retreat}} () -\/$>$ Item \&=0
+\item 
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator_ac29aee2546a7cc8cbf773e020900ce15}{Can\+Advance}} () const -\/$>$ bool=0
+\item 
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator_a57e0228f66da3d28bdb98aa879f269b8}{Can\+Retreat}} () const -\/$>$ bool=0
+\item 
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator_aadd38b1b1319243306245cc17a256fa2}{Current\+Item}} () const -\/$>$ Item \&=0
+\item 
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator_a2d5bf51ae09e55f7f088dedd69951a74}{Get\+Item}} (int index) const -\/$>$ Item \&=0
+\begin{DoxyCompactList}\small\item\em 指定されたインデックスの要素を取得 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classElementPtr}{Element\+Ptr}}$<$ Item $>$ \mbox{\hyperlink{classiterator_1_1Iterator_a4986238b3698a3ba5809f1c0db57c296}{cur\+Item}}
+\begin{DoxyCompactList}\small\item\em 現在の要素へのポインタ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classiterator_1_1Iterator_a57cc35c36c9172572cc8c9369b0d9419}{idx}} = 0
+\begin{DoxyCompactList}\small\item\em 現在のインデックス \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Item$>$\newline
+class iterator\+::\+Iterator$<$ Item $>$}
+
+イテレータの抽象基底クラス 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Item} & イテレートする要素の型 \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classiterator_1_1Iterator_a7f4c8ccf86c1f35507a3ff0692033c8e}\label{classiterator_1_1Iterator_a7f4c8ccf86c1f35507a3ff0692033c8e}} 
+\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}!````~Iterator@{$\sim$Iterator}}
+\index{````~Iterator@{$\sim$Iterator}!iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Iterator()}{~Iterator()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+virtual \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ Item $>$\+::$\sim$\mbox{\hyperlink{classiterator_1_1Iterator}{Iterator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classiterator_1_1Iterator_afe66a0a3d474d157f82a47d522bd8dbc}\label{classiterator_1_1Iterator_afe66a0a3d474d157f82a47d522bd8dbc}} 
+\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Iterator()}{Iterator()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+\mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ Item $>$\+::\mbox{\hyperlink{classiterator_1_1Iterator}{Iterator}} (\begin{DoxyParamCaption}\item[{Item $\ast$}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+コンストラクタ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & 初期要素へのポインタ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classiterator_1_1Iterator_a2b393a80520a7408aba1857f075d8856}\label{classiterator_1_1Iterator_a2b393a80520a7408aba1857f075d8856}} 
+\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}!Advance@{Advance}}
+\index{Advance@{Advance}!iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Advance()}{Advance()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ Item $>$\+::Advance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  Item \&\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classiterator_1_1Iterator_ac29aee2546a7cc8cbf773e020900ce15}\label{classiterator_1_1Iterator_ac29aee2546a7cc8cbf773e020900ce15}} 
+\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}!CanAdvance@{CanAdvance}}
+\index{CanAdvance@{CanAdvance}!iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{CanAdvance()}{CanAdvance()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ Item $>$\+::Can\+Advance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  bool\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classiterator_1_1Iterator_a57e0228f66da3d28bdb98aa879f269b8}\label{classiterator_1_1Iterator_a57e0228f66da3d28bdb98aa879f269b8}} 
+\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}!CanRetreat@{CanRetreat}}
+\index{CanRetreat@{CanRetreat}!iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{CanRetreat()}{CanRetreat()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ Item $>$\+::Can\+Retreat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  bool\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classiterator_1_1Iterator_aadd38b1b1319243306245cc17a256fa2}\label{classiterator_1_1Iterator_aadd38b1b1319243306245cc17a256fa2}} 
+\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}!CurrentItem@{CurrentItem}}
+\index{CurrentItem@{CurrentItem}!iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{CurrentItem()}{CurrentItem()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ Item $>$\+::Current\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  Item \&\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classiterator_1_1Iterator_a2d5bf51ae09e55f7f088dedd69951a74}\label{classiterator_1_1Iterator_a2d5bf51ae09e55f7f088dedd69951a74}} 
+\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}!GetItem@{GetItem}}
+\index{GetItem@{GetItem}!iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{GetItem()}{GetItem()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ Item $>$\+::Get\+Item (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const -\/$>$  Item \&\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+指定されたインデックスの要素を取得 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & 取得する要素のインデックス \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+指定されたインデックスの要素への参照 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classiterator_1_1Iterator_afb4def289e88d45c0a0b9248ebe87d83}\label{classiterator_1_1Iterator_afb4def289e88d45c0a0b9248ebe87d83}} 
+\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}!Retreat@{Retreat}}
+\index{Retreat@{Retreat}!iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Retreat()}{Retreat()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+virtual auto \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ Item $>$\+::Retreat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  Item \&\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classiterator_1_1Iterator_a4986238b3698a3ba5809f1c0db57c296}\label{classiterator_1_1Iterator_a4986238b3698a3ba5809f1c0db57c296}} 
+\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}!curItem@{curItem}}
+\index{curItem@{curItem}!iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{curItem}{curItem}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+\mbox{\hyperlink{classElementPtr}{Element\+Ptr}}$<$Item$>$ \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ Item $>$\+::cur\+Item\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+現在の要素へのポインタ 
+
+\mbox{\Hypertarget{classiterator_1_1Iterator_a57cc35c36c9172572cc8c9369b0d9419}\label{classiterator_1_1Iterator_a57cc35c36c9172572cc8c9369b0d9419}} 
+\index{iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}!idx@{idx}}
+\index{idx@{idx}!iterator::Iterator$<$ Item $>$@{iterator::Iterator$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{idx}{idx}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+int \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ Item $>$\+::idx = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+現在のインデックス 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/iterator/\mbox{\hyperlink{iterator_8hpp}{iterator.\+hpp}}\end{DoxyCompactItemize}

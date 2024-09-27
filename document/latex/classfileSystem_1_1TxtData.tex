@@ -1,0 +1,94 @@
+\hypertarget{classfileSystem_1_1TxtData}{}\doxysection{file\+System\+::Txt\+Data Class Reference}
+\label{classfileSystem_1_1TxtData}\index{fileSystem::TxtData@{fileSystem::TxtData}}
+
+
+テキストデータを管理するクラス  
+
+
+
+
+{\ttfamily \#include $<$File\+Data.\+hpp$>$}
+
+
+
+Inheritance diagram for file\+System\+::Txt\+Data\+:
+% FIG 0
+
+
+Collaboration diagram for file\+System\+::Txt\+Data\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{classfileSystem_1_1TxtData_a1bf5f1dd9caf3ac045e53fc5078a2af2}{Append\+Line}} (const \mbox{\hyperlink{namespacefileSystem_a8e8134c7ebf642c477cb6b07a9d70cf8}{Line}} input) -\/$>$ void
+\begin{DoxyCompactList}\small\item\em 行を追加する \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classfileSystem_1_1TxtData_abf92fad8f3acf75946fd4b6e61d7196d}{Get\+First\+Line}} () -\/$>$ \mbox{\hyperlink{namespacefileSystem_a8e8134c7ebf642c477cb6b07a9d70cf8}{Line}} \&
+\begin{DoxyCompactList}\small\item\em 最初の行を取得する \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classfileSystem_1_1TxtData_a98a7b26e5969c1a5c0b642544701ba93}{Create\+Iterator}} () const -\/$>$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ \mbox{\hyperlink{namespacefileSystem_a8e8134c7ebf642c477cb6b07a9d70cf8}{Line}} $>$$>$ override
+\begin{DoxyCompactList}\small\item\em イテレータを作成する \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classfileSystem_1_1TxtData_a16eb492322eaab3a89a922c04725510c}{operator\mbox{[}$\,$\mbox{]}}} (int \mbox{\hyperlink{classiterator_1_1Iterator_a57cc35c36c9172572cc8c9369b0d9419}{idx}}) -\/$>$ \mbox{\hyperlink{namespacefileSystem_a8e8134c7ebf642c477cb6b07a9d70cf8}{Line}} \&
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+テキストデータを管理するクラス 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfileSystem_1_1TxtData_a1bf5f1dd9caf3ac045e53fc5078a2af2}\label{classfileSystem_1_1TxtData_a1bf5f1dd9caf3ac045e53fc5078a2af2}} 
+\index{fileSystem::TxtData@{fileSystem::TxtData}!AppendLine@{AppendLine}}
+\index{AppendLine@{AppendLine}!fileSystem::TxtData@{fileSystem::TxtData}}
+\doxysubsubsection{\texorpdfstring{AppendLine()}{AppendLine()}}
+{\footnotesize\ttfamily auto file\+System\+::\+Txt\+Data\+::\+Append\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacefileSystem_a8e8134c7ebf642c477cb6b07a9d70cf8}{Line}}}]{input }\end{DoxyParamCaption}) -\/$>$ void}
+
+
+
+行を追加する 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & 追加する行 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classfileSystem_1_1TxtData_a98a7b26e5969c1a5c0b642544701ba93}\label{classfileSystem_1_1TxtData_a98a7b26e5969c1a5c0b642544701ba93}} 
+\index{fileSystem::TxtData@{fileSystem::TxtData}!CreateIterator@{CreateIterator}}
+\index{CreateIterator@{CreateIterator}!fileSystem::TxtData@{fileSystem::TxtData}}
+\doxysubsubsection{\texorpdfstring{CreateIterator()}{CreateIterator()}}
+{\footnotesize\ttfamily auto file\+System\+::\+Txt\+Data\+::\+Create\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$  std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ \mbox{\hyperlink{namespacefileSystem_a8e8134c7ebf642c477cb6b07a9d70cf8}{Line}} $>$$>$\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+イテレータを作成する 
+
+\begin{DoxyReturn}{Returns}
+作成されたイテレータへのユニークポインタ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classiterator_1_1AbstractArray_a5a3b04799cb5020b6b8938b79f3f63ca}{iterator\+::\+Abstract\+Array$<$ Line $>$}}.
+
+\mbox{\Hypertarget{classfileSystem_1_1TxtData_abf92fad8f3acf75946fd4b6e61d7196d}\label{classfileSystem_1_1TxtData_abf92fad8f3acf75946fd4b6e61d7196d}} 
+\index{fileSystem::TxtData@{fileSystem::TxtData}!GetFirstLine@{GetFirstLine}}
+\index{GetFirstLine@{GetFirstLine}!fileSystem::TxtData@{fileSystem::TxtData}}
+\doxysubsubsection{\texorpdfstring{GetFirstLine()}{GetFirstLine()}}
+{\footnotesize\ttfamily auto file\+System\+::\+Txt\+Data\+::\+Get\+First\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{namespacefileSystem_a8e8134c7ebf642c477cb6b07a9d70cf8}{Line}}\& \hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+最初の行を取得する 
+
+\begin{DoxyReturn}{Returns}
+最初の行への参照 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfileSystem_1_1TxtData_a16eb492322eaab3a89a922c04725510c}\label{classfileSystem_1_1TxtData_a16eb492322eaab3a89a922c04725510c}} 
+\index{fileSystem::TxtData@{fileSystem::TxtData}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!fileSystem::TxtData@{fileSystem::TxtData}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily auto file\+System\+::\+Txt\+Data\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{namespacefileSystem_a8e8134c7ebf642c477cb6b07a9d70cf8}{Line}}\&}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/file/\mbox{\hyperlink{FileData_8hpp}{File\+Data.\+hpp}}\item 
+src/\mbox{\hyperlink{type_8cpp}{type.\+cpp}}\end{DoxyCompactItemize}

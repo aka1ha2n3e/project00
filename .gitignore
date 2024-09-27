@@ -1,5 +1,6 @@
 # ビルドディレクトリ 
 build/  
+cmp/  
 # huyoufairu
 googletest/
 cmake-build-debug/
