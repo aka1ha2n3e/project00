@@ -1,0 +1,93 @@
+\hypertarget{md_sekkeisyo_autotoc_md6}{}\doxysection{インクリメンタルサーチ\+:}\label{md_sekkeisyo_autotoc_md6}
+ユーザーが入力するたびに即座に検索結果が更新される機能。例えば、\+Ctrl+\+Fを押すと検索ボックスが表示され、ユーザーが入力するたびにリアルタイムで検索結果がハイライトされます。 正規表現検索\+:
+
+正規表現を使用して柔軟な検索と置換が可能。 \hypertarget{md_sekkeisyo_autotoc_md7}{}\doxysection{検索履歴\+:}\label{md_sekkeisyo_autotoc_md7}
+最近使用した検索キーワードや置換パターンを保存し、再利用できるようにする。 \hypertarget{md_sekkeisyo_autotoc_md8}{}\doxysection{2. ユーザーフレンドリーなショートカット設定}\label{md_sekkeisyo_autotoc_md8}
+\hypertarget{md_sekkeisyo_autotoc_md9}{}\doxysubsection{ショートカット設定\+UI\+:}\label{md_sekkeisyo_autotoc_md9}
+ユーザーが簡単にショートカットを設定・変更できる\+UIを提供。設定画面でショートカットを一覧表示し、編集可能にする。 \hypertarget{md_sekkeisyo_autotoc_md10}{}\doxysubsection{デフォルトショートカットの提供\+:}\label{md_sekkeisyo_autotoc_md10}
+初心者ユーザー向けにデフォルトのショートカット設定を提供し、必要に応じてカスタマイズできるようにする。 \hypertarget{md_sekkeisyo_autotoc_md11}{}\doxysection{3. 高度なテキスト操作}\label{md_sekkeisyo_autotoc_md11}
+\hypertarget{md_sekkeisyo_autotoc_md12}{}\doxysubsection{スニペット機能\+:}\label{md_sekkeisyo_autotoc_md12}
+ユーザーが頻繁に使用するコードやテキストのテンプレートをスニペットとして保存し、簡単に挿入できる機能。 \hypertarget{md_sekkeisyo_autotoc_md13}{}\doxysubsection{コード補完\+:}\label{md_sekkeisyo_autotoc_md13}
+プログラミング言語向けのコード補完機能。ユーザーが入力を始めると、候補を提示する。 \hypertarget{md_sekkeisyo_autotoc_md14}{}\doxysubsection{リファクタリングツール\+:}\label{md_sekkeisyo_autotoc_md14}
+プログラマー向けに簡単なリファクタリングツールを提供。例えば、変数名の一括変更や関数の抽出など。 \hypertarget{md_sekkeisyo_autotoc_md15}{}\doxysection{4. ファイル管理の強化}\label{md_sekkeisyo_autotoc_md15}
+\hypertarget{md_sekkeisyo_autotoc_md16}{}\doxysubsection{タブインターフェース\+:}\label{md_sekkeisyo_autotoc_md16}
+複数のファイルをタブで開くことができるインターフェース。ユーザーが複数のファイルを同時に編集できる。 \hypertarget{md_sekkeisyo_autotoc_md17}{}\doxysubsection{ファイルツリービュー\+:}\label{md_sekkeisyo_autotoc_md17}
+プロジェクト全体のファイル構造を視覚的に表示し、ファイルを簡単にナビゲートできる機能。 \hypertarget{md_sekkeisyo_autotoc_md18}{}\doxysection{5. コラボレーション機能}\label{md_sekkeisyo_autotoc_md18}
+\hypertarget{md_sekkeisyo_autotoc_md19}{}\doxysubsection{リアルタイムコラボレーション\+:}\label{md_sekkeisyo_autotoc_md19}
+複数のユーザーが同じファイルをリアルタイムで編集できる機能。\+Google Docsのような共同編集機能を提供。 \hypertarget{md_sekkeisyo_autotoc_md20}{}\doxysubsection{バージョン管理統合\+:}\label{md_sekkeisyo_autotoc_md20}
+Gitなどのバージョン管理システムと統合し、リポジトリの操作をエディタ内から直接行えるようにする。 \hypertarget{md_sekkeisyo_autotoc_md21}{}\doxysection{6. カスタマイズ性の強化}\label{md_sekkeisyo_autotoc_md21}
+\hypertarget{md_sekkeisyo_autotoc_md22}{}\doxysubsection{テーマとカラースキーム\+:}\label{md_sekkeisyo_autotoc_md22}
+ユーザーがエディタのテーマやカラースキームを変更できるようにする。暗いテーマや明るいテーマなど、好みに合わせてカスタマイズ可能。 \hypertarget{md_sekkeisyo_autotoc_md23}{}\doxysubsection{プラグインシステム\+:}\label{md_sekkeisyo_autotoc_md23}
+ユーザーがプラグインをインストールして機能を拡張できるようにする。コミュニティが作成したプラグインを簡単に導入可能にする。\hypertarget{md_sekkeisyo_autotoc_md24}{}\doxysection{7静的解析機能}\label{md_sekkeisyo_autotoc_md24}
+\hypertarget{md_sekkeisyo_autotoc_md25}{}\doxysubsubsection{Clang-\/tidyの統合}\label{md_sekkeisyo_autotoc_md25}
+Clang-\/tidyを使用して\+C++コードの静的解析を実行できること。 プロジェクトディレクトリに配置された\+Clang-\/tidy設定ファイル（.clang-\/tidy）を読み込むこと。 解析結果をエディタ内に表示すること。 \hypertarget{md_sekkeisyo_autotoc_md26}{}\doxysubsubsection{インクルードディレクトリの設定}\label{md_sekkeisyo_autotoc_md26}
+相対パスで指定されたインクルードディレクトリを使用して、\+Clang-\/tidyの解析を実行できること。\hypertarget{md_sekkeisyo_autotoc_md27}{}\doxysection{8編集マクロ機能}\label{md_sekkeisyo_autotoc_md27}
+テキストを編集すると、1コマンドごとにマクロが記録される。 例えばノーマルモードの状態から、行頭に空白を入れるコマンドを行うと、内容が記録されて、他の行でも同じ編集ができる。 \hypertarget{md_sekkeisyo_autotoc_md28}{}\doxysection{プロジェクト名\+: ハイブリッドテキストエディタ}\label{md_sekkeisyo_autotoc_md28}
+バージョン\+: 1.\+0
+
+作成日\+: 2024年7月18日
+
+作成者\+: \mbox{[}ユーザーの名前\mbox{]}\hypertarget{md_sekkeisyo_autotoc_md29}{}\doxysubsection{プロジェクト概要\+:}\label{md_sekkeisyo_autotoc_md29}
+このプロジェクトは、\+C++で開発された挿入モードを基本とするシンプルかつ高機能なテキストエディタの作成を目的としています。エディタは、動的なショートカット設定、自動保存、変更フラグ管理、検索と置換の強化機能などを備え、ユーザーが快適に使用できるよう設計されています。\hypertarget{md_sekkeisyo_autotoc_md30}{}\doxysubsection{目的\+:}\label{md_sekkeisyo_autotoc_md30}
+シンプルで使いやすいテキストエディタを提供する。 動的なショートカット設定によりユーザーのカスタマイズ性を向上させる。 自動保存機能や変更フラグ管理によりユーザーデータの保護を強化する。 簡単にアクセスできる検索・置換機能を提供する。\hypertarget{md_sekkeisyo_autotoc_md31}{}\doxysubsection{システム要件\+:}\label{md_sekkeisyo_autotoc_md31}
+オペレーティングシステム\+: Linux, Mac\+OS, Windows（ターミナル環境） プログラミング言語\+: C++ 必須ライブラリ\+: ncurses（ターミナルベースの\+UIライブラリ） 仕様ツール\+: cmake, git, google\+Test \hypertarget{md_sekkeisyo_autotoc_md32}{}\doxysubsection{機能要件\+:}\label{md_sekkeisyo_autotoc_md32}
+\hypertarget{md_sekkeisyo_autotoc_md33}{}\doxysubsubsection{基本的なテキスト編集機能\+:}\label{md_sekkeisyo_autotoc_md33}
+テキストの入力、削除、コピー、ペースト、カット。 アンドゥ（元に戻す）/リドゥ（やり直し）機能。 編集のマクロ機能 \hypertarget{md_sekkeisyo_autotoc_md34}{}\doxysubsubsection{ファイル操作\+:}\label{md_sekkeisyo_autotoc_md34}
+ファイルの新規作成、開く、保存、名前を付けて保存。 \hypertarget{md_sekkeisyo_autotoc_md35}{}\doxysubsubsection{検索と置換\+:}\label{md_sekkeisyo_autotoc_md35}
+Ctrl+\+Fで検索・置換ダイアログを表示し、簡単に操作できるようにする。 インクリメンタルサーチ機能。 正規表現検索機能。 検索履歴の保存。 \hypertarget{md_sekkeisyo_autotoc_md36}{}\doxysubsubsection{動的ショートカット設定\+:}\label{md_sekkeisyo_autotoc_md36}
+ユーザーがショートカットを動的に設定できる機能。 ショートカット設定\+UIの提供。 \hypertarget{md_sekkeisyo_autotoc_md37}{}\doxysubsubsection{自動保存機能\+:}\label{md_sekkeisyo_autotoc_md37}
+定期的に自動保存する機能（自動保存の間隔はユーザー設定可能）。 \hypertarget{md_sekkeisyo_autotoc_md38}{}\doxysubsubsection{変更フラグ管理\+:}\label{md_sekkeisyo_autotoc_md38}
+ファイルに未保存の変更がある場合にフラグを立て、ユーザーに警告する機能。 \hypertarget{md_sekkeisyo_autotoc_md39}{}\doxysubsubsection{保存確認ダイアログ\+:}\label{md_sekkeisyo_autotoc_md39}
+エディタを閉じる際に、保存されていない変更がある場合に警告を表示。 \hypertarget{md_sekkeisyo_autotoc_md40}{}\doxysubsubsection{バックアップファイルの作成\+:}\label{md_sekkeisyo_autotoc_md40}
+保存時にバックアップファイルを作成する機能。 \hypertarget{md_sekkeisyo_autotoc_md41}{}\doxysubsubsection{スニペット機能\+:}\label{md_sekkeisyo_autotoc_md41}
+頻繁に使用するコードやテキストのテンプレートをスニペットとして保存し、簡単に挿入できる機能。 \hypertarget{md_sekkeisyo_autotoc_md42}{}\doxysubsubsection{テーマとカラースキーム\+:}\label{md_sekkeisyo_autotoc_md42}
+ユーザーがエディタのテーマやカラースキームを変更できるようにする。 \hypertarget{md_sekkeisyo_autotoc_md43}{}\doxysubsection{非機能要件\+:}\label{md_sekkeisyo_autotoc_md43}
+\hypertarget{md_sekkeisyo_autotoc_md44}{}\doxysubsubsection{パフォーマンス\+:}\label{md_sekkeisyo_autotoc_md44}
+大きなファイルでもスムーズに動作すること。 高速な検索と置換機能。 \hypertarget{md_sekkeisyo_autotoc_md45}{}\doxysubsubsection{可用性\+:}\label{md_sekkeisyo_autotoc_md45}
+安定した動作を確保し、クラッシュやデータ消失を防止する。 \hypertarget{md_sekkeisyo_autotoc_md46}{}\doxysubsubsection{拡張性\+:}\label{md_sekkeisyo_autotoc_md46}
+将来的にプラグインシステムを実装し、ユーザーが機能を拡張できるようにする。 \hypertarget{md_sekkeisyo_autotoc_md47}{}\doxysubsubsection{ドキュメント\+:}\label{md_sekkeisyo_autotoc_md47}
+コードとシステムの詳細なドキュメントを提供。 ユーザーガイドやチュートリアルを含む。 \hypertarget{md_sekkeisyo_autotoc_md48}{}\doxysubsection{リスク管理\+:}\label{md_sekkeisyo_autotoc_md48}
+\hypertarget{md_sekkeisyo_autotoc_md49}{}\doxysubsubsection{技術的リスク\+: ncursesライブラリの使用による不確実性。}\label{md_sekkeisyo_autotoc_md49}
+スケジュールリスク\+: 開発スケジュールの遅延。\hypertarget{md_sekkeisyo_autotoc_md50}{}\doxysubsubsection{必須要件（初期実装で必須）}\label{md_sekkeisyo_autotoc_md50}
+基本的なテキスト編集機能 ファイル操作 検索と置換 自動保存機能 変更フラグ管理 保存確認ダイアログ \hypertarget{md_sekkeisyo_autotoc_md51}{}\doxysubsubsection{高優先度要件（次のステップで実装）}\label{md_sekkeisyo_autotoc_md51}
+動的ショートカット設定 バックアップファイルの作成 \hypertarget{md_sekkeisyo_autotoc_md52}{}\doxysubsubsection{中優先度要件（将来的な拡張）}\label{md_sekkeisyo_autotoc_md52}
+スニペット機能 テーマとカラースキーム\hypertarget{md_sekkeisyo_autotoc_md53}{}\doxysection{イベントチャート}\label{md_sekkeisyo_autotoc_md53}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 時間   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ユーザーアクション   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ システムアクション    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 時間   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ユーザーアクション   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ システムアクション    }\\\cline{1-3}
+\endhead
+T1   &ファイルを選択し、開く   &ファイルを読み込み、内容を表示する    \\\cline{1-3}
+T2-\/1   &ctrf+f, ctrl+bキーでカーソルを移動   &カーソル位置を更新し、新しい位置をハイライトする    \\\cline{1-3}
+T2-\/2   &iキーで挿入モードに切り替え、テキストを入力   &挿入モードに切り替え、入力された文字をカーソル位置に挿入し、表示を更新する    \\\cline{1-3}
+T2-\/3   &Iキーで行の先頭から挿入   &行の先頭から挿入モードに切り替え、文字を挿入する    \\\cline{1-3}
+T2-\/4   &Aキーで行の末尾から挿入   &行の末尾から挿入モードに切り替え、文字を挿入する    \\\cline{1-3}
+T2-\/5   &cキーと特定の操作（例：cw）でテキストを変更   &指定されたテキストを変更し、表示を更新する    \\\cline{1-3}
+T2-\/6   &Ctrl+hでカーソル前の文字を削除   &指定された文字を削除し、表示を更新する    \\\cline{1-3}
+T2-\/7   &dキーと特定の操作（例：dd）で行を削除   &指定された行や文字を削除し、表示を更新する    \\\cline{1-3}
+T2-\/8   &Ctrl+aで行の先頭に移動   &カーソルを行の先頭に移動する    \\\cline{1-3}
+T2-\/9   &Ctrl+eで行の末尾に移動   &カーソルを行の末尾に移動する    \\\cline{1-3}
+T2-\/10   &vキーでビジュアルモードに切り替え、テキストを選択   &選択されたテキスト範囲をハイライトする    \\\cline{1-3}
+T2-\/11   &escまたはctrl+oキーでnormalモードに切り替え   &カーソル位置をハイライトする    \\\cline{1-3}
+T2-\/12   &yキーで選択範囲をコピー   &クリップボードにテキストを保存する    \\\cline{1-3}
+T2-\/13   &pキーでヤンクしたテキストをペースト   &指定された位置にヤンクしたテキストを挿入し、表示を更新する    \\\cline{1-3}
+T2-\/14   &Ctrl+shift+cでテキストをクリップボードにコピー   &クリップボードにテキストを保存する    \\\cline{1-3}
+T2-\/15   &Ctrl+shift+vでクリップボードからテキストをペースト   &クリップボードからテキストを指定された位置に挿入する    \\\cline{1-3}
+T2-\/15   &Ctrl+shift+hで検索・置換モード   &クリップボードからテキストを指定された位置に挿入する    \\\cline{1-3}
+T2-\/16   &.キーで最後の編集操作を繰り返す   &最後の編集操作を繰り返す    \\\cline{1-3}
+T2-\/17   &uキーで操作を元に戻す   &変更履歴を管理し、操作を元に戻す    \\\cline{1-3}
+T2-\/18   &Ctrl+shift+zで操作をやり直す   &変更履歴を管理し、操作をやり直す    \\\cline{1-3}
+T3   &ファイルを保存する   &現在の状態をディスクに書き込む    \\\cline{1-3}
+T4   &ファイルを閉じる   &ファイルを閉じ、メモリを解放する    \\\cline{1-3}
+T5   &検索キーワードを入力する   &ファイル内を検索し、結果を表示する    \\\cline{1-3}
+T6   &置換前と置換後のキーワードを入力   &ファイル内の一致するキーワードを置換する    \\\cline{1-3}
+T7   &テキストをコピーし、ペーストする   &選択されたテキストをクリップボードに保存し、指定位置に貼り付ける    \\\cline{1-3}
+T8   &元に戻す、やり直すを選択する   &変更履歴を管理し、指定されたアクションを実行する    \\\cline{1-3}
+T9   &テストスクリプトを実行する   &テストケースを実行し、結果を表示する    \\\cline{1-3}
+T10   &ビルドコマンドを実行する   &ソースコードをコンパイルし、バイナリを生成する   \\\cline{1-3}
+\end{longtabu}

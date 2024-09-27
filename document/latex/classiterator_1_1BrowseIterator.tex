@@ -1,116 +1,62 @@
-\hypertarget{classiterator_1_1BrowseIterator}{}\doxysection{iterator\+::Browse\+Iterator$<$ T $>$ Class Template Reference}
-\label{classiterator_1_1BrowseIterator}\index{iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}}
+\hypertarget{classiterator_1_1BrowseIterator}{}\doxysection{iterator\+::Browse\+Iterator$<$ Item $>$ Class Template Reference}
+\label{classiterator_1_1BrowseIterator}\index{iterator::BrowseIterator$<$ Item $>$@{iterator::BrowseIterator$<$ Item $>$}}
+
+
+閲覧用イテレータクラス  
+
+
 
 
 {\ttfamily \#include $<$iterator.\+hpp$>$}
 
 
 
-Inheritance diagram for iterator\+::Browse\+Iterator$<$ T $>$\+:
+Inheritance diagram for iterator\+::Browse\+Iterator$<$ Item $>$\+:
 % FIG 0
 
 
-Collaboration diagram for iterator\+::Browse\+Iterator$<$ T $>$\+:
+Collaboration diagram for iterator\+::Browse\+Iterator$<$ Item $>$\+:
 % FIG 1
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classiterator_1_1BrowseIterator_af50a61a77ad9d04c681ff5e47fb8ac3c}{Browse\+Iterator}} (T $\ast$element)
-\item 
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator_ad807f79bd00a1ba8a7d1af3e6ef21b7c}{Advance}} () -\/$>$ T \&override
-\item 
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator_af3679b5a066ed88bdeed384e5745430e}{Retreat}} () -\/$>$ T \&override
-\item 
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator_ad8da39be4b611102ba9e04db7e5c6903}{Can\+Advance}} () const -\/$>$ bool override
-\item 
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator_a2a25ea739a393ca6f874a0e8b4535889}{Can\+Retreat}} () const -\/$>$ bool override
-\item 
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator_a0ebfcc3163cd99c00f44a1752cd23ef2}{Current\+Item}} () const -\/$>$ T \&override
-\item 
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator_acb1da8531e6ecc80779e30a450535063}{Get\+Item}} (int index) const -\/$>$ T \&override
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classiterator_1_1BrowseIterator_a948fb91137e7f56e4ce52041479b6036}{Browse\+Iterator}} (Item $\ast$element)
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Item$>$\newline
+class iterator\+::\+Browse\+Iterator$<$ Item $>$}
+
+閲覧用イテレータクラス 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Item} & イテレートする要素の型 \\
+\hline
+\end{DoxyTemplParams}
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classiterator_1_1BrowseIterator_af50a61a77ad9d04c681ff5e47fb8ac3c}\label{classiterator_1_1BrowseIterator_af50a61a77ad9d04c681ff5e47fb8ac3c}} 
-\index{iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}!BrowseIterator@{BrowseIterator}}
-\index{BrowseIterator@{BrowseIterator}!iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}}
+\mbox{\Hypertarget{classiterator_1_1BrowseIterator_a948fb91137e7f56e4ce52041479b6036}\label{classiterator_1_1BrowseIterator_a948fb91137e7f56e4ce52041479b6036}} 
+\index{iterator::BrowseIterator$<$ Item $>$@{iterator::BrowseIterator$<$ Item $>$}!BrowseIterator@{BrowseIterator}}
+\index{BrowseIterator@{BrowseIterator}!iterator::BrowseIterator$<$ Item $>$@{iterator::BrowseIterator$<$ Item $>$}}
 \doxysubsubsection{\texorpdfstring{BrowseIterator()}{BrowseIterator()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classiterator_1_1BrowseIterator}{iterator\+::\+Browse\+Iterator}}$<$ T $>$\+::\mbox{\hyperlink{classiterator_1_1BrowseIterator}{Browse\+Iterator}} (\begin{DoxyParamCaption}\item[{T $\ast$}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+\mbox{\hyperlink{classiterator_1_1BrowseIterator}{iterator\+::\+Browse\+Iterator}}$<$ Item $>$\+::\mbox{\hyperlink{classiterator_1_1BrowseIterator}{Browse\+Iterator}} (\begin{DoxyParamCaption}\item[{Item $\ast$}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classiterator_1_1BrowseIterator_ad807f79bd00a1ba8a7d1af3e6ef21b7c}\label{classiterator_1_1BrowseIterator_ad807f79bd00a1ba8a7d1af3e6ef21b7c}} 
-\index{iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}!Advance@{Advance}}
-\index{Advance@{Advance}!iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Advance()}{Advance()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator}{iterator\+::\+Browse\+Iterator}}$<$ T $>$\+::Advance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ T\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+コンストラクタ 
 
 
-
-Implements \mbox{\hyperlink{classiterator_1_1Iterator_a3fc7d0c0bf53437bba85f68bc5ecd133}{iterator\+::\+Iterator$<$ T $>$}}.
-
-\mbox{\Hypertarget{classiterator_1_1BrowseIterator_ad8da39be4b611102ba9e04db7e5c6903}\label{classiterator_1_1BrowseIterator_ad8da39be4b611102ba9e04db7e5c6903}} 
-\index{iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}!CanAdvance@{CanAdvance}}
-\index{CanAdvance@{CanAdvance}!iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{CanAdvance()}{CanAdvance()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator}{iterator\+::\+Browse\+Iterator}}$<$ T $>$\+::Can\+Advance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ bool\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Implements \mbox{\hyperlink{classiterator_1_1Iterator_a99a13c125c0c1004868ac6bf03332dca}{iterator\+::\+Iterator$<$ T $>$}}.
-
-\mbox{\Hypertarget{classiterator_1_1BrowseIterator_a2a25ea739a393ca6f874a0e8b4535889}\label{classiterator_1_1BrowseIterator_a2a25ea739a393ca6f874a0e8b4535889}} 
-\index{iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}!CanRetreat@{CanRetreat}}
-\index{CanRetreat@{CanRetreat}!iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{CanRetreat()}{CanRetreat()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator}{iterator\+::\+Browse\+Iterator}}$<$ T $>$\+::Can\+Retreat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ bool\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Implements \mbox{\hyperlink{classiterator_1_1Iterator_a77d53d61526035550d83425b3879d123}{iterator\+::\+Iterator$<$ T $>$}}.
-
-\mbox{\Hypertarget{classiterator_1_1BrowseIterator_a0ebfcc3163cd99c00f44a1752cd23ef2}\label{classiterator_1_1BrowseIterator_a0ebfcc3163cd99c00f44a1752cd23ef2}} 
-\index{iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}!CurrentItem@{CurrentItem}}
-\index{CurrentItem@{CurrentItem}!iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{CurrentItem()}{CurrentItem()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator}{iterator\+::\+Browse\+Iterator}}$<$ T $>$\+::Current\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ T\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Implements \mbox{\hyperlink{classiterator_1_1Iterator_a6a7faa636eb643e030f8b8fa2046e1a1}{iterator\+::\+Iterator$<$ T $>$}}.
-
-\mbox{\Hypertarget{classiterator_1_1BrowseIterator_acb1da8531e6ecc80779e30a450535063}\label{classiterator_1_1BrowseIterator_acb1da8531e6ecc80779e30a450535063}} 
-\index{iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}!GetItem@{GetItem}}
-\index{GetItem@{GetItem}!iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{GetItem()}{GetItem()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator}{iterator\+::\+Browse\+Iterator}}$<$ T $>$\+::Get\+Item (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const -\/$>$ T\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Implements \mbox{\hyperlink{classiterator_1_1Iterator_a236b8c51545524b6272d01543b6af8d8}{iterator\+::\+Iterator$<$ T $>$}}.
-
-\mbox{\Hypertarget{classiterator_1_1BrowseIterator_af3679b5a066ed88bdeed384e5745430e}\label{classiterator_1_1BrowseIterator_af3679b5a066ed88bdeed384e5745430e}} 
-\index{iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}!Retreat@{Retreat}}
-\index{Retreat@{Retreat}!iterator::BrowseIterator$<$ T $>$@{iterator::BrowseIterator$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{Retreat()}{Retreat()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-auto \mbox{\hyperlink{classiterator_1_1BrowseIterator}{iterator\+::\+Browse\+Iterator}}$<$ T $>$\+::Retreat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ T\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Implements \mbox{\hyperlink{classiterator_1_1Iterator_a826734a6871fac6af7564777cbce8929}{iterator\+::\+Iterator$<$ T $>$}}.
-
+\begin{DoxyParams}{Parameters}
+{\em element} & 初期要素へのポインタ \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{iterator_8hpp}{iterator.\+hpp}}\end{DoxyCompactItemize}
+include/iterator/\mbox{\hyperlink{iterator_8hpp}{iterator.\+hpp}}\end{DoxyCompactItemize}

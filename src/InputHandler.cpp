@@ -1,5 +1,5 @@
-#include "inputHandler.hpp"
-#include "UI.hpp"
+#include "input/InputHandler.hpp"
+#include "libwrap/UI.hpp"
 
 
 namespace inputHandler

@@ -38,16 +38,16 @@ if (SOURCES STREQUAL "")
     message(FATAL_ERROR "No source files found in src directory")
 endif()
 
-# 実行ファイルを作成
-add_executable(TextEditor "${PROJECT_SOURCE_DIR}/src/main.cpp" ${SOURCES}
-        src/common.cpp)
-add_executable(Test ${TEST_SOURCES} ${SOURCES}
-        src/common.cpp)
+# メインの実行ファイルを作成
+add_executable(TextEditor "${PROJECT_SOURCE_DIR}/src/main.cpp" ${SOURCES})
 
-# cursesのリンクをTextEditorターゲットにも追加
+# テスト実行ファイルを作成
+add_executable(Test ${TEST_SOURCES} ${SOURCES})
+
+# cursesのリンクをTextEditorターゲットに追加
 target_link_libraries(TextEditor ${CURSES_LIBRARIES})
 
-# Google Testライブラリのリンク方法を修正
+# Google Testライブラリのリンク
 target_link_libraries(Test PRIVATE gtest gtest_main pthread ${CURSES_LIBRARIES})
 
 # テストファイルのためのインクルードディレクトリを追加

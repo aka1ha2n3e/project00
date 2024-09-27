@@ -1,11 +1,14 @@
-#include "commonType.hpp"
-#include "type.hpp"
-#include "LogData.hpp"
-#include "Logger.hpp"
+#include "common/commonType.hpp"
+#include "logging/LogData.hpp"
+#include "logging/Logger.hpp"
 
 namespace loging
 {
    LogData::~LogData(){};
+    /*
+    *  @brief loggerのインスタンスを作成する
+    * @return loggerのインスタンス
+    */
 
    /*
    * @todo イテレーターの実装
@@ -51,41 +54,39 @@ namespace loging
    };
 
 
-    Logger::Logger()
-        : userActionLog(new UserAction()),
-          infoLog(new Info()),
-          warningLog(new Warning()),
-          errorLog(new Error()),
-          debugLog(new Debug()) {
-    }
 
-    auto Logger::getLogger() -> Logger & {
-        static Logger instance;
-        return instance;
-    }
 
+
+   /*
+    *  @brief loggerのインスタンスを作成する
+    * @return loggerのインスタンス
+    */
+   auto Logger::getLogger() -> Logger& {
+      static Logger instance;
+      return instance;
+   }
     auto Logger::setLogFile(const fileSystem::Path &logFilePath) -> void {
         // 分からん
     }
 
     auto Logger::logUserAction(const String &message) -> void {
-        leaveLog(LogLevel::USER_ACTION, message);
+        getLogger().leaveLog(LogLevel::USER_ACTION, message);
     }
 
     auto Logger::logInfo(const String &message) -> void {
-        leaveLog(LogLevel::INFO, message);
+        getLogger().leaveLog(LogLevel::INFO, message);
     }
 
     auto Logger::logWarning(const String &message) -> void {
-        leaveLog(LogLevel::WARNING, message);
+        getLogger().leaveLog(LogLevel::WARNING, message);
     }
 
     auto Logger::logError(const String &message) -> void {
-        leaveLog(LogLevel::ERROR, message);
+        getLogger().leaveLog(LogLevel::ERROR, message);
     }
 
     auto Logger::logDebug(const String &message) -> void {
-        leaveLog(LogLevel::DEBUG, message);
+        getLogger().leaveLog(LogLevel::DEBUG, message);
     }
 
     auto Logger::leaveLog(LogLevel level, const String &message) -> void {

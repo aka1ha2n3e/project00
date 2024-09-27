@@ -1,0 +1,116 @@
+\hypertarget{classutil_1_1Stack}{}\doxysection{util\+::Stack$<$ T $>$ Class Template Reference}
+\label{classutil_1_1Stack}\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Stack\+Wrapper.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classutil_1_1Stack_a681613b069c0c57e48ae71255abb4cba}{Error\+Callback}} = std\+::function$<$ void(const std\+::string \&)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutil_1_1Stack_a03ed8a918c9c5e1524f661aad87e113b}{Stack}} ()=default
+\item 
+void \mbox{\hyperlink{classutil_1_1Stack_a67ebc9a024e2b4eb371c6295c6e9460d}{Set\+Error\+Callback}} (\mbox{\hyperlink{classutil_1_1Stack_a681613b069c0c57e48ae71255abb4cba}{Error\+Callback}} callback)
+\item 
+void \mbox{\hyperlink{classutil_1_1Stack_adaed1f914ab4583a9ca9eca5c7db6c4e}{Push}} (const T \&value)
+\item 
+void \mbox{\hyperlink{classutil_1_1Stack_aefd5c12222958e51e35932a93c910eeb}{Push}} (T \&\&value)
+\item 
+bool \mbox{\hyperlink{classutil_1_1Stack_ab7f87859a46ada4a90407b38abf0c297}{Pop}} ()
+\item 
+bool \mbox{\hyperlink{classutil_1_1Stack_a5d16ae2a16c2e094dc0440329cdbdc35}{Top}} (T \&value) const
+\item 
+bool \mbox{\hyperlink{classutil_1_1Stack_ac81aedcac39f1ab3f5a784e34a6aede1}{Empty}} () const noexcept
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classutil_1_1Stack_aacc02871346dcc1d54c268a1f97c218a}{Size}} () const noexcept
+\item 
+void \mbox{\hyperlink{classutil_1_1Stack_a68ae372cbcc47877812707b08da7e595}{Clear}} () noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classutil_1_1Stack_a681613b069c0c57e48ae71255abb4cba}\label{classutil_1_1Stack_a681613b069c0c57e48ae71255abb4cba}} 
+\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}!ErrorCallback@{ErrorCallback}}
+\index{ErrorCallback@{ErrorCallback}!util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ErrorCallback}{ErrorCallback}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classutil_1_1Stack}{util\+::\+Stack}}$<$ T $>$\+::\mbox{\hyperlink{classutil_1_1Stack_a681613b069c0c57e48ae71255abb4cba}{Error\+Callback}} =  std\+::function$<$void(const std\+::string\&)$>$}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1Stack_a03ed8a918c9c5e1524f661aad87e113b}\label{classutil_1_1Stack_a03ed8a918c9c5e1524f661aad87e113b}} 
+\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}!Stack@{Stack}}
+\index{Stack@{Stack}!util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Stack()}{Stack()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classutil_1_1Stack}{util\+::\+Stack}}$<$ T $>$\+::\mbox{\hyperlink{classutil_1_1Stack}{Stack}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1Stack_a68ae372cbcc47877812707b08da7e595}\label{classutil_1_1Stack_a68ae372cbcc47877812707b08da7e595}} 
+\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}!Clear@{Clear}}
+\index{Clear@{Clear}!util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classutil_1_1Stack}{util\+::\+Stack}}$<$ T $>$\+::Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classutil_1_1Stack_ac81aedcac39f1ab3f5a784e34a6aede1}\label{classutil_1_1Stack_ac81aedcac39f1ab3f5a784e34a6aede1}} 
+\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}!Empty@{Empty}}
+\index{Empty@{Empty}!util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Empty()}{Empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classutil_1_1Stack}{util\+::\+Stack}}$<$ T $>$\+::Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classutil_1_1Stack_ab7f87859a46ada4a90407b38abf0c297}\label{classutil_1_1Stack_ab7f87859a46ada4a90407b38abf0c297}} 
+\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}!Pop@{Pop}}
+\index{Pop@{Pop}!util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Pop()}{Pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classutil_1_1Stack}{util\+::\+Stack}}$<$ T $>$\+::Pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classutil_1_1Stack_adaed1f914ab4583a9ca9eca5c7db6c4e}\label{classutil_1_1Stack_adaed1f914ab4583a9ca9eca5c7db6c4e}} 
+\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}!Push@{Push}}
+\index{Push@{Push}!util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Push()}{Push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classutil_1_1Stack}{util\+::\+Stack}}$<$ T $>$\+::Push (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classutil_1_1Stack_aefd5c12222958e51e35932a93c910eeb}\label{classutil_1_1Stack_aefd5c12222958e51e35932a93c910eeb}} 
+\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}!Push@{Push}}
+\index{Push@{Push}!util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Push()}{Push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classutil_1_1Stack}{util\+::\+Stack}}$<$ T $>$\+::Push (\begin{DoxyParamCaption}\item[{T \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classutil_1_1Stack_a67ebc9a024e2b4eb371c6295c6e9460d}\label{classutil_1_1Stack_a67ebc9a024e2b4eb371c6295c6e9460d}} 
+\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}!SetErrorCallback@{SetErrorCallback}}
+\index{SetErrorCallback@{SetErrorCallback}!util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetErrorCallback()}{SetErrorCallback()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classutil_1_1Stack}{util\+::\+Stack}}$<$ T $>$\+::Set\+Error\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1Stack_a681613b069c0c57e48ae71255abb4cba}{Error\+Callback}}}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classutil_1_1Stack_aacc02871346dcc1d54c268a1f97c218a}\label{classutil_1_1Stack_aacc02871346dcc1d54c268a1f97c218a}} 
+\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}!Size@{Size}}
+\index{Size@{Size}!util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::size\+\_\+t \mbox{\hyperlink{classutil_1_1Stack}{util\+::\+Stack}}$<$ T $>$\+::Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classutil_1_1Stack_a5d16ae2a16c2e094dc0440329cdbdc35}\label{classutil_1_1Stack_a5d16ae2a16c2e094dc0440329cdbdc35}} 
+\index{util::Stack$<$ T $>$@{util::Stack$<$ T $>$}!Top@{Top}}
+\index{Top@{Top}!util::Stack$<$ T $>$@{util::Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Top()}{Top()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classutil_1_1Stack}{util\+::\+Stack}}$<$ T $>$\+::Top (\begin{DoxyParamCaption}\item[{T \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/libwrap/\mbox{\hyperlink{StackWrapper_8hpp}{Stack\+Wrapper.\+hpp}}\end{DoxyCompactItemize}
