@@ -4,6 +4,8 @@
 {\ttfamily \#include \char`\"{}common/common\+Type.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}input/\+Input\+Data.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}common/general\+Type.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logging/\+Logger.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$optional$>$}\newline
 Include dependency graph for Command.\+hpp\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
@@ -17,12 +19,24 @@ class \mbox{\hyperlink{classcommand_1_1CommandManager}{command\+::\+Command\+Man
 \item 
 class \mbox{\hyperlink{classcommand_1_1MoveCursorCommand}{command\+::\+Move\+Cursor\+Command}}
 \item 
-class \mbox{\hyperlink{classcommand_1_1InsertTextCommand}{command\+::\+Insert\+Text\+Command}}
+class \mbox{\hyperlink{classcommand_1_1InsertModeCommand}{command\+::\+Insert\+Mode\+Command}}
 \item 
-class \mbox{\hyperlink{classcommand_1_1DeleteTextCommand}{command\+::\+Delete\+Text\+Command}}
+class \mbox{\hyperlink{classcommand_1_1CommandBuilder}{command\+::\+Command\+Builder}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespacecommand}{command}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacecommand_a0b9114da8bac4b6dfacd37139c026b37}{command\+::\+EDIT\+\_\+\+MODE}} \{ \newline
+\mbox{\hyperlink{namespacecommand_a0b9114da8bac4b6dfacd37139c026b37a1e23852820b9154316c7c06e2b7ba051}{command\+::\+NORMAL}}
+, \mbox{\hyperlink{namespacecommand_a0b9114da8bac4b6dfacd37139c026b37a61ee777e7f71dc466c3b2c685d8d313b}{command\+::\+INSERT}}
+, \mbox{\hyperlink{namespacecommand_a0b9114da8bac4b6dfacd37139c026b37a8daf3496602a64f00b16ce266e7084dc}{command\+::\+VISUAL}}
+, \mbox{\hyperlink{namespacecommand_a0b9114da8bac4b6dfacd37139c026b37aee86602a23e7a9a5136f6b2138894aa5}{command\+::\+LINUX}}
+, \newline
+\mbox{\hyperlink{namespacecommand_a0b9114da8bac4b6dfacd37139c026b37ad273a0465c8fbfd111aae706cdf9ec20}{command\+::\+WINDOWS}}
+ \}
 \end{DoxyCompactItemize}

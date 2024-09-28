@@ -2,6 +2,7 @@
 \label{InputHandler_8hpp}\index{include/input/InputHandler.hpp@{include/input/InputHandler.hpp}}
 {\ttfamily \#include \char`\"{}common/common\+Type.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}input/\+Input\+Data.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}input/adapter/\+Ncurses\+Input\+Adapter.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}input/\+Key\+Mapping.\+hpp\char`\"{}}\newline
 Include dependency graph for Input\+Handler.\+hpp\+:
 % FIG 0
@@ -11,13 +12,23 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classinputHandler_1_1UsrInput}{input\+Handler\+::\+Usr\+Input}}
-\begin{DoxyCompactList}\small\item\em ユーザー入力を処理するクラス \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classinputHandler_1_1CommandInput}{input\+Handler\+::\+Command\+Input}}
-\begin{DoxyCompactList}\small\item\em コマンド経由で入力を受け取るクラス \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classinputHandler_1_1InputAdapter}{input\+Handler\+::\+Input\+Adapter}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em ユーザー入力を処理するクラス \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespaceinputHandler}{input\+Handler}}
 \begin{DoxyCompactList}\small\item\em 入力処理に関する機能を提供する名前空間 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{InputHandler_8hpp_a2f474efb08dc368aca5703383d5a4bfc}{Input\+Driver}}~Ncurses\+Input\+Adapter
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{InputHandler_8hpp_a2f474efb08dc368aca5703383d5a4bfc}\label{InputHandler_8hpp_a2f474efb08dc368aca5703383d5a4bfc}} 
+\index{InputHandler.hpp@{InputHandler.hpp}!InputDriver@{InputDriver}}
+\index{InputDriver@{InputDriver}!InputHandler.hpp@{InputHandler.hpp}}
+\doxysubsubsection{\texorpdfstring{InputDriver}{InputDriver}}
+{\footnotesize\ttfamily \#define Input\+Driver~Ncurses\+Input\+Adapter}
+

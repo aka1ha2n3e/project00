@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['generaltype_2ehpp_110',['generalType.hpp',['../generalType_8hpp.html',1,'']]],
-  ['generalui_111',['GeneralUI',['../classUI_1_1GeneralUI.html',1,'UI']]],
-  ['getcode_112',['GetCode',['../classinput_1_1EncodedKey.html#aa51a199953052f4ae004500cd0ce74be',1,'input::EncodedKey']]],
+  ['generaltype_2ehpp_109',['generalType.hpp',['../generalType_8hpp.html',1,'']]],
+  ['generalui_110',['GeneralUI',['../classUI_1_1GeneralUI.html',1,'UI']]],
+  ['getcode_111',['GetCode',['../classinput_1_1EncodedKey.html#aa51a199953052f4ae004500cd0ce74be',1,'input::EncodedKey']]],
+  ['getcurrentmode_112',['GetCurrentMode',['../classstate_1_1StateEditorManager.html#abdde403059e7f8b0e1837d39772e93c5',1,'state::StateEditorManager']]],
   ['getcursorposition_113',['GetCursorPosition',['../classtextEditor_1_1TextBuffer.html#a9bc7c01d82e75a7a7821bcf7598441e2',1,'textEditor::TextBuffer']]],
   ['getdata_114',['getData',['../classSample.html#a15c89085fcc1e0fa4533c9ce974e5958',1,'Sample']]],
   ['getfirstline_115',['GetFirstLine',['../classfileSystem_1_1TxtData.html#abf92fad8f3acf75946fd4b6e61d7196d',1,'fileSystem::TxtData']]],

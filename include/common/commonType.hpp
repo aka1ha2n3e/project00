@@ -114,4 +114,17 @@ namespace UI
   using Coordinate = int;
 };
 
+/*
+* 
+*/
+namespace input
+{
+enum class ResultCode
+{
+  SUCCESS,
+  FAILURE,
+  INVALID_OPERATION,
+};
+};
+
 #endif // COMMONTYPE_HPP

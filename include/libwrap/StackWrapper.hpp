@@ -34,23 +34,45 @@ namespace util
         {
             if (stack_.empty())
             {
-                ReportError("Attempt to pop from empty stack");
+                ReportError("スタックが空です");
                 return false;
             }
             stack_.pop();
             return true;
         }
 
-        bool Top(T& value) const
+/**  
+* @todo チャットGPTが生成したのでロジックを確認する
+*/
+    const T& Top() const
         {
             if (stack_.empty())
             {
-                ReportError("Attempt to access top of empty stack");
+                ReportError("スタックが空です");
+                throw std::runtime_error("スタックが空です");
+            }
+            return stack_.top();
+    }
+        bool Top(const T& value) const
+        {
+            if (stack_.empty())
+            {
+                    ReportError("スタックが空です");
                 return false;
             }
             value = stack_.top();
             return true;
         }
+    bool Top(T&& value)
+    {
+        if (stack_.empty())
+        {
+            ReportError("スタックが空です");
+            return false;
+        }
+        value = std::move(stack_.top());
+        return true;
+    }
 
         bool Empty() const noexcept
         {

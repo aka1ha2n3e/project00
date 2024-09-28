@@ -93,8 +93,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aefd5c12222958e51e35932a93c910eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7f87859a46ada4a90407b38abf0c297"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1Stack.html#ab7f87859a46ada4a90407b38abf0c297">Pop</a> ()</td></tr>
 <tr class="separator:ab7f87859a46ada4a90407b38abf0c297"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d16ae2a16c2e094dc0440329cdbdc35"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1Stack.html#a5d16ae2a16c2e094dc0440329cdbdc35">Top</a> (T &amp;value) const</td></tr>
-<tr class="separator:a5d16ae2a16c2e094dc0440329cdbdc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a759a326bd3d83705be9bc0eb78e367c0"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1Stack.html#a759a326bd3d83705be9bc0eb78e367c0">Top</a> () const</td></tr>
+<tr class="separator:a759a326bd3d83705be9bc0eb78e367c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ece889ab1cae2eda538b1e4e3fe725c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1Stack.html#a0ece889ab1cae2eda538b1e4e3fe725c">Top</a> (const T &amp;value) const</td></tr>
+<tr class="separator:a0ece889ab1cae2eda538b1e4e3fe725c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84a724fee16deee6251e7a1092d012cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1Stack.html#a84a724fee16deee6251e7a1092d012cd">Top</a> (T &amp;&amp;value)</td></tr>
+<tr class="separator:a84a724fee16deee6251e7a1092d012cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac81aedcac39f1ab3f5a784e34a6aede1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1Stack.html#ac81aedcac39f1ab3f5a784e34a6aede1">Empty</a> () const noexcept</td></tr>
 <tr class="separator:ac81aedcac39f1ab3f5a784e34a6aede1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacc02871346dcc1d54c268a1f97c218a"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1Stack.html#aacc02871346dcc1d54c268a1f97c218a">Size</a> () const noexcept</td></tr>
@@ -340,8 +344,36 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a5d16ae2a16c2e094dc0440329cdbdc35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d16ae2a16c2e094dc0440329cdbdc35">&#9670;&nbsp;</a></span>Top()</h2>
+<a id="a759a326bd3d83705be9bc0eb78e367c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a759a326bd3d83705be9bc0eb78e367c0">&#9670;&nbsp;</a></span>Top() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T&amp; <a class="el" href="classutil_1_1Stack.html">util::Stack</a>&lt; T &gt;::Top </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>チャットGPTが生成したのでロジックを確認する </dd></dl>
+
+</div>
+</div>
+<a id="a0ece889ab1cae2eda538b1e4e3fe725c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ece889ab1cae2eda538b1e4e3fe725c">&#9670;&nbsp;</a></span>Top() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,9 +386,37 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="classutil_1_1Stack.html">util::Stack</a>&lt; T &gt;::Top </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a84a724fee16deee6251e7a1092d012cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84a724fee16deee6251e7a1092d012cd">&#9670;&nbsp;</a></span>Top() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classutil_1_1Stack.html">util::Stack</a>&lt; T &gt;::Top </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>

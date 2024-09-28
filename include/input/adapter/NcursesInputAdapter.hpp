@@ -1,7 +1,7 @@
 #ifndef NCURSES_INPUT_ADAPTER_HPP
 #define NCURSES_INPUT_ADAPTER_HPP
 
-#include "input/InputHandler.hpp"
+#include "input/adapter/InputAdapter.hpp"
 #include "libwrap/UI.hpp"
 
 namespace inputHandler {

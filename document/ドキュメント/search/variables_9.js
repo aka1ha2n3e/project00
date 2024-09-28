@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['shortcut_505',['shortcut',['../structshortcuts_1_1ShortcutMapping.html#a971840a64b396396d77b74938b0b4fab',1,'shortcuts::ShortcutMapping']]]
+  ['shortcut_537',['shortcut',['../structshortcuts_1_1ShortcutMapping.html#a971840a64b396396d77b74938b0b4fab',1,'shortcuts::ShortcutMapping']]]
 ];

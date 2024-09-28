@@ -3,6 +3,8 @@
 
 #include "input/InputHandler.hpp"
 #include "input/InputData.hpp"
+#include "input/KeyMapping.hpp"
+#include "core/Command.hpp"
 
 /**
  * @namespace inputManager
@@ -24,6 +26,7 @@ namespace inputManager
 
         /**
          * @brief 入力を処理するメソッド
+         * @note いらねえんじゃね
          */
         void processInput();
 
@@ -35,7 +38,11 @@ namespace inputManager
          * @brief コマンドを処理するメソッド
          * @return 処理結果のコード
          */
-        auto CommandDispatcher() -> textEditor::ResultCode;
+        auto DispatchCommand(input::EncodedKey Command) -> input::ResultCode;
+        auto TransitionState() -> void;
+
+        command::EDIT_MODE state;
+
 
     };
 }

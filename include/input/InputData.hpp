@@ -56,11 +56,11 @@ namespace input{
     }
 
 
-        unsigned int GetCode() const { return value & 0xFFFFFF; }
-        bool CtrlPressed() const { return value & 0x1000000; }
-        bool ShiftPressed() const { return value & 0x2000000; }
-        bool AltPressed() const { return value & 0x4000000; }
-        bool MetaPressed() const { return value & 0x8000000; }
+        unsigned int GetCode() const { return value & KEY_CODE_BITS; }
+        bool CtrlPressed() const { return value & CTRL_BITS; }
+        bool ShiftPressed() const { return value & SHIFT_BITS; }
+        bool AltPressed() const { return value & ALT_BITS; }
+        bool MetaPressed() const { return value & META_BITS; }
 
         bool operator==(const EncodedKey& other) const { return value == other.value; }
         bool operator!=(const EncodedKey& other) const { return value != other.value; }

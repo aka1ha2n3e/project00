@@ -157,70 +157,72 @@ $(function() {
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classContextPtr.html">   99</a></span>&#160;<span class="keyword">class </span><a class="code" href="classContextPtr.html">ContextPtr</a></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classContextPtr.html#a8be34bf3c0b349ec6301eabf05f7a542">  102</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classContextPtr.html#a8be34bf3c0b349ec6301eabf05f7a542">ContextPtr</a>(T* instance = <span class="keyword">nullptr</span>) : curPtr(instance) {};</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classContextPtr.html#a539b89a70e6a61bc9717248def18f0f5">  104</a></span>&#160;    <a class="code" href="classContextPtr.html">ContextPtr</a>&amp; <a class="code" href="classContextPtr.html#a539b89a70e6a61bc9717248def18f0f5">operator=</a>(<span class="keyword">const</span> <a class="code" href="classContextPtr.html">ContextPtr</a>&amp; other)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span> (other.curPtr)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                curPtr = std::make_unique&lt;T&gt;(*other.curPtr);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                curPtr.reset();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classContextPtr.html#a1f2b46e48155b346f6552af2228517f6">  120</a></span>&#160;    <a class="code" href="classContextPtr.html">ContextPtr</a>&amp; <a class="code" href="classContextPtr.html#a1f2b46e48155b346f6552af2228517f6">operator=</a>(<a class="code" href="classContextPtr.html">ContextPtr</a>&amp;&amp; other) noexcept</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            curPtr = std::move(other.curPtr);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classContextPtr.html#a7cde6f00672cdd0fdd7b8e3515ed5144">  129</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="classContextPtr.html#a7cde6f00672cdd0fdd7b8e3515ed5144">SetPtr</a>(T* ptr) -&gt; <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    curPtr = std::make_unique&lt;T&gt;(*ptr);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    ptr    = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  };</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classContextPtr.html#ae68c14cb7a7f550725d9dafbb500441d">  138</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="classContextPtr.html#ae68c14cb7a7f550725d9dafbb500441d">operator-&gt;</a>() const -&gt; T*</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">if</span> (GetPtr() != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      <span class="keywordflow">return</span> curPtr.get();</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  };</div>
-<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="classContextPtr.html#aba426bc6d63a6e83ac7e84eaa66211a0">  145</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="classContextPtr.html">ContextPtr&lt;T&gt;</a> <a class="code" href="classContextPtr.html#aba426bc6d63a6e83ac7e84eaa66211a0">Create</a>() {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classContextPtr.html">ContextPtr&lt;T&gt;</a>();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    };</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classContextPtr.html">   99</a></span>&#160;<span class="keyword">class </span><a class="code" href="classContextPtr.html">ContextPtr</a> {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classContextPtr.html#ac1078291cb76bc56e48d3133d3e048a0">  101</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classContextPtr.html#ac1078291cb76bc56e48d3133d3e048a0">ContextPtr</a>(T* ptr = <span class="keyword">nullptr</span>) : curPtr(ptr) {}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classContextPtr.html#a5b1d39348eb6f1f274d9017d85e72bd9">  103</a></span>&#160;    <a class="code" href="classContextPtr.html#a5b1d39348eb6f1f274d9017d85e72bd9">ContextPtr</a>(<span class="keyword">const</span> <a class="code" href="classContextPtr.html">ContextPtr</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classContextPtr.html#a35141eaf51df08d693f8d2c61f6c8325">  105</a></span>&#160;    <a class="code" href="classContextPtr.html#a35141eaf51df08d693f8d2c61f6c8325">ContextPtr</a>(<a class="code" href="classContextPtr.html">ContextPtr</a>&amp;&amp; other) noexcept = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U, <span class="keyword">typename</span> = std::enable_if_t&lt;std::is_convertible_v&lt;U*, T*&gt;&gt;&gt;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classContextPtr.html#af1b7cfb2a139a4094a73613f6ac7e7a3">  108</a></span>&#160;    <a class="code" href="classContextPtr.html#af1b7cfb2a139a4094a73613f6ac7e7a3">ContextPtr</a>(<a class="code" href="classContextPtr.html">ContextPtr&lt;U&gt;</a>&amp;&amp; other) noexcept : curPtr(other.curPtr.release()) {}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classContextPtr.html#a7cde6f00672cdd0fdd7b8e3515ed5144">  110</a></span>&#160;  <span class="keyword">auto</span> <a class="code" href="classContextPtr.html#a7cde6f00672cdd0fdd7b8e3515ed5144">SetPtr</a>(T* ptr) -&gt; <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    curPtr = std::make_unique&lt;T&gt;(*ptr);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    ptr    = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  };</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classContextPtr.html#a9de6e7f01ae908cbb85ec7056b64c51c">  116</a></span>&#160;    <a class="code" href="classContextPtr.html">ContextPtr</a>&amp; <a class="code" href="classContextPtr.html#a9de6e7f01ae908cbb85ec7056b64c51c">operator=</a>(<span class="keyword">const</span> <a class="code" href="classContextPtr.html">ContextPtr</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classContextPtr.html#a7ce53f2ed254ac81acc29449a2a1dbb7">  117</a></span>&#160;    <a class="code" href="classContextPtr.html">ContextPtr</a>&amp; <a class="code" href="classContextPtr.html#a7ce53f2ed254ac81acc29449a2a1dbb7">operator=</a>(<a class="code" href="classContextPtr.html">ContextPtr</a>&amp;&amp; other) noexcept = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classContextPtr.html#a21daa0141b3d2057205a224184a7a1c2">  119</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classContextPtr.html#a21daa0141b3d2057205a224184a7a1c2">reset</a>(T* ptr = <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        curPtr.reset(ptr);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classContextPtr.html#a784209347f13b1a8da3c759f2a0789a8">  124</a></span>&#160;    T&amp; <a class="code" href="classContextPtr.html#a784209347f13b1a8da3c759f2a0789a8">operator*</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> *curPtr;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classContextPtr.html#ac0413c251149e8dbaeebeb3b25c0dee7">  128</a></span>&#160;    T* <a class="code" href="classContextPtr.html#ac0413c251149e8dbaeebeb3b25c0dee7">operator-&gt;</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">return</span> curPtr.get();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classContextPtr.html#a265dfefff594d243ffeb25e78bafd488">  132</a></span>&#160;    <span class="keyword">explicit</span> <span class="keyword">operator</span> bool()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> curPtr != <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    std::unique_ptr&lt;T&gt; curPtr;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keyword">auto</span> GetPtr() const -&gt; T*</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> curPtr.get();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  };</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classContextPtr.html#a8a48d4d01ac521679cd91120524eca6d">  147</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classContextPtr.html">ContextPtr</a>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;};</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keyword">auto</span> GetPtr() const -&gt; T*</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">return</span> curPtr.get();</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  };</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  std::unique_ptr&lt;T&gt; curPtr;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;};</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GENERALTYPE_HPP</span></div>
-<div class="ttc" id="aclassContextPtr_html"><div class="ttname"><a href="classContextPtr.html">ContextPtr</a></div><div class="ttdef"><b>Definition:</b> generalType.hpp:100</div></div>
-<div class="ttc" id="aclassContextPtr_html_a1f2b46e48155b346f6552af2228517f6"><div class="ttname"><a href="classContextPtr.html#a1f2b46e48155b346f6552af2228517f6">ContextPtr::operator=</a></div><div class="ttdeci">ContextPtr &amp; operator=(ContextPtr &amp;&amp;other) noexcept</div><div class="ttdef"><b>Definition:</b> generalType.hpp:120</div></div>
-<div class="ttc" id="aclassContextPtr_html_a539b89a70e6a61bc9717248def18f0f5"><div class="ttname"><a href="classContextPtr.html#a539b89a70e6a61bc9717248def18f0f5">ContextPtr::operator=</a></div><div class="ttdeci">ContextPtr &amp; operator=(const ContextPtr &amp;other)</div><div class="ttdef"><b>Definition:</b> generalType.hpp:104</div></div>
-<div class="ttc" id="aclassContextPtr_html_a7cde6f00672cdd0fdd7b8e3515ed5144"><div class="ttname"><a href="classContextPtr.html#a7cde6f00672cdd0fdd7b8e3515ed5144">ContextPtr::SetPtr</a></div><div class="ttdeci">auto SetPtr(T *ptr) -&gt; void</div><div class="ttdef"><b>Definition:</b> generalType.hpp:129</div></div>
-<div class="ttc" id="aclassContextPtr_html_a8be34bf3c0b349ec6301eabf05f7a542"><div class="ttname"><a href="classContextPtr.html#a8be34bf3c0b349ec6301eabf05f7a542">ContextPtr::ContextPtr</a></div><div class="ttdeci">ContextPtr(T *instance=nullptr)</div><div class="ttdef"><b>Definition:</b> generalType.hpp:102</div></div>
-<div class="ttc" id="aclassContextPtr_html_aba426bc6d63a6e83ac7e84eaa66211a0"><div class="ttname"><a href="classContextPtr.html#aba426bc6d63a6e83ac7e84eaa66211a0">ContextPtr::Create</a></div><div class="ttdeci">static ContextPtr&lt; T &gt; Create()</div><div class="ttdef"><b>Definition:</b> generalType.hpp:145</div></div>
-<div class="ttc" id="aclassContextPtr_html_ae68c14cb7a7f550725d9dafbb500441d"><div class="ttname"><a href="classContextPtr.html#ae68c14cb7a7f550725d9dafbb500441d">ContextPtr::operator-&gt;</a></div><div class="ttdeci">auto operator-&gt;() const -&gt; T *</div><div class="ttdoc">メソッドを呼び出す．</div><div class="ttdef"><b>Definition:</b> generalType.hpp:138</div></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="generalType_8hpp.html#ab5fdf50bba6dfb8ccffa7c59f7466104">  151</a></span>&#160;<a class="code" href="classContextPtr.html">ContextPtr&lt;T&gt;</a> <a class="code" href="generalType_8hpp.html#ab5fdf50bba6dfb8ccffa7c59f7466104">makeContextPtr</a>(Args&amp;&amp;... args) {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classContextPtr.html">ContextPtr&lt;T&gt;</a>(<span class="keyword">new</span> T(std::forward&lt;Args&gt;(args)...));</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;};</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GENERALTYPE_HPP</span></div>
+<div class="ttc" id="aclassContextPtr_html"><div class="ttname"><a href="classContextPtr.html">ContextPtr</a></div><div class="ttdef"><b>Definition:</b> generalType.hpp:99</div></div>
+<div class="ttc" id="aclassContextPtr_html_a21daa0141b3d2057205a224184a7a1c2"><div class="ttname"><a href="classContextPtr.html#a21daa0141b3d2057205a224184a7a1c2">ContextPtr::reset</a></div><div class="ttdeci">void reset(T *ptr=nullptr)</div><div class="ttdef"><b>Definition:</b> generalType.hpp:119</div></div>
+<div class="ttc" id="aclassContextPtr_html_a35141eaf51df08d693f8d2c61f6c8325"><div class="ttname"><a href="classContextPtr.html#a35141eaf51df08d693f8d2c61f6c8325">ContextPtr::ContextPtr</a></div><div class="ttdeci">ContextPtr(ContextPtr &amp;&amp;other) noexcept=default</div></div>
+<div class="ttc" id="aclassContextPtr_html_a5b1d39348eb6f1f274d9017d85e72bd9"><div class="ttname"><a href="classContextPtr.html#a5b1d39348eb6f1f274d9017d85e72bd9">ContextPtr::ContextPtr</a></div><div class="ttdeci">ContextPtr(const ContextPtr &amp;other)=delete</div></div>
+<div class="ttc" id="aclassContextPtr_html_a784209347f13b1a8da3c759f2a0789a8"><div class="ttname"><a href="classContextPtr.html#a784209347f13b1a8da3c759f2a0789a8">ContextPtr::operator*</a></div><div class="ttdeci">T &amp; operator*() const</div><div class="ttdef"><b>Definition:</b> generalType.hpp:124</div></div>
+<div class="ttc" id="aclassContextPtr_html_a7cde6f00672cdd0fdd7b8e3515ed5144"><div class="ttname"><a href="classContextPtr.html#a7cde6f00672cdd0fdd7b8e3515ed5144">ContextPtr::SetPtr</a></div><div class="ttdeci">auto SetPtr(T *ptr) -&gt; void</div><div class="ttdef"><b>Definition:</b> generalType.hpp:110</div></div>
+<div class="ttc" id="aclassContextPtr_html_a7ce53f2ed254ac81acc29449a2a1dbb7"><div class="ttname"><a href="classContextPtr.html#a7ce53f2ed254ac81acc29449a2a1dbb7">ContextPtr::operator=</a></div><div class="ttdeci">ContextPtr &amp; operator=(ContextPtr &amp;&amp;other) noexcept=default</div></div>
+<div class="ttc" id="aclassContextPtr_html_a9de6e7f01ae908cbb85ec7056b64c51c"><div class="ttname"><a href="classContextPtr.html#a9de6e7f01ae908cbb85ec7056b64c51c">ContextPtr::operator=</a></div><div class="ttdeci">ContextPtr &amp; operator=(const ContextPtr &amp;other)=delete</div></div>
+<div class="ttc" id="aclassContextPtr_html_ac0413c251149e8dbaeebeb3b25c0dee7"><div class="ttname"><a href="classContextPtr.html#ac0413c251149e8dbaeebeb3b25c0dee7">ContextPtr::operator-&gt;</a></div><div class="ttdeci">T * operator-&gt;() const</div><div class="ttdef"><b>Definition:</b> generalType.hpp:128</div></div>
+<div class="ttc" id="aclassContextPtr_html_ac1078291cb76bc56e48d3133d3e048a0"><div class="ttname"><a href="classContextPtr.html#ac1078291cb76bc56e48d3133d3e048a0">ContextPtr::ContextPtr</a></div><div class="ttdeci">ContextPtr(T *ptr=nullptr)</div><div class="ttdef"><b>Definition:</b> generalType.hpp:101</div></div>
+<div class="ttc" id="aclassContextPtr_html_af1b7cfb2a139a4094a73613f6ac7e7a3"><div class="ttname"><a href="classContextPtr.html#af1b7cfb2a139a4094a73613f6ac7e7a3">ContextPtr::ContextPtr</a></div><div class="ttdeci">ContextPtr(ContextPtr&lt; U &gt; &amp;&amp;other) noexcept</div><div class="ttdef"><b>Definition:</b> generalType.hpp:108</div></div>
 <div class="ttc" id="aclassElementPtr_html"><div class="ttname"><a href="classElementPtr.html">ElementPtr</a></div><div class="ttdef"><b>Definition:</b> generalType.hpp:40</div></div>
 <div class="ttc" id="aclassElementPtr_html_a7bd0e22799259a384c7193d5f68a182c"><div class="ttname"><a href="classElementPtr.html#a7bd0e22799259a384c7193d5f68a182c">ElementPtr::operator-&gt;</a></div><div class="ttdeci">auto operator-&gt;() const -&gt; T *</div><div class="ttdoc">メソッドを呼び出す．</div><div class="ttdef"><b>Definition:</b> generalType.hpp:56</div></div>
 <div class="ttc" id="aclassElementPtr_html_a9f43f5aad152343d31deb62ce219887a"><div class="ttname"><a href="classElementPtr.html#a9f43f5aad152343d31deb62ce219887a">ElementPtr::ElementPtr</a></div><div class="ttdeci">ElementPtr(T *instance=nullptr)</div><div class="ttdef"><b>Definition:</b> generalType.hpp:42</div></div>
@@ -236,6 +238,7 @@ $(function() {
 <div class="ttc" id="aclassfileSystem_1_1FileContents_html_a725a56c2d8fef136a5ca0e56bec8784a"><div class="ttname"><a href="classfileSystem_1_1FileContents.html#a725a56c2d8fef136a5ca0e56bec8784a">fileSystem::FileContents::path</a></div><div class="ttdeci">Path path</div><div class="ttdef"><b>Definition:</b> generalType.hpp:30</div></div>
 <div class="ttc" id="aclassfileSystem_1_1FileContents_html_ab8c84f4588d433ab78be7fef183b7700"><div class="ttname"><a href="classfileSystem_1_1FileContents.html#ab8c84f4588d433ab78be7fef183b7700">fileSystem::FileContents::~FileContents</a></div><div class="ttdeci">virtual ~FileContents()</div></div>
 <div class="ttc" id="acommonType_8hpp_html"><div class="ttname"><a href="commonType_8hpp.html">commonType.hpp</a></div></div>
+<div class="ttc" id="ageneralType_8hpp_html_ab5fdf50bba6dfb8ccffa7c59f7466104"><div class="ttname"><a href="generalType_8hpp.html#ab5fdf50bba6dfb8ccffa7c59f7466104">makeContextPtr</a></div><div class="ttdeci">ContextPtr&lt; T &gt; makeContextPtr(Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> generalType.hpp:151</div></div>
 <div class="ttc" id="anamespacedata_html"><div class="ttname"><a href="namespacedata.html">data</a></div><div class="ttdoc">データ関連の型や定数を定義する名前空間</div></div>
 <div class="ttc" id="anamespacefileSystem_html"><div class="ttname"><a href="namespacefileSystem.html">fileSystem</a></div><div class="ttdoc">ファイルシステム関連の型や定数を定義する名前空間</div><div class="ttdef"><b>Definition:</b> type.cpp:4</div></div>
 <div class="ttc" id="anamespacefileSystem_html_acaf1fdc2b37b2cb6615d4cdc55020e5f"><div class="ttname"><a href="namespacefileSystem.html#acaf1fdc2b37b2cb6615d4cdc55020e5f">fileSystem::Path</a></div><div class="ttdeci">std::filesystem::path Path</div><div class="ttdoc">ファイルパス型の別名</div><div class="ttdef"><b>Definition:</b> commonType.hpp:44</div></div>
