@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="fileDriver::FileReader\l\< DataType \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfileDriver_1_1FileReader.html",tooltip="ファイル読み込みの抽象基底クラス"];
+  Node0 [label="ElementPtr\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classElementPtr.html",tooltip=" "];
 }

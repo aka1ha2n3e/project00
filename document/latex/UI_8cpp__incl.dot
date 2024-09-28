@@ -14,4 +14,6 @@ digraph "src/UI.cpp"
   Node5 [label="filesystem",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
   Node6 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="libwrap/LibWrapper.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LibWrapper_8hpp.html",tooltip=" "];
 }

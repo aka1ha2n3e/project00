@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="input::EncodedKey",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classinput_1_1EncodedKey.html",tooltip=" "];
+  Node0 [label="fileSystem::FileContents\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfileSystem_1_1FileContents.html",tooltip=" "];
 }

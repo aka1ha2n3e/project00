@@ -67,7 +67,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">Command.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -76,6 +77,8 @@ $(function() {
 <code>#include &quot;<a class="el" href="commonType_8hpp_source.html">common/commonType.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="InputData_8hpp_source.html">input/InputData.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="generalType_8hpp_source.html">common/generalType.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Logger_8hpp_source.html">logging/Logger.hpp</a>&quot;</code><br />
+<code>#include &lt;optional&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Command.hpp:</div>
 <div class="dyncontent">
@@ -97,15 +100,28 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommand_1_1MoveCursorCommand.html">command::MoveCursorCommand</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommand_1_1InsertTextCommand.html">command::InsertTextCommand</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommand_1_1InsertModeCommand.html">command::InsertModeCommand</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommand_1_1DeleteTextCommand.html">command::DeleteTextCommand</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommand_1_1CommandBuilder.html">command::CommandBuilder</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacecommand"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecommand.html">command</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a0b9114da8bac4b6dfacd37139c026b37"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecommand.html#a0b9114da8bac4b6dfacd37139c026b37">command::EDIT_MODE</a> { <br />
+&#160;&#160;<a class="el" href="namespacecommand.html#a0b9114da8bac4b6dfacd37139c026b37a1e23852820b9154316c7c06e2b7ba051">command::NORMAL</a>
+, <a class="el" href="namespacecommand.html#a0b9114da8bac4b6dfacd37139c026b37a61ee777e7f71dc466c3b2c685d8d313b">command::INSERT</a>
+, <a class="el" href="namespacecommand.html#a0b9114da8bac4b6dfacd37139c026b37a8daf3496602a64f00b16ce266e7084dc">command::VISUAL</a>
+, <a class="el" href="namespacecommand.html#a0b9114da8bac4b6dfacd37139c026b37aee86602a23e7a9a5136f6b2138894aa5">command::LINUX</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacecommand.html#a0b9114da8bac4b6dfacd37139c026b37ad273a0465c8fbfd111aae706cdf9ec20">command::WINDOWS</a>
+<br />
+ }</td></tr>
+<tr class="separator:a0b9114da8bac4b6dfacd37139c026b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

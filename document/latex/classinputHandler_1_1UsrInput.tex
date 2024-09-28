@@ -9,22 +9,31 @@
 
 {\ttfamily \#include $<$Input\+Handler.\+hpp$>$}
 
+
+
+Collaboration diagram for input\+Handler\+::Usr\+Input\+:
+% FIG 0
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-auto \mbox{\hyperlink{classinputHandler_1_1UsrInput_a8593020ca4886c412195469efbfe208f}{Input\+Key}} () -\/$>$ \mbox{\hyperlink{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}{text\+Editor\+::\+Key}}
+auto \mbox{\hyperlink{classinputHandler_1_1UsrInput_ab80bbf0fae7da83b4f24efb59f925eb0}{Input\+Text}} () -\/$>$ \mbox{\hyperlink{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}{text\+Editor\+::\+Key}}
 \begin{DoxyCompactList}\small\item\em キー入力を受け取るメソッド \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classinputHandler_1_1NcursesInputAdapter}{Ncurses\+Input\+Adapter}} \mbox{\hyperlink{classinputHandler_1_1UsrInput_abc6ebc8b5fcc89e01d6e5656153448a6}{Parse}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 ユーザー入力を処理するクラス 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classinputHandler_1_1UsrInput_a8593020ca4886c412195469efbfe208f}\label{classinputHandler_1_1UsrInput_a8593020ca4886c412195469efbfe208f}} 
-\index{inputHandler::UsrInput@{inputHandler::UsrInput}!InputKey@{InputKey}}
-\index{InputKey@{InputKey}!inputHandler::UsrInput@{inputHandler::UsrInput}}
-\doxysubsubsection{\texorpdfstring{InputKey()}{InputKey()}}
-{\footnotesize\ttfamily auto input\+Handler\+::\+Usr\+Input\+::\+Input\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}{text\+Editor\+::\+Key}}}
+\mbox{\Hypertarget{classinputHandler_1_1UsrInput_ab80bbf0fae7da83b4f24efb59f925eb0}\label{classinputHandler_1_1UsrInput_ab80bbf0fae7da83b4f24efb59f925eb0}} 
+\index{inputHandler::UsrInput@{inputHandler::UsrInput}!InputText@{InputText}}
+\index{InputText@{InputText}!inputHandler::UsrInput@{inputHandler::UsrInput}}
+\doxysubsubsection{\texorpdfstring{InputText()}{InputText()}}
+{\footnotesize\ttfamily auto input\+Handler\+::\+Usr\+Input\+::\+Input\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}{text\+Editor\+::\+Key}}}
 
 
 
@@ -33,6 +42,15 @@ auto \mbox{\hyperlink{classinputHandler_1_1UsrInput_a8593020ca4886c412195469efbf
 \begin{DoxyReturn}{Returns}
 入力されたキー 
 \end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classinputHandler_1_1UsrInput_abc6ebc8b5fcc89e01d6e5656153448a6}\label{classinputHandler_1_1UsrInput_abc6ebc8b5fcc89e01d6e5656153448a6}} 
+\index{inputHandler::UsrInput@{inputHandler::UsrInput}!Parse@{Parse}}
+\index{Parse@{Parse}!inputHandler::UsrInput@{inputHandler::UsrInput}}
+\doxysubsubsection{\texorpdfstring{Parse}{Parse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classinputHandler_1_1NcursesInputAdapter}{Ncurses\+Input\+Adapter}} input\+Handler\+::\+Usr\+Input\+::\+Parse}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

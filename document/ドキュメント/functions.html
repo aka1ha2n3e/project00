@@ -97,6 +97,9 @@ $(function() {
 <li>BrowseIterator()
 : <a class="el" href="classiterator_1_1BrowseIterator.html#a948fb91137e7f56e4ce52041479b6036">iterator::BrowseIterator&lt; Item &gt;</a>
 </li>
+<li>build()
+: <a class="el" href="classcommand_1_1CommandBuilder.html#af4caf13430843894f03aefdb62d89f08">command::CommandBuilder</a>
+</li>
 </ul>
 
 
@@ -117,15 +120,12 @@ $(function() {
 <li>contents
 : <a class="el" href="classfileSystem_1_1TxtFile.html#a6e839ba33bc12bcbcc9a123016231bb1">fileSystem::TxtFile</a>
 </li>
-<li>ContextPtr()
-: <a class="el" href="classContextPtr.html#a8be34bf3c0b349ec6301eabf05f7a542">ContextPtr&lt; T &gt;</a>
+<li>ContextPtr
+: <a class="el" href="classContextPtr.html#a8a48d4d01ac521679cd91120524eca6d">ContextPtr&lt; T &gt;</a>
 </li>
 <li>ConvertToEncodedKey()
 : <a class="el" href="classinputHandler_1_1InputAdapter.html#a7ae12033b119bc8eefe53296cec9ccf9">inputHandler::InputAdapter</a>
 , <a class="el" href="classinputHandler_1_1NcursesInputAdapter.html#a47907ea3b8440eb6738db6b03c2f5b29">inputHandler::NcursesInputAdapter</a>
-</li>
-<li>Create()
-: <a class="el" href="classContextPtr.html#aba426bc6d63a6e83ac7e84eaa66211a0">ContextPtr&lt; T &gt;</a>
 </li>
 <li>CreateFileReader()
 : <a class="el" href="classfileIO_1_1FileIO.html#a1d2093c66b7cab407fc29f398f28a265">fileIO::FileIO</a>
@@ -165,9 +165,6 @@ $(function() {
 <li>DeleteText()
 : <a class="el" href="classtextEditor_1_1TextBuffer.html#a1216c85410eb08cbcb7a96a8ecc1ea1c">textEditor::TextBuffer</a>
 </li>
-<li>DeleteTextCommand()
-: <a class="el" href="classcommand_1_1DeleteTextCommand.html#a47642c7dbcba202beb0d67255bc46d93">command::DeleteTextCommand</a>
-</li>
 <li>display()
 : <a class="el" href="classSample.html#a55cf9155379a342675e8b7754ff55f4d">Sample</a>
 </li>
@@ -202,8 +199,7 @@ $(function() {
 </li>
 <li>Execute()
 : <a class="el" href="classcommand_1_1Command.html#a962387c6d0b2541163591236f7e25567">command::Command</a>
-, <a class="el" href="classcommand_1_1DeleteTextCommand.html#ab4d336119bf987d111042b7db966c6bd">command::DeleteTextCommand</a>
-, <a class="el" href="classcommand_1_1InsertTextCommand.html#abb992e3c5f4fc814cdd745faf5dc3be5">command::InsertTextCommand</a>
+, <a class="el" href="classcommand_1_1InsertModeCommand.html#ac98802e34a9ba6c8b3562d7b9edcd2a3">command::InsertModeCommand</a>
 , <a class="el" href="classcommand_1_1MoveCursorCommand.html#a8229761726c1f583448b30788ff66a99">command::MoveCursorCommand</a>
 </li>
 <li>ExecuteCommand()
@@ -245,6 +241,9 @@ $(function() {
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>GetCode()
 : <a class="el" href="classinput_1_1EncodedKey.html#aa51a199953052f4ae004500cd0ce74be">input::EncodedKey</a>
+</li>
+<li>GetCurrentMode()
+: <a class="el" href="classstate_1_1StateEditorManager.html#abdde403059e7f8b0e1837d39772e93c5">state::StateEditorManager</a>
 </li>
 <li>GetCursorPosition()
 : <a class="el" href="classtextEditor_1_1TextBuffer.html#a9bc7c01d82e75a7a7821bcf7598441e2">textEditor::TextBuffer</a>
@@ -291,20 +290,20 @@ $(function() {
 <li>input
 : <a class="el" href="classApplicationManager_1_1ApplicationManager.html#a69d44bb8d1a4e999488c278cfb81c37a">ApplicationManager::ApplicationManager</a>
 </li>
-<li>InputKey()
-: <a class="el" href="classinputHandler_1_1UsrInput.html#a8593020ca4886c412195469efbfe208f">inputHandler::UsrInput</a>
-</li>
 <li>InputManager()
 : <a class="el" href="classinputManager_1_1InputManager.html#a5702c1f320a2f5febcc130279dd5447d">inputManager::InputManager</a>
 </li>
 <li>InputParser()
 : <a class="el" href="classinputHandler_1_1InputAdapter.html#a6c0bb106c80ed65c5dee547991d09e23">inputHandler::InputAdapter</a>
 </li>
+<li>InputText()
+: <a class="el" href="classinputHandler_1_1UsrInput.html#ab80bbf0fae7da83b4f24efb59f925eb0">inputHandler::UsrInput</a>
+</li>
+<li>InsertModeCommand()
+: <a class="el" href="classcommand_1_1InsertModeCommand.html#a45c2ca223745f5444adfcdfa86e131b6">command::InsertModeCommand</a>
+</li>
 <li>InsertText()
 : <a class="el" href="classtextEditor_1_1TextBuffer.html#a35b843676f1d606b4994b5f77eeb71ce">textEditor::TextBuffer</a>
-</li>
-<li>InsertTextCommand()
-: <a class="el" href="classcommand_1_1InsertTextCommand.html#a26434eb0953543523cabc6e719d6e1f2">command::InsertTextCommand</a>
 </li>
 <li>Iterator()
 : <a class="el" href="classiterator_1_1Iterator.html#afe66a0a3d474d157f82a47d522bd8dbc">iterator::Iterator&lt; Item &gt;</a>
@@ -358,15 +357,21 @@ $(function() {
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
+<li>operator bool()
+: <a class="el" href="classContextPtr.html#a265dfefff594d243ffeb25e78bafd488">ContextPtr&lt; T &gt;</a>
+</li>
 <li>operator!=()
 : <a class="el" href="classinput_1_1EncodedKey.html#ad8e5ed6a549e251bfd12a030cfa23ad0">input::EncodedKey</a>
 </li>
+<li>operator*()
+: <a class="el" href="classContextPtr.html#a784209347f13b1a8da3c759f2a0789a8">ContextPtr&lt; T &gt;</a>
+</li>
 <li>operator-&gt;()
-: <a class="el" href="classContextPtr.html#ae68c14cb7a7f550725d9dafbb500441d">ContextPtr&lt; T &gt;</a>
+: <a class="el" href="classContextPtr.html#ac0413c251149e8dbaeebeb3b25c0dee7">ContextPtr&lt; T &gt;</a>
 , <a class="el" href="classElementPtr.html#a7bd0e22799259a384c7193d5f68a182c">ElementPtr&lt; T &gt;</a>
 </li>
 <li>operator=()
-: <a class="el" href="classContextPtr.html#a539b89a70e6a61bc9717248def18f0f5">ContextPtr&lt; T &gt;</a>
+: <a class="el" href="classContextPtr.html#a9de6e7f01ae908cbb85ec7056b64c51c">ContextPtr&lt; T &gt;</a>
 </li>
 <li>operator==()
 : <a class="el" href="classinput_1_1EncodedKey.html#ac55fc54e16de4ace9734806d2d207750">input::EncodedKey</a>
@@ -378,6 +383,9 @@ $(function() {
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
+<li>Parse
+: <a class="el" href="classinputHandler_1_1UsrInput.html#abc6ebc8b5fcc89e01d6e5656153448a6">inputHandler::UsrInput</a>
+</li>
 <li>path
 : <a class="el" href="classfileSystem_1_1FileContents.html#a725a56c2d8fef136a5ca0e56bec8784a">fileSystem::FileContents&lt; T &gt;</a>
 </li>
@@ -401,7 +409,12 @@ $(function() {
 : <a class="el" href="classfileDriver_1_1FileReader.html#a273aac9456a0cfd1059d6b47633dc2e6">fileDriver::FileReader&lt; DataType &gt;</a>
 </li>
 <li>Redo()
-: <a class="el" href="classcommand_1_1CommandManager.html#a1420df0221bf1bad5487511aaccc41e9">command::CommandManager</a>
+: <a class="el" href="classcommand_1_1Command.html#a689092d680cca1040648323a772e5bbb">command::Command</a>
+, <a class="el" href="classcommand_1_1CommandManager.html#a1420df0221bf1bad5487511aaccc41e9">command::CommandManager</a>
+, <a class="el" href="classcommand_1_1InsertModeCommand.html#a8c6e150a9118985b93da01e9eaadaea7">command::InsertModeCommand</a>
+</li>
+<li>reset()
+: <a class="el" href="classContextPtr.html#a21daa0141b3d2057205a224184a7a1c2">ContextPtr&lt; T &gt;</a>
 </li>
 <li>Retreat()
 : <a class="el" href="classiterator_1_1Iterator.html#afb4def289e88d45c0a0b9248ebe87d83">iterator::Iterator&lt; Item &gt;</a>
@@ -411,7 +424,7 @@ $(function() {
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>Sample()
-: <a class="el" href="classSample.html#a48a4cf559a1ff65b7d4776c262236e27">Sample</a>
+: <a class="el" href="classSample.html#a1138f57d3e5b78055c9f6225b3474aa1">Sample</a>
 </li>
 <li>SaveFile()
 : <a class="el" href="classfileDriver_1_1FileWriter.html#a20d0f16ec4c762a3eec1f012b4d9fda6">fileDriver::FileWriter&lt; DataType &gt;</a>
@@ -419,11 +432,17 @@ $(function() {
 <li>SetAlt()
 : <a class="el" href="classinput_1_1EncodedKey.html#a5248685a0ac2bccbd98efe8ec35c4aca">input::EncodedKey</a>
 </li>
+<li>SetBuffer()
+: <a class="el" href="classcommand_1_1CommandBuilder.html#a78b59fb601479b9ae6a7b2ac9f9a8d09">command::CommandBuilder</a>
+</li>
 <li>SetCtrl()
 : <a class="el" href="classinput_1_1EncodedKey.html#abc0bd24595e84089ad48cea38cb169d9">input::EncodedKey</a>
 </li>
 <li>SetErrorCallback()
 : <a class="el" href="classutil_1_1Stack.html#a67ebc9a024e2b4eb371c6295c6e9460d">util::Stack&lt; T &gt;</a>
+</li>
+<li>SetKey()
+: <a class="el" href="classcommand_1_1CommandBuilder.html#a8a45c9abb6f3fee8b78b379ea90b2381">command::CommandBuilder</a>
 </li>
 <li>SetKeyCode()
 : <a class="el" href="classinput_1_1EncodedKey.html#af4888feee73e49f16245fd5c410b4a2f">input::EncodedKey</a>
@@ -434,9 +453,18 @@ $(function() {
 <li>SetMeta()
 : <a class="el" href="classinput_1_1EncodedKey.html#a3f82cc497d20307089b0ed1c22019670">input::EncodedKey</a>
 </li>
+<li>SetMode()
+: <a class="el" href="classcommand_1_1CommandBuilder.html#adc1771a47880ca6c1d0b36edfb0d7256">command::CommandBuilder</a>
+</li>
 <li>SetPtr()
 : <a class="el" href="classContextPtr.html#a7cde6f00672cdd0fdd7b8e3515ed5144">ContextPtr&lt; T &gt;</a>
 , <a class="el" href="classElementPtr.html#ad6c4740b85c611143392a7891be847d4">ElementPtr&lt; T &gt;</a>
+</li>
+<li>SetSelectionEnd()
+: <a class="el" href="classcommand_1_1CommandBuilder.html#a063a29f88e443a77076dd49e2c42f0fc">command::CommandBuilder</a>
+</li>
+<li>SetSelectionStart()
+: <a class="el" href="classcommand_1_1CommandBuilder.html#ad30f66cb53288a61ad844758f0ecb40a">command::CommandBuilder</a>
 </li>
 <li>SetShift()
 : <a class="el" href="classinput_1_1EncodedKey.html#ae12ce6938e935874ac486f9ef8c803cb">input::EncodedKey</a>
@@ -461,7 +489,10 @@ $(function() {
 : <a class="el" href="classtextEditor_1_1TextBuffer.html#a37dca66e69e5475d87ff11b0a12dc341">textEditor::TextBuffer</a>
 </li>
 <li>Top()
-: <a class="el" href="classutil_1_1Stack.html#a5d16ae2a16c2e094dc0440329cdbdc35">util::Stack&lt; T &gt;</a>
+: <a class="el" href="classutil_1_1Stack.html#a759a326bd3d83705be9bc0eb78e367c0">util::Stack&lt; T &gt;</a>
+</li>
+<li>TranslateState()
+: <a class="el" href="classstate_1_1StateEditorManager.html#a8486929cb8c327058b947b14c41ef10b">state::StateEditorManager</a>
 </li>
 <li>type
 : <a class="el" href="structshortcuts_1_1ShortcutMapping.html#aad498d7c791110b05a7be0a7ac108047">shortcuts::ShortcutMapping</a>
@@ -473,8 +504,7 @@ $(function() {
 <li>Undo()
 : <a class="el" href="classcommand_1_1Command.html#a0d8de8a635b176bbdbec81b2ecac0fab">command::Command</a>
 , <a class="el" href="classcommand_1_1CommandManager.html#a909a5e9ad9e7c1b05e14b04027352616">command::CommandManager</a>
-, <a class="el" href="classcommand_1_1DeleteTextCommand.html#a8f070009d6d37137053ba6280f5ff760">command::DeleteTextCommand</a>
-, <a class="el" href="classcommand_1_1InsertTextCommand.html#a4d2a74d445a49d31733b4bab7de744cc">command::InsertTextCommand</a>
+, <a class="el" href="classcommand_1_1InsertModeCommand.html#a8cedccd63b6dc6ea14f54e2afd97662a">command::InsertModeCommand</a>
 , <a class="el" href="classcommand_1_1MoveCursorCommand.html#aeb2485e30f42e77cbe3d2a171171799c">command::MoveCursorCommand</a>
 </li>
 </ul>
