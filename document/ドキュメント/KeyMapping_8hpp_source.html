@@ -75,34 +75,89 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define KEY_MAPPING_HPP</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="commonType_8hpp.html">commonType.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="commonType_8hpp.html">common/commonType.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespaceinput.html">    9</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceinput.html">input</a> {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceinput.html">input</a> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6">   11</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6">KeyAction</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classinput_1_1KeyMapping.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classinput_1_1KeyMapping.html">KeyMapping</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6af684bf05fa3e81528c84d1d281d839f1">TAB</a>,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a46afff2b309b8b16a46d812172a9235c">SHIFT</a>,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a32f7eee2581c72a5561c21df3013a89a">CTRL</a>,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6adfbfc9cc7a235560f04cb1a5faf1ec3e">ALT</a>,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classinput_1_1NcursesKeyMapping.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classinput_1_1NcursesKeyMapping.html">NcursesKeyMapping</a> : <span class="keyword">public</span> <a class="code" href="classinput_1_1KeyMapping.html">KeyMapping</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6adc8f31aaeae8c1dea6bdf96207f925c7">SHIFT_TAB</a>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ab99320973a4dd4f1f442037248dcaf8f">CTRL_SHIFT</a>,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a8e2421b55ac77eab6f4eb4aa61f36420">ALT_SHIFT</a>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a61ee777e7f71dc466c3b2c685d8d313b">INSERT</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a32f68a60cef40faedbc6af20298c1a1e">DELETE</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a710533dd879dd1202e5c73b27705bf02">HOME</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ab1a326c06d88bf042f73d70f50197905">END</a>,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;} <span class="comment">// namespace input</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ae791d936f894ce58dd18bf603edcb9b4">PAGE_UP</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ae9a23c5ce3d34b40123d65ca14b2e88f">PAGE_DOWN</a>,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// KEY_MAPPING_HPP</span></div>
-<div class="ttc" id="aclassinput_1_1KeyMapping_html"><div class="ttname"><a href="classinput_1_1KeyMapping.html">input::KeyMapping</a></div><div class="ttdef"><b>Definition:</b> KeyMapping.hpp:14</div></div>
-<div class="ttc" id="aclassinput_1_1NcursesKeyMapping_html"><div class="ttname"><a href="classinput_1_1NcursesKeyMapping.html">input::NcursesKeyMapping</a></div><div class="ttdef"><b>Definition:</b> KeyMapping.hpp:20</div></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6afbaedde498cdead4f2780217646e9ba1">UP</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ac4e0e4e3118472beeb2ae75827450f1f">DOWN</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a684d325a7303f52e64011467ff5c5758">LEFT</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a21507b40c80068eda19865706fdc2403">RIGHT</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a6f5d8e41084b4d3d47fa621c459eede1">BACKSPACE</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a331b3100a485d8cacff1d3df8e9b0c13">ENTER</a>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6adaaedac409335b869929ea43fa44be5d">ESCAPE</a>,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a6506ae39fdca9845e3a6de3865183e57">SPACE</a>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a76a0b98529ccb887fef7c6d484cda8a8">BACK_SLASH</a>,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a61827a0ec62ffa29bfcd015230dc8600">FORWARD_SLASH</a>,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a1e23852820b9154316c7c06e2b7ba051">NORMAL</a>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classinput_1_1KeyMapping.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classinput_1_1KeyMapping.html">KeyMapping</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classinput_1_1NcursesKeyMapping.html">   51</a></span>&#160;<span class="keyword">class </span><a class="code" href="classinput_1_1NcursesKeyMapping.html">NcursesKeyMapping</a> : <span class="keyword">public</span> <a class="code" href="classinput_1_1KeyMapping.html">KeyMapping</a> {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace input</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// KEY_MAPPING_HPP</span></div>
+<div class="ttc" id="aclassinput_1_1KeyMapping_html"><div class="ttname"><a href="classinput_1_1KeyMapping.html">input::KeyMapping</a></div><div class="ttdef"><b>Definition:</b> KeyMapping.hpp:45</div></div>
+<div class="ttc" id="aclassinput_1_1NcursesKeyMapping_html"><div class="ttname"><a href="classinput_1_1NcursesKeyMapping.html">input::NcursesKeyMapping</a></div><div class="ttdef"><b>Definition:</b> KeyMapping.hpp:51</div></div>
 <div class="ttc" id="acommonType_8hpp_html"><div class="ttname"><a href="commonType_8hpp.html">commonType.hpp</a></div></div>
-<div class="ttc" id="anamespaceinput_html"><div class="ttname"><a href="namespaceinput.html">input</a></div><div class="ttdef"><b>Definition:</b> KeyMapping.hpp:9</div></div>
+<div class="ttc" id="anamespaceinput_html"><div class="ttname"><a href="namespaceinput.html">input</a></div><div class="ttdef"><b>Definition:</b> InputData.cpp:3</div></div>
 <div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6">input::KeyAction</a></div><div class="ttdeci">KeyAction</div><div class="ttdef"><b>Definition:</b> KeyMapping.hpp:11</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a1e23852820b9154316c7c06e2b7ba051"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a1e23852820b9154316c7c06e2b7ba051">input::KeyAction::NORMAL</a></div><div class="ttdeci">@ NORMAL</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a21507b40c80068eda19865706fdc2403"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a21507b40c80068eda19865706fdc2403">input::KeyAction::RIGHT</a></div><div class="ttdeci">@ RIGHT</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a32f68a60cef40faedbc6af20298c1a1e"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a32f68a60cef40faedbc6af20298c1a1e">input::KeyAction::DELETE</a></div><div class="ttdeci">@ DELETE</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a32f7eee2581c72a5561c21df3013a89a"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a32f7eee2581c72a5561c21df3013a89a">input::KeyAction::CTRL</a></div><div class="ttdeci">@ CTRL</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a331b3100a485d8cacff1d3df8e9b0c13"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a331b3100a485d8cacff1d3df8e9b0c13">input::KeyAction::ENTER</a></div><div class="ttdeci">@ ENTER</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a46afff2b309b8b16a46d812172a9235c"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a46afff2b309b8b16a46d812172a9235c">input::KeyAction::SHIFT</a></div><div class="ttdeci">@ SHIFT</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a61827a0ec62ffa29bfcd015230dc8600"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a61827a0ec62ffa29bfcd015230dc8600">input::KeyAction::FORWARD_SLASH</a></div><div class="ttdeci">@ FORWARD_SLASH</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a61ee777e7f71dc466c3b2c685d8d313b"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a61ee777e7f71dc466c3b2c685d8d313b">input::KeyAction::INSERT</a></div><div class="ttdeci">@ INSERT</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a6506ae39fdca9845e3a6de3865183e57"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a6506ae39fdca9845e3a6de3865183e57">input::KeyAction::SPACE</a></div><div class="ttdeci">@ SPACE</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a684d325a7303f52e64011467ff5c5758"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a684d325a7303f52e64011467ff5c5758">input::KeyAction::LEFT</a></div><div class="ttdeci">@ LEFT</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a6f5d8e41084b4d3d47fa621c459eede1"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a6f5d8e41084b4d3d47fa621c459eede1">input::KeyAction::BACKSPACE</a></div><div class="ttdeci">@ BACKSPACE</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a710533dd879dd1202e5c73b27705bf02"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a710533dd879dd1202e5c73b27705bf02">input::KeyAction::HOME</a></div><div class="ttdeci">@ HOME</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a76a0b98529ccb887fef7c6d484cda8a8"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a76a0b98529ccb887fef7c6d484cda8a8">input::KeyAction::BACK_SLASH</a></div><div class="ttdeci">@ BACK_SLASH</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6a8e2421b55ac77eab6f4eb4aa61f36420"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a8e2421b55ac77eab6f4eb4aa61f36420">input::KeyAction::ALT_SHIFT</a></div><div class="ttdeci">@ ALT_SHIFT</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6ab1a326c06d88bf042f73d70f50197905"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ab1a326c06d88bf042f73d70f50197905">input::KeyAction::END</a></div><div class="ttdeci">@ END</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6ab99320973a4dd4f1f442037248dcaf8f"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ab99320973a4dd4f1f442037248dcaf8f">input::KeyAction::CTRL_SHIFT</a></div><div class="ttdeci">@ CTRL_SHIFT</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6ac4e0e4e3118472beeb2ae75827450f1f"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ac4e0e4e3118472beeb2ae75827450f1f">input::KeyAction::DOWN</a></div><div class="ttdeci">@ DOWN</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6adaaedac409335b869929ea43fa44be5d"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6adaaedac409335b869929ea43fa44be5d">input::KeyAction::ESCAPE</a></div><div class="ttdeci">@ ESCAPE</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6adc8f31aaeae8c1dea6bdf96207f925c7"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6adc8f31aaeae8c1dea6bdf96207f925c7">input::KeyAction::SHIFT_TAB</a></div><div class="ttdeci">@ SHIFT_TAB</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6adfbfc9cc7a235560f04cb1a5faf1ec3e"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6adfbfc9cc7a235560f04cb1a5faf1ec3e">input::KeyAction::ALT</a></div><div class="ttdeci">@ ALT</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6ae791d936f894ce58dd18bf603edcb9b4"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ae791d936f894ce58dd18bf603edcb9b4">input::KeyAction::PAGE_UP</a></div><div class="ttdeci">@ PAGE_UP</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6ae9a23c5ce3d34b40123d65ca14b2e88f"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ae9a23c5ce3d34b40123d65ca14b2e88f">input::KeyAction::PAGE_DOWN</a></div><div class="ttdeci">@ PAGE_DOWN</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6af684bf05fa3e81528c84d1d281d839f1"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6af684bf05fa3e81528c84d1d281d839f1">input::KeyAction::TAB</a></div><div class="ttdeci">@ TAB</div></div>
+<div class="ttc" id="anamespaceinput_html_a9b1b68944aa99486ff004ba71ca8d0c6afbaedde498cdead4f2780217646e9ba1"><div class="ttname"><a href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6afbaedde498cdead4f2780217646e9ba1">input::KeyAction::UP</a></div><div class="ttdeci">@ UP</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

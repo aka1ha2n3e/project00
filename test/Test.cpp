@@ -1,81 +1,79 @@
 #include <gtest/gtest.h>
-#include "sample.hpp"
+#include <gmock/gmock.h>
+#include "input/adapter/NcursesInputAdapter.hpp"
 #include "libwrap/UI.hpp"
+#include "input/InputData.hpp"
 
+using ::testing::Return;
+using ::testing::_;
 
-namespace ContextPtrTest {
-
-class ContextPtrTest : public ::testing::Test {
-protected:
-    void SetUp() override {
-    }
-
-    void TearDown() override {
-    }
+class MockNcursesUI : public UI::NcursesUI {
+public:
+    MOCK_METHOD(int, GetInput, (), (override));
 };
 
+// テスト用のNcursesInputAdapterクラス
+class TestNcursesInputAdapter : public inputHandler::NcursesInputAdapter {
+public:
+    TestNcursesInputAdapter(UI::NcursesUI& ui) : NcursesInputAdapter(ui) {}
+    using NcursesInputAdapter::FetchRawKey;
+    using NcursesInputAdapter::ConvertToEncodedKey;
+};
 
-/*
-*UIのテスト
-*/
-TEST_F(ContextPtrTest, ConstructorWithInstance) {
-    UI::NcursesUI ui;
+class NcursesInputAdapterTest : public ::testing::Test {
+protected:
+    MockNcursesUI mockUI;
+    TestNcursesInputAdapter adapter;
 
-    try {
-        // UI の初期化
-        ui.InitializeUI();
+    NcursesInputAdapterTest() : adapter(mockUI) {}
+};
 
-        // テキスト表示のテスト
-        ui.DisplayText("Press and hold a key to see it displayed", 10, 5);
-        ui.DisplayText("Press 'q' to quit", 10, 7);
+/* キー入力を変換するテスト */
+TEST_F(NcursesInputAdapterTest, ConvertToEncodedKeyTest) {
+    /* アルファベットのテスト */
+    auto encodedKey = adapter.ConvertToEncodedKey(UI::NcursesUI::FIRST_ALPHABET_KEY);
+    EXPECT_EQ(encodedKey.GetCode(), 0);
+    EXPECT_FALSE(encodedKey.CtrlPressed());
+    EXPECT_FALSE(encodedKey.ShiftPressed());
+    EXPECT_FALSE(encodedKey.AltPressed());
+    EXPECT_FALSE(encodedKey.MetaPressed());
 
-        int ch = 0;
-        std::string displayText;
-        auto lastKeyPressTime = std::chrono::steady_clock::now();
+    /* Ctrlキーのテスト */
+    encodedKey = adapter.ConvertToEncodedKey(UI::NcursesUI::FIRST_CTRL_KEY);
+    EXPECT_EQ(encodedKey.GetCode(), 0);
+    EXPECT_TRUE(encodedKey.CtrlPressed());
+    EXPECT_FALSE(encodedKey.ShiftPressed());
+    EXPECT_FALSE(encodedKey.AltPressed());
+    EXPECT_FALSE(encodedKey.MetaPressed());
 
-        while (true) {
-            auto now = std::chrono::steady_clock::now();
-            auto timeSinceLastKeyPress = std::chrono::duration_cast<std::chrono::milliseconds>(now - lastKeyPressTime).count();
-
-            int newCh = ui.GetInput();
-            if (newCh != ERR) {  // 新しい入力がある場合
-                ch = newCh;
-                lastKeyPressTime = now;
-                if (ch == 'q' || ch == 'Q') {
-                    break;
-                }
-                displayText = "Key pressed: " + std::to_string(ch);
-            } 
-
-            ui.ClearScreen();
-            ui.DisplayText("Press and hold a key to see it displayed", 10, 5);
-            ui.DisplayText("Press 'q' to quit", 10, 7);
-            if (!displayText.empty()) {
-                ui.DisplayText(displayText, 10, 9);
-            }
-
-        }
-
-        // UI の終了処理
-        ui.FinalizeUI();
-    }
-    catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-        ui.FinalizeUI();
-    }
-
+    /* Shiftキーのテスト */
+    encodedKey = adapter.ConvertToEncodedKey(UI::NcursesUI::FIRST_SHIFT_KEY);
+    EXPECT_EQ(encodedKey.GetCode(), 0);
+    EXPECT_FALSE(encodedKey.CtrlPressed());
+    EXPECT_TRUE(encodedKey.ShiftPressed());
+    EXPECT_FALSE(encodedKey.AltPressed());
+    EXPECT_FALSE(encodedKey.MetaPressed());
 }
 
-} // namespace ContextPtrTest
+
+/* キー入力を取得するテスト */
+TEST_F(NcursesInputAdapterTest, FetchRawKeyTest) {
+    EXPECT_CALL(mockUI, GetInput())
+        .WillOnce(Return(UI::NcursesUI::FIRST_ALPHABET_KEY))  // 'a'
+        .WillOnce(Return(UI::NcursesUI::FIRST_CTRL_KEY))      // Ctrl+A
+        .WillOnce(Return(UI::NcursesUI::FIRST_SHIFT_KEY));    // Shift+A
+
+    auto encodedKey = adapter.FetchRawKey();
+    EXPECT_EQ(encodedKey, UI::NcursesUI::FIRST_ALPHABET_KEY);
+
+    encodedKey = adapter.FetchRawKey();
+    EXPECT_EQ(encodedKey, UI::NcursesUI::FIRST_CTRL_KEY);
+
+    encodedKey = adapter.FetchRawKey();
+    EXPECT_EQ(encodedKey, UI::NcursesUI::FIRST_SHIFT_KEY);
+}
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
-    UI::UI sample;
-    sample.InitializeUI();
-    while (true) {
-    int ch = sample.GetInput();
-        if (ch == 'q') break;
-    }
-    sample.FinalizeUI();
     return RUN_ALL_TESTS();
 }

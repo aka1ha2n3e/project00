@@ -1,0 +1,86 @@
+\hypertarget{classinputHandler_1_1NcursesInputAdapter}{}\doxysection{input\+Handler\+::Ncurses\+Input\+Adapter Class Reference}
+\label{classinputHandler_1_1NcursesInputAdapter}\index{inputHandler::NcursesInputAdapter@{inputHandler::NcursesInputAdapter}}
+
+
+{\ttfamily \#include $<$Ncurses\+Input\+Adapter.\+hpp$>$}
+
+
+
+Inheritance diagram for input\+Handler\+::Ncurses\+Input\+Adapter\+:
+% FIG 0
+
+
+Collaboration diagram for input\+Handler\+::Ncurses\+Input\+Adapter\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classinputHandler_1_1NcursesInputAdapter_ac4d2f218849c2a86846683bd5fc3280c}{Ncurses\+Input\+Adapter}} (\mbox{\hyperlink{classUI_1_1NcursesUI}{UI\+::\+Ncurses\+UI}} \&ui)
+\item 
+\mbox{\hyperlink{classinputHandler_1_1NcursesInputAdapter_a38fdaee73990eaf9be9ded3cb61bf1ac}{$\sim$\+Ncurses\+Input\+Adapter}} () override=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+auto \mbox{\hyperlink{classinputHandler_1_1NcursesInputAdapter_a47907ea3b8440eb6738db6b03c2f5b29}{Convert\+To\+Encoded\+Key}} (\mbox{\hyperlink{namespaceinput_acdb7a5dc66186461a28f7f945847d2b9}{input\+::\+Raw\+Key}} Catch\+Num) -\/$>$ \mbox{\hyperlink{classinput_1_1EncodedKey}{input\+::\+Encoded\+Key}} override
+\begin{DoxyCompactList}\small\item\em 入力を受け取る純粋仮想関数 \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{classinputHandler_1_1NcursesInputAdapter_a6bb40bba8aca20b7aa2c3683cfff8ef5}{Fetch\+Raw\+Key}} () -\/$>$ \mbox{\hyperlink{namespaceinput_acdb7a5dc66186461a28f7f945847d2b9}{input\+::\+Raw\+Key}} override
+\begin{DoxyCompactList}\small\item\em 入力を受け取る純粋仮想関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classinputHandler_1_1NcursesInputAdapter_ac4d2f218849c2a86846683bd5fc3280c}\label{classinputHandler_1_1NcursesInputAdapter_ac4d2f218849c2a86846683bd5fc3280c}} 
+\index{inputHandler::NcursesInputAdapter@{inputHandler::NcursesInputAdapter}!NcursesInputAdapter@{NcursesInputAdapter}}
+\index{NcursesInputAdapter@{NcursesInputAdapter}!inputHandler::NcursesInputAdapter@{inputHandler::NcursesInputAdapter}}
+\doxysubsubsection{\texorpdfstring{NcursesInputAdapter()}{NcursesInputAdapter()}}
+{\footnotesize\ttfamily input\+Handler\+::\+Ncurses\+Input\+Adapter\+::\+Ncurses\+Input\+Adapter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUI_1_1NcursesUI}{UI\+::\+Ncurses\+UI}} \&}]{ui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classinputHandler_1_1NcursesInputAdapter_a38fdaee73990eaf9be9ded3cb61bf1ac}\label{classinputHandler_1_1NcursesInputAdapter_a38fdaee73990eaf9be9ded3cb61bf1ac}} 
+\index{inputHandler::NcursesInputAdapter@{inputHandler::NcursesInputAdapter}!````~NcursesInputAdapter@{$\sim$NcursesInputAdapter}}
+\index{````~NcursesInputAdapter@{$\sim$NcursesInputAdapter}!inputHandler::NcursesInputAdapter@{inputHandler::NcursesInputAdapter}}
+\doxysubsubsection{\texorpdfstring{$\sim$NcursesInputAdapter()}{~NcursesInputAdapter()}}
+{\footnotesize\ttfamily input\+Handler\+::\+Ncurses\+Input\+Adapter\+::$\sim$\+Ncurses\+Input\+Adapter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classinputHandler_1_1NcursesInputAdapter_a47907ea3b8440eb6738db6b03c2f5b29}\label{classinputHandler_1_1NcursesInputAdapter_a47907ea3b8440eb6738db6b03c2f5b29}} 
+\index{inputHandler::NcursesInputAdapter@{inputHandler::NcursesInputAdapter}!ConvertToEncodedKey@{ConvertToEncodedKey}}
+\index{ConvertToEncodedKey@{ConvertToEncodedKey}!inputHandler::NcursesInputAdapter@{inputHandler::NcursesInputAdapter}}
+\doxysubsubsection{\texorpdfstring{ConvertToEncodedKey()}{ConvertToEncodedKey()}}
+{\footnotesize\ttfamily auto input\+Handler\+::\+Ncurses\+Input\+Adapter\+::\+Convert\+To\+Encoded\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceinput_acdb7a5dc66186461a28f7f945847d2b9}{input\+::\+Raw\+Key}}}]{Catch\+Num }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{classinput_1_1EncodedKey}{input\+::\+Encoded\+Key}}\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+入力を受け取る純粋仮想関数 
+
+\begin{DoxyNote}{Note}
+関数は\+Fetch\+Raw\+Input()を呼び出して入力を受け取る 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classinputHandler_1_1InputAdapter_a7ae12033b119bc8eefe53296cec9ccf9}{input\+Handler\+::\+Input\+Adapter}}.
+
+\mbox{\Hypertarget{classinputHandler_1_1NcursesInputAdapter_a6bb40bba8aca20b7aa2c3683cfff8ef5}\label{classinputHandler_1_1NcursesInputAdapter_a6bb40bba8aca20b7aa2c3683cfff8ef5}} 
+\index{inputHandler::NcursesInputAdapter@{inputHandler::NcursesInputAdapter}!FetchRawKey@{FetchRawKey}}
+\index{FetchRawKey@{FetchRawKey}!inputHandler::NcursesInputAdapter@{inputHandler::NcursesInputAdapter}}
+\doxysubsubsection{\texorpdfstring{FetchRawKey()}{FetchRawKey()}}
+{\footnotesize\ttfamily auto input\+Handler\+::\+Ncurses\+Input\+Adapter\+::\+Fetch\+Raw\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  \mbox{\hyperlink{namespaceinput_acdb7a5dc66186461a28f7f945847d2b9}{input\+::\+Raw\+Key}}\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+入力を受け取る純粋仮想関数 
+
+\begin{DoxyNote}{Note}
+ライブラリの入力を受け取る 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classinputHandler_1_1InputAdapter_a7a6c6f0c89bd5d8216a3946e02d3ace9}{input\+Handler\+::\+Input\+Adapter}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/input/adapter/\mbox{\hyperlink{NcursesInputAdapter_8hpp}{Ncurses\+Input\+Adapter.\+hpp}}\item 
+src/\mbox{\hyperlink{InputHandler_8cpp}{Input\+Handler.\+cpp}}\end{DoxyCompactItemize}

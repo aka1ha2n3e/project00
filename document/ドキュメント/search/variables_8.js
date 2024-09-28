@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_429',['type',['../structshortcuts_1_1ShortcutMapping.html#aad498d7c791110b05a7be0a7ac108047',1,'shortcuts::ShortcutMapping']]]
+  ['range_5falphabet_504',['RANGE_ALPHABET',['../classUI_1_1NcursesUI.html#a29d4cfb543974a4df5bef44267a32813',1,'UI::NcursesUI']]]
 ];

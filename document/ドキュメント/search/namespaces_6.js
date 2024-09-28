@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['shortcuts_299',['shortcuts',['../namespaceshortcuts.html',1,'']]]
+  ['shortcuts_349',['shortcuts',['../namespaceshortcuts.html',1,'']]]
 ];

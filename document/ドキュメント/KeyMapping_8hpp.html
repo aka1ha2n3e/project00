@@ -74,11 +74,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;map&gt;</code><br />
-<code>#include &quot;<a class="el" href="commonType_8hpp_source.html">commonType.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="commonType_8hpp_source.html">common/commonType.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for KeyMapping.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="KeyMapping_8hpp__incl.png" border="0" usemap="#ainclude_2input_2KeyMapping_8hpp" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="KeyMapping_8hpp__dep__incl.png" border="0" usemap="#ainclude_2input_2KeyMapping_8hppdep" alt=""/></div>
 </div>
 </div>
 <p><a href="KeyMapping_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -97,7 +102,38 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a9b1b68944aa99486ff004ba71ca8d0c6"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6">input::KeyAction</a> </td></tr>
+<tr class="memitem:a9b1b68944aa99486ff004ba71ca8d0c6"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6">input::KeyAction</a> { <br />
+&#160;&#160;<a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6af684bf05fa3e81528c84d1d281d839f1">input::TAB</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a46afff2b309b8b16a46d812172a9235c">input::SHIFT</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a32f7eee2581c72a5561c21df3013a89a">input::CTRL</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6adfbfc9cc7a235560f04cb1a5faf1ec3e">input::ALT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6adc8f31aaeae8c1dea6bdf96207f925c7">input::SHIFT_TAB</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ab99320973a4dd4f1f442037248dcaf8f">input::CTRL_SHIFT</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a8e2421b55ac77eab6f4eb4aa61f36420">input::ALT_SHIFT</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a61ee777e7f71dc466c3b2c685d8d313b">input::INSERT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a32f68a60cef40faedbc6af20298c1a1e">input::DELETE</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a710533dd879dd1202e5c73b27705bf02">input::HOME</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ab1a326c06d88bf042f73d70f50197905">input::END</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ae791d936f894ce58dd18bf603edcb9b4">input::PAGE_UP</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ae9a23c5ce3d34b40123d65ca14b2e88f">input::PAGE_DOWN</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6afbaedde498cdead4f2780217646e9ba1">input::UP</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6ac4e0e4e3118472beeb2ae75827450f1f">input::DOWN</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a684d325a7303f52e64011467ff5c5758">input::LEFT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a21507b40c80068eda19865706fdc2403">input::RIGHT</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a6f5d8e41084b4d3d47fa621c459eede1">input::BACKSPACE</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a331b3100a485d8cacff1d3df8e9b0c13">input::ENTER</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6adaaedac409335b869929ea43fa44be5d">input::ESCAPE</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a6506ae39fdca9845e3a6de3865183e57">input::SPACE</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a76a0b98529ccb887fef7c6d484cda8a8">input::BACK_SLASH</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a61827a0ec62ffa29bfcd015230dc8600">input::FORWARD_SLASH</a>
+, <a class="el" href="namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6a1e23852820b9154316c7c06e2b7ba051">input::NORMAL</a>
+<br />
+ }</td></tr>
 <tr class="separator:a9b1b68944aa99486ff004ba71ca8d0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

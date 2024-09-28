@@ -4,11 +4,42 @@
 #define KEY_MAPPING_HPP
 
 #include <map>
-#include "commonType.hpp"
+#include "common/commonType.hpp"
 
 namespace input {
 
 enum class KeyAction {
+    TAB,
+    SHIFT,
+    CTRL,
+    ALT,
+
+    SHIFT_TAB,
+    CTRL_SHIFT,
+    ALT_SHIFT,
+
+    INSERT,
+    DELETE,
+    HOME,
+    END,
+
+    PAGE_UP,
+    PAGE_DOWN,
+
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT,
+
+    BACKSPACE,
+    ENTER,
+    ESCAPE,
+
+    SPACE,
+    BACK_SLASH,
+    FORWARD_SLASH,
+
+    NORMAL,
 };
 
 class KeyMapping {

@@ -28,8 +28,25 @@ auto \mbox{\hyperlink{classUI_1_1NcursesUI_afc3d67253ebaea58dcff61dd862b6cf8}{Cl
 \begin{DoxyCompactList}\small\item\em 画面をクリアする \end{DoxyCompactList}\item 
 auto \mbox{\hyperlink{classUI_1_1NcursesUI_afd7acc16829f3e52426525ce0cad57cb}{Display\+Text}} (const \mbox{\hyperlink{namespaceUI_a0080fba5cd4f3110c923a2332e958bac}{String}} \&text, \mbox{\hyperlink{namespaceUI_ad1020610fe737da5df29653c5f32201a}{Coordinate}} x\+Coord, \mbox{\hyperlink{namespaceUI_ad1020610fe737da5df29653c5f32201a}{Coordinate}} y\+Coord) -\/$>$ void override
 \begin{DoxyCompactList}\small\item\em 指定された位置にテキストを表示する \end{DoxyCompactList}\item 
-auto \mbox{\hyperlink{classUI_1_1NcursesUI_a1034326949b2711b773d8d946788c9b8}{Get\+Input}} () -\/$>$ int override
+auto \mbox{\hyperlink{classUI_1_1NcursesUI_a747800e9d9fc788a5c879a410a0d6f03}{Get\+Input}} () -\/$>$ \mbox{\hyperlink{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}{text\+Editor\+::\+Key}} override
 \begin{DoxyCompactList}\small\item\em ユーザーからの入力を取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{classUI_1_1NcursesUI_a29d4cfb543974a4df5bef44267a32813}{RANGE\+\_\+\+ALPHABET}} = 26
+\item 
+static constexpr int \mbox{\hyperlink{classUI_1_1NcursesUI_a3879fd8a2daf0982997fc87fb97ef648}{FIRST\+\_\+\+ALPHABET\+\_\+\+KEY}} = 97
+\item 
+static constexpr int \mbox{\hyperlink{classUI_1_1NcursesUI_af590bbac6f2d43115c4aafbe65570168}{END\+\_\+\+ALPHABET\+\_\+\+KEY}} = \mbox{\hyperlink{classUI_1_1NcursesUI_a3879fd8a2daf0982997fc87fb97ef648}{FIRST\+\_\+\+ALPHABET\+\_\+\+KEY}} + \mbox{\hyperlink{classUI_1_1NcursesUI_a29d4cfb543974a4df5bef44267a32813}{RANGE\+\_\+\+ALPHABET}}
+\item 
+static constexpr int \mbox{\hyperlink{classUI_1_1NcursesUI_a29027e9b1748dfd57e6929424a1de72d}{FIRST\+\_\+\+CTRL\+\_\+\+KEY}} = 1
+\item 
+static constexpr int \mbox{\hyperlink{classUI_1_1NcursesUI_a3c5cf38e2c06bcf4867b7cf643b32212}{END\+\_\+\+CTRL\+\_\+\+KEY}} = \mbox{\hyperlink{classUI_1_1NcursesUI_a29027e9b1748dfd57e6929424a1de72d}{FIRST\+\_\+\+CTRL\+\_\+\+KEY}} + \mbox{\hyperlink{classUI_1_1NcursesUI_a29d4cfb543974a4df5bef44267a32813}{RANGE\+\_\+\+ALPHABET}}
+\item 
+static constexpr int \mbox{\hyperlink{classUI_1_1NcursesUI_a9352a5c5ccffa3e0b597691b757d9810}{FIRST\+\_\+\+SHIFT\+\_\+\+KEY}} = 65
+\item 
+static constexpr int \mbox{\hyperlink{classUI_1_1NcursesUI_a1e43acc3fcc9525a7d7ea2464ff92107}{END\+\_\+\+SHIFT\+\_\+\+KEY}} = \mbox{\hyperlink{classUI_1_1NcursesUI_a9352a5c5ccffa3e0b597691b757d9810}{FIRST\+\_\+\+SHIFT\+\_\+\+KEY}} + \mbox{\hyperlink{classUI_1_1NcursesUI_a29d4cfb543974a4df5bef44267a32813}{RANGE\+\_\+\+ALPHABET}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -87,11 +104,11 @@ UIの終了処理を行う
 
 Implements \mbox{\hyperlink{classUI_1_1GeneralUI_a9b7e4ee95cb67c01a9b7f231502d9135}{UI\+::\+General\+UI}}.
 
-\mbox{\Hypertarget{classUI_1_1NcursesUI_a1034326949b2711b773d8d946788c9b8}\label{classUI_1_1NcursesUI_a1034326949b2711b773d8d946788c9b8}} 
+\mbox{\Hypertarget{classUI_1_1NcursesUI_a747800e9d9fc788a5c879a410a0d6f03}\label{classUI_1_1NcursesUI_a747800e9d9fc788a5c879a410a0d6f03}} 
 \index{UI::NcursesUI@{UI::NcursesUI}!GetInput@{GetInput}}
 \index{GetInput@{GetInput}!UI::NcursesUI@{UI::NcursesUI}}
 \doxysubsubsection{\texorpdfstring{GetInput()}{GetInput()}}
-{\footnotesize\ttfamily auto UI\+::\+Ncurses\+UI\+::\+Get\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ int\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily auto UI\+::\+Ncurses\+UI\+::\+Get\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ \mbox{\hyperlink{namespacetextEditor_ade3de5dab8e0c8cbcfb9bf305a51af4e}{text\+Editor\+::\+Key}}\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -112,7 +129,7 @@ Implements \mbox{\hyperlink{classUI_1_1GeneralUI_a9b7e4ee95cb67c01a9b7f231502d91
 \item[\mbox{\hyperlink{todo__todo000003}{Todo}}]キーマッピングを変更する \end{DoxyRefDesc}
 
 
-Implements \mbox{\hyperlink{classUI_1_1GeneralUI_a8194fea6f25c222169b2af5a5ba153fe}{UI\+::\+General\+UI}}.
+Implements \mbox{\hyperlink{classUI_1_1GeneralUI_ac811b88c74f52c0873e68abf8ccb6cd5}{UI\+::\+General\+UI}}.
 
 \mbox{\Hypertarget{classUI_1_1NcursesUI_ad6ee1733c6f6c1b17a52291c15b5cb55}\label{classUI_1_1NcursesUI_ad6ee1733c6f6c1b17a52291c15b5cb55}} 
 \index{UI::NcursesUI@{UI::NcursesUI}!InitializeUI@{InitializeUI}}
@@ -127,6 +144,51 @@ UIの初期化を行う
 
 
 Implements \mbox{\hyperlink{classUI_1_1GeneralUI_a1e8200892aa050b31b42731191a75a6f}{UI\+::\+General\+UI}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUI_1_1NcursesUI_af590bbac6f2d43115c4aafbe65570168}\label{classUI_1_1NcursesUI_af590bbac6f2d43115c4aafbe65570168}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!END\_ALPHABET\_KEY@{END\_ALPHABET\_KEY}}
+\index{END\_ALPHABET\_KEY@{END\_ALPHABET\_KEY}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{END\_ALPHABET\_KEY}{END\_ALPHABET\_KEY}}
+{\footnotesize\ttfamily constexpr int UI\+::\+Ncurses\+UI\+::\+END\+\_\+\+ALPHABET\+\_\+\+KEY = \mbox{\hyperlink{classUI_1_1NcursesUI_a3879fd8a2daf0982997fc87fb97ef648}{FIRST\+\_\+\+ALPHABET\+\_\+\+KEY}} + \mbox{\hyperlink{classUI_1_1NcursesUI_a29d4cfb543974a4df5bef44267a32813}{RANGE\+\_\+\+ALPHABET}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{classUI_1_1NcursesUI_a3c5cf38e2c06bcf4867b7cf643b32212}\label{classUI_1_1NcursesUI_a3c5cf38e2c06bcf4867b7cf643b32212}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!END\_CTRL\_KEY@{END\_CTRL\_KEY}}
+\index{END\_CTRL\_KEY@{END\_CTRL\_KEY}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{END\_CTRL\_KEY}{END\_CTRL\_KEY}}
+{\footnotesize\ttfamily constexpr int UI\+::\+Ncurses\+UI\+::\+END\+\_\+\+CTRL\+\_\+\+KEY = \mbox{\hyperlink{classUI_1_1NcursesUI_a29027e9b1748dfd57e6929424a1de72d}{FIRST\+\_\+\+CTRL\+\_\+\+KEY}} + \mbox{\hyperlink{classUI_1_1NcursesUI_a29d4cfb543974a4df5bef44267a32813}{RANGE\+\_\+\+ALPHABET}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{classUI_1_1NcursesUI_a1e43acc3fcc9525a7d7ea2464ff92107}\label{classUI_1_1NcursesUI_a1e43acc3fcc9525a7d7ea2464ff92107}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!END\_SHIFT\_KEY@{END\_SHIFT\_KEY}}
+\index{END\_SHIFT\_KEY@{END\_SHIFT\_KEY}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{END\_SHIFT\_KEY}{END\_SHIFT\_KEY}}
+{\footnotesize\ttfamily constexpr int UI\+::\+Ncurses\+UI\+::\+END\+\_\+\+SHIFT\+\_\+\+KEY = \mbox{\hyperlink{classUI_1_1NcursesUI_a9352a5c5ccffa3e0b597691b757d9810}{FIRST\+\_\+\+SHIFT\+\_\+\+KEY}} + \mbox{\hyperlink{classUI_1_1NcursesUI_a29d4cfb543974a4df5bef44267a32813}{RANGE\+\_\+\+ALPHABET}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{classUI_1_1NcursesUI_a3879fd8a2daf0982997fc87fb97ef648}\label{classUI_1_1NcursesUI_a3879fd8a2daf0982997fc87fb97ef648}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!FIRST\_ALPHABET\_KEY@{FIRST\_ALPHABET\_KEY}}
+\index{FIRST\_ALPHABET\_KEY@{FIRST\_ALPHABET\_KEY}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{FIRST\_ALPHABET\_KEY}{FIRST\_ALPHABET\_KEY}}
+{\footnotesize\ttfamily constexpr int UI\+::\+Ncurses\+UI\+::\+FIRST\+\_\+\+ALPHABET\+\_\+\+KEY = 97\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{classUI_1_1NcursesUI_a29027e9b1748dfd57e6929424a1de72d}\label{classUI_1_1NcursesUI_a29027e9b1748dfd57e6929424a1de72d}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!FIRST\_CTRL\_KEY@{FIRST\_CTRL\_KEY}}
+\index{FIRST\_CTRL\_KEY@{FIRST\_CTRL\_KEY}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{FIRST\_CTRL\_KEY}{FIRST\_CTRL\_KEY}}
+{\footnotesize\ttfamily constexpr int UI\+::\+Ncurses\+UI\+::\+FIRST\+\_\+\+CTRL\+\_\+\+KEY = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{classUI_1_1NcursesUI_a9352a5c5ccffa3e0b597691b757d9810}\label{classUI_1_1NcursesUI_a9352a5c5ccffa3e0b597691b757d9810}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!FIRST\_SHIFT\_KEY@{FIRST\_SHIFT\_KEY}}
+\index{FIRST\_SHIFT\_KEY@{FIRST\_SHIFT\_KEY}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{FIRST\_SHIFT\_KEY}{FIRST\_SHIFT\_KEY}}
+{\footnotesize\ttfamily constexpr int UI\+::\+Ncurses\+UI\+::\+FIRST\+\_\+\+SHIFT\+\_\+\+KEY = 65\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{classUI_1_1NcursesUI_a29d4cfb543974a4df5bef44267a32813}\label{classUI_1_1NcursesUI_a29d4cfb543974a4df5bef44267a32813}} 
+\index{UI::NcursesUI@{UI::NcursesUI}!RANGE\_ALPHABET@{RANGE\_ALPHABET}}
+\index{RANGE\_ALPHABET@{RANGE\_ALPHABET}!UI::NcursesUI@{UI::NcursesUI}}
+\doxysubsubsection{\texorpdfstring{RANGE\_ALPHABET}{RANGE\_ALPHABET}}
+{\footnotesize\ttfamily constexpr int UI\+::\+Ncurses\+UI\+::\+RANGE\+\_\+\+ALPHABET = 26\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
 
 

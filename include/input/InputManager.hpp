@@ -28,7 +28,7 @@ namespace inputManager
         void processInput();
 
     private:
-        inputHandler::KeyInput inputer; /**< キー入力を処理するオブジェクト */
+        inputHandler::UsrInput inputer; /**< キー入力を処理するオブジェクト */
         textEditor::TextBuffer txtData; /**< 文字データの保管場所 */
 
         /**

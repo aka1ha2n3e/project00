@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['string_441',['String',['../namespaceloging.html#ad6e1d4dfe5e0c2c4a92644589724d73b',1,'loging::String()'],['../namespaceutils.html#a73d287c18dd29682f8f663865a298da8',1,'utils::String()'],['../namespacetextEditor.html#a3d036cc7d1a7a70b2d787af5f57f0806',1,'textEditor::String()'],['../namespaceUI.html#a0080fba5cd4f3110c923a2332e958bac',1,'UI::String()']]]
+  ['rawkey_518',['RawKey',['../namespaceinput.html#acdb7a5dc66186461a28f7f945847d2b9',1,'input']]]
 ];

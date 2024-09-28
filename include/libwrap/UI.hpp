@@ -47,8 +47,9 @@ namespace UI
      * @brief ユーザーからの入力を取得する
      * @return 入力されたキーのコード
      */
-    virtual auto GetInput() -> int = 0;
+    virtual auto GetInput() -> textEditor::Key = 0;
   };
+
 
   /**
    * @class NcursesUI
@@ -72,7 +73,19 @@ namespace UI
      * * shift アルファベット順 + 64.例）shift + a は 64が出力
      * @todo キーマッピングを変更する
      */
-    auto GetInput() -> int override;
+    auto GetInput() -> textEditor::Key override;
+
+    static constexpr int RANGE_ALPHABET = 26;
+
+    static constexpr int FIRST_ALPHABET_KEY = 97;
+    static constexpr int END_ALPHABET_KEY = FIRST_ALPHABET_KEY + RANGE_ALPHABET;
+
+    static constexpr int FIRST_CTRL_KEY = 1;
+    static constexpr int END_CTRL_KEY = FIRST_CTRL_KEY + RANGE_ALPHABET;
+
+    static constexpr int FIRST_SHIFT_KEY = 65;
+    static constexpr int END_SHIFT_KEY = FIRST_SHIFT_KEY + RANGE_ALPHABET;
+    private:
   };
   using UI = NcursesUI;
 } // namespace UI

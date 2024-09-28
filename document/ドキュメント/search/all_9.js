@@ -1,20 +1,7 @@
 var searchData=
 [
-  ['line_130',['Line',['../namespacetextEditor.html#ae7a0df29f8b36d3b80b109680cede372',1,'textEditor::Line()'],['../namespacefileSystem.html#a8e8134c7ebf642c477cb6b07a9d70cf8',1,'fileSystem::Line()']]],
-  ['linux_131',['LINUX',['../namespaceshortcuts.html#a94ac5c511bd84a6bfafa8c24c7b7afa0aee86602a23e7a9a5136f6b2138894aa5',1,'shortcuts']]],
-  ['loading_132',['LOADING',['../namespacetextEditor.html#a98fde9e4349ed31810e7b3dd2b67c44daf9f6955ebca09a484157c05f80acd65e',1,'textEditor']]],
-  ['log_2ecpp_133',['Log.cpp',['../Log_8cpp.html',1,'']]],
-  ['logdata_134',['LogData',['../classloging_1_1LogData.html',1,'loging']]],
-  ['logdata_2ehpp_135',['LogData.hpp',['../LogData_8hpp.html',1,'']]],
-  ['logdebug_136',['logDebug',['../classloging_1_1Logger.html#a620a12bcb924c8283117dca98f8c5a58',1,'loging::Logger']]],
-  ['logerror_137',['logError',['../classloging_1_1Logger.html#ac900cc3bc157006c9f8ad4a9bcad0f4a',1,'loging::Logger']]],
-  ['logger_138',['logger',['../classApplicationManager_1_1ApplicationManager.html#a3924d614963228d0cda35a159af11204',1,'ApplicationManager::ApplicationManager']]],
-  ['logger_139',['Logger',['../classloging_1_1Logger.html',1,'loging']]],
-  ['logger_2ehpp_140',['Logger.hpp',['../Logger_8hpp.html',1,'']]],
-  ['loginfo_141',['logInfo',['../classloging_1_1Logger.html#a7b49bb9b558fe5e59a42293632ce3099',1,'loging::Logger']]],
-  ['loging_142',['loging',['../namespaceloging.html',1,'']]],
-  ['loglevel_143',['LogLevel',['../namespaceloging.html#acbbdd5545f34c51401a02d4f98adbabd',1,'loging']]],
-  ['logmanager_144',['LogManager',['../namespacewrap.html#a19578285798a9044a61ccce88732c8b9',1,'wrap']]],
-  ['loguseraction_145',['logUserAction',['../classloging_1_1Logger.html#a584b1e8e69247f551b1a67842b190937',1,'loging::Logger']]],
-  ['logwarning_146',['logWarning',['../classloging_1_1Logger.html#adc90389244edc5665192c7f587d3ad35',1,'loging::Logger']]]
+  ['key_151',['Key',['../namespacetextEditor.html#ade3de5dab8e0c8cbcfb9bf305a51af4e',1,'textEditor']]],
+  ['keyaction_152',['KeyAction',['../namespaceinput.html#a9b1b68944aa99486ff004ba71ca8d0c6',1,'input']]],
+  ['keymapping_153',['KeyMapping',['../classinput_1_1KeyMapping.html',1,'input']]],
+  ['keymapping_2ehpp_154',['KeyMapping.hpp',['../KeyMapping_8hpp.html',1,'']]]
 ];
