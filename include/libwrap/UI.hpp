@@ -3,7 +3,9 @@
 
 #include <ncurses.h>
 #include "common/commonType.hpp"
-/**
+#include "libwrap/LibWrapper.hpp"
+
+/*
  * @namespace UI
  * @brief UIのライブラリに関するラップ
  */
@@ -87,7 +89,9 @@ namespace UI
     static constexpr int END_SHIFT_KEY = FIRST_SHIFT_KEY + RANGE_ALPHABET;
     private:
   };
+  #ifdef UI_NCURSES
   using UI = NcursesUI;
+  #endif
 } // namespace UI
 
 #endif // UI_HPP_

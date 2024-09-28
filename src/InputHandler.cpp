@@ -1,8 +1,9 @@
-#include "input/InputHandler.hpp"
+#include "input/InputData.hpp"
+#include "input/adapter/InputAdapter.hpp"
 #include "libwrap/UI.hpp"
 #include "input/KeyMapping.hpp"
-#include "input/InputData.hpp"
 #include "input/adapter/NcursesInputAdapter.hpp"
+#include "input/InputHandler.hpp"
 
 
 namespace inputHandler
@@ -55,8 +56,8 @@ namespace inputHandler
         return encodedKey;
     };
 
-auto InputAdapter::InputParser() -> input::EncodedKey {
-    input::RawKey rawKey = FetchRawKey();
-    return ConvertToEncodedKey(rawKey);
-}
+    auto InputAdapter::InputParser() -> input::EncodedKey {
+        input::RawKey rawKey = FetchRawKey();
+        return ConvertToEncodedKey(rawKey);
+    }
 };
