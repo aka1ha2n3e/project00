@@ -95,36 +95,17 @@ private:
 };
 
 
-template <typename T> 
-class ContextPtr
-{
+template <typename T>
+class ContextPtr {
 public:
-  explicit ContextPtr(T* instance = nullptr) : curPtr(instance) {};
+    explicit ContextPtr(T* ptr = nullptr) : curPtr(ptr) {}
 
-    ContextPtr& operator=(const ContextPtr& other)
-    {
-        if (this != &other)
-        {
-            if (other.curPtr)
-            {
-                curPtr = std::make_unique<T>(*other.curPtr);
-            }
-            else
-            {
-                curPtr.reset();
-            }
-        }
-        return *this;
-    }
+    ContextPtr(const ContextPtr& other) = delete;
 
-    ContextPtr& operator=(ContextPtr&& other) noexcept
-    {
-        if (this != &other)
-        {
-            curPtr = std::move(other.curPtr);
-        }
-        return *this;
-    }
+    ContextPtr(ContextPtr&& other) noexcept = default;
+
+      template <typename U, typename = std::enable_if_t<std::is_convertible_v<U*, T*>>>
+    ContextPtr(ContextPtr<U>&& other) noexcept : curPtr(other.curPtr.release()) {}
 
   auto SetPtr(T* ptr) -> void
   {
@@ -132,20 +113,28 @@ public:
     ptr    = nullptr;
   };
 
-  /**
-   * @brief メソッドを呼び出す．
-   */
-  auto operator->() const -> T*
-  {
-    if (GetPtr() != nullptr)
-    {
-      return curPtr.get();
+    ContextPtr& operator=(const ContextPtr& other) = delete;
+    ContextPtr& operator=(ContextPtr&& other) noexcept = default;
+
+    void reset(T* ptr = nullptr) {
+        curPtr.reset(ptr);
     }
-  };
-    static ContextPtr<T> Create() {
-        return ContextPtr<T>();
-    };
+
+
+    T& operator*() const {
+        return *curPtr;
+    }
+
+    T* operator->() const {
+        return curPtr.get();
+    }
+
+    explicit operator bool() const {
+        return curPtr != nullptr;
+    }
+
 private:
+    std::unique_ptr<T> curPtr;
 
   /**
    * @brief ポインタを返す.
@@ -154,7 +143,13 @@ private:
   {
     return curPtr.get();
   };
-  std::unique_ptr<T> curPtr;
+    template <typename U>
+    friend class ContextPtr;
+};
+
+template <typename T, typename... Args>
+ContextPtr<T> makeContextPtr(Args&&... args) {
+    return ContextPtr<T>(new T(std::forward<Args>(args)...));
 };
 
 #endif // GENERALTYPE_HPP
