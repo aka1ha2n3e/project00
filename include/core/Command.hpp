@@ -8,6 +8,12 @@
 
 namespace command
 {
+    enum class EDIT_MODE {
+        NORMAL,
+        LINUX,
+        WINDOWS,
+    };
+
     class Command
     {
     public:
@@ -68,6 +74,7 @@ namespace command
         textEditor::Coordinate position;
         textEditor::Line deletedText;
     };
+
 
 }
 

@@ -42,17 +42,6 @@ enum class KeyAction {
     NORMAL,
 };
 
-class KeyMapping {
-public:
-
-protected:
-};
-
-class NcursesKeyMapping : public KeyMapping {
-public:
-
-protected:
-};
 
 
 } // namespace input
