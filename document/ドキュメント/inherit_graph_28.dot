@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="loging::Logger",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classloging_1_1Logger.html",tooltip="ロギング機能を提供するシングルトンクラス"];
+  Node0 [label="inputHandler::UsrInput",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classinputHandler_1_1UsrInput.html",tooltip="ユーザー入力を処理するクラス"];
 }

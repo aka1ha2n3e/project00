@@ -15,21 +15,12 @@ Collaboration diagram for command\+::Move\+Cursor\+Command\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classcommand_1_1MoveCursorCommand_a29b9f14031a1663b6a6f2e4fd637e8b1}{Move\+Cursor\+Command}} (\mbox{\hyperlink{classtextEditor_1_1TextBuffer}{text\+Editor\+::\+Text\+Buffer}} \&buffer, \mbox{\hyperlink{namespacetextEditor_a17364ea4d1207688c8ab60a8ab95484f}{text\+Editor\+::\+Coordinate}} new\+Position)
-\item 
 auto \mbox{\hyperlink{classcommand_1_1MoveCursorCommand_a8229761726c1f583448b30788ff66a99}{Execute}} () -\/$>$ void override
 \item 
 auto \mbox{\hyperlink{classcommand_1_1MoveCursorCommand_aeb2485e30f42e77cbe3d2a171171799c}{Undo}} () -\/$>$ void override
+\item 
+auto \mbox{\hyperlink{classcommand_1_1MoveCursorCommand_ace4c357196c6caff3fcc9380baca99e6}{Redo}} () -\/$>$ void override
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classcommand_1_1MoveCursorCommand_a29b9f14031a1663b6a6f2e4fd637e8b1}\label{classcommand_1_1MoveCursorCommand_a29b9f14031a1663b6a6f2e4fd637e8b1}} 
-\index{command::MoveCursorCommand@{command::MoveCursorCommand}!MoveCursorCommand@{MoveCursorCommand}}
-\index{MoveCursorCommand@{MoveCursorCommand}!command::MoveCursorCommand@{command::MoveCursorCommand}}
-\doxysubsubsection{\texorpdfstring{MoveCursorCommand()}{MoveCursorCommand()}}
-{\footnotesize\ttfamily command\+::\+Move\+Cursor\+Command\+::\+Move\+Cursor\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtextEditor_1_1TextBuffer}{text\+Editor\+::\+Text\+Buffer}} \&}]{buffer,  }\item[{\mbox{\hyperlink{namespacetextEditor_a17364ea4d1207688c8ab60a8ab95484f}{text\+Editor\+::\+Coordinate}}}]{new\+Position }\end{DoxyParamCaption})}
-
 
 
 \doxysubsection{Member Function Documentation}
@@ -42,6 +33,16 @@ auto \mbox{\hyperlink{classcommand_1_1MoveCursorCommand_aeb2485e30f42e77cbe3d2a1
 
 
 Implements \mbox{\hyperlink{classcommand_1_1Command_a962387c6d0b2541163591236f7e25567}{command\+::\+Command}}.
+
+\mbox{\Hypertarget{classcommand_1_1MoveCursorCommand_ace4c357196c6caff3fcc9380baca99e6}\label{classcommand_1_1MoveCursorCommand_ace4c357196c6caff3fcc9380baca99e6}} 
+\index{command::MoveCursorCommand@{command::MoveCursorCommand}!Redo@{Redo}}
+\index{Redo@{Redo}!command::MoveCursorCommand@{command::MoveCursorCommand}}
+\doxysubsubsection{\texorpdfstring{Redo()}{Redo()}}
+{\footnotesize\ttfamily auto command\+::\+Move\+Cursor\+Command\+::\+Redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  void\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcommand_1_1Command_a689092d680cca1040648323a772e5bbb}{command\+::\+Command}}.
 
 \mbox{\Hypertarget{classcommand_1_1MoveCursorCommand_aeb2485e30f42e77cbe3d2a171171799c}\label{classcommand_1_1MoveCursorCommand_aeb2485e30f42e77cbe3d2a171171799c}} 
 \index{command::MoveCursorCommand@{command::MoveCursorCommand}!Undo@{Undo}}

@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="fileManager::FileManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfileManager_1_1FileManager.html",tooltip="ファイル管理を行うクラス"];
+  Node0 [label="fileDriver::FileWriter\l\< DataType \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfileDriver_1_1FileWriter.html",tooltip="ファイル書き込みの抽象基底クラス"];
 }

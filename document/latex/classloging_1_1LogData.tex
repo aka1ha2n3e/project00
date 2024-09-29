@@ -17,15 +17,22 @@ Collaboration diagram for loging\+::Log\+Data\+:
 \item 
 virtual \mbox{\hyperlink{classloging_1_1LogData_a844ec951e0e95f8aa92da2369f2ebd2c}{$\sim$\+Log\+Data}} ()=0
 \item 
+\mbox{\hyperlink{classloging_1_1LogData_aa7541c40a2d622f2150b46096f34c451}{Log\+Data}} ()
+\item 
 virtual auto \mbox{\hyperlink{classloging_1_1LogData_a20529a1ace0afbb338da6081cad94565}{Create\+Iterator}} () const -\/$>$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classiterator_1_1Iterator}{iterator\+::\+Iterator}}$<$ \mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}} $>$$>$ override=0
 \begin{DoxyCompactList}\small\item\em イテレータを作成する \end{DoxyCompactList}\item 
 virtual auto \mbox{\hyperlink{classloging_1_1LogData_a05b9d7f9729036d303b6333fbcae70a5}{Append\+Data}} (\mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}} input) -\/$>$ void=0
+\item 
+auto \mbox{\hyperlink{classloging_1_1LogData_ad91d421557de72a85815ca6e4d6393a6}{Get\+Size}} () const -\/$>$ size\+\_\+t override
+\item 
+auto \mbox{\hyperlink{classloging_1_1LogData_a26f279f55f1269090f5e0644dd20c63c}{Get\+Item\+Impl}} (int) const -\/$>$ \mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}} \&override
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::map$<$ \mbox{\hyperlink{namespaceloging_acbbdd5545f34c51401a02d4f98adbabd}{Log\+Level}}, std\+::vector$<$ \mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}} $>$ $>$ \mbox{\hyperlink{classloging_1_1LogData_a487ecc5c4712f2fbd13e10be00b0305e}{data}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -34,6 +41,12 @@ std\+::map$<$ \mbox{\hyperlink{namespaceloging_acbbdd5545f34c51401a02d4f98adbabd
 \index{````~LogData@{$\sim$LogData}!loging::LogData@{loging::LogData}}
 \doxysubsubsection{\texorpdfstring{$\sim$LogData()}{~LogData()}}
 {\footnotesize\ttfamily loging\+::\+Log\+Data\+::$\sim$\+Log\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classloging_1_1LogData_aa7541c40a2d622f2150b46096f34c451}\label{classloging_1_1LogData_aa7541c40a2d622f2150b46096f34c451}} 
+\index{loging::LogData@{loging::LogData}!LogData@{LogData}}
+\index{LogData@{LogData}!loging::LogData@{loging::LogData}}
+\doxysubsubsection{\texorpdfstring{LogData()}{LogData()}}
+{\footnotesize\ttfamily loging\+::\+Log\+Data\+::\+Log\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -68,6 +81,26 @@ Implements \mbox{\hyperlink{classiterator_1_1AbstractArray_a5a3b04799cb5020b6b89
 
 
 Implemented in \mbox{\hyperlink{classloging_1_1Debug_a2dd9b16978cfb07fc2ab22e887f13a94}{loging\+::\+Debug}}, \mbox{\hyperlink{classloging_1_1Error_a7f9df4b4c9f3a62de9f966db3119734a}{loging\+::\+Error}}, \mbox{\hyperlink{classloging_1_1Warning_afcffff722d52ad9acb14ae92f8cd1e79}{loging\+::\+Warning}}, \mbox{\hyperlink{classloging_1_1Info_a35cd2700a1c635d3f93b4f2031d02a1d}{loging\+::\+Info}}, and \mbox{\hyperlink{classloging_1_1UserAction_a14cfa790e005b9cac928df99ceea9154}{loging\+::\+User\+Action}}.
+
+\mbox{\Hypertarget{classloging_1_1LogData_a26f279f55f1269090f5e0644dd20c63c}\label{classloging_1_1LogData_a26f279f55f1269090f5e0644dd20c63c}} 
+\index{loging::LogData@{loging::LogData}!GetItemImpl@{GetItemImpl}}
+\index{GetItemImpl@{GetItemImpl}!loging::LogData@{loging::LogData}}
+\doxysubsubsection{\texorpdfstring{GetItemImpl()}{GetItemImpl()}}
+{\footnotesize\ttfamily auto loging\+::\+Log\+Data\+::\+Get\+Item\+Impl (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption}) const -\/$>$ \mbox{\hyperlink{namespaceloging_ad6e1d4dfe5e0c2c4a92644589724d73b}{loging\+::\+String}}\&\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classiterator_1_1AbstractArray_a8786fe226906427ede8da5a032601068}{iterator\+::\+Abstract\+Array$<$ loging\+::\+String $>$}}.
+
+\mbox{\Hypertarget{classloging_1_1LogData_ad91d421557de72a85815ca6e4d6393a6}\label{classloging_1_1LogData_ad91d421557de72a85815ca6e4d6393a6}} 
+\index{loging::LogData@{loging::LogData}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!loging::LogData@{loging::LogData}}
+\doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily auto loging\+::\+Log\+Data\+::\+Get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const -\/$>$ size\+\_\+t\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classiterator_1_1AbstractArray_af9474f3ee5be8b0c6225cab24431db4a}{iterator\+::\+Abstract\+Array$<$ loging\+::\+String $>$}}.
 
 
 

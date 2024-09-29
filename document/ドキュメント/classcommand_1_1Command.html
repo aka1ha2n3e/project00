@@ -84,6 +84,8 @@ Inheritance diagram for command::Command:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a775a6156d64a7e813ea29165825023c2"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommand_1_1Command.html#a775a6156d64a7e813ea29165825023c2">~Command</a> ()=default</td></tr>
 <tr class="separator:a775a6156d64a7e813ea29165825023c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6495de043e88fef4d389e1f5e51074de"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommand_1_1Command.html#a6495de043e88fef4d389e1f5e51074de">ResetCommand</a> () -&gt; void=0</td></tr>
+<tr class="separator:a6495de043e88fef4d389e1f5e51074de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a962387c6d0b2541163591236f7e25567"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommand_1_1Command.html#a962387c6d0b2541163591236f7e25567">Execute</a> () -&gt; void=0</td></tr>
 <tr class="separator:a962387c6d0b2541163591236f7e25567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d8de8a635b176bbdbec81b2ecac0fab"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcommand_1_1Command.html#a0d8de8a635b176bbdbec81b2ecac0fab">Undo</a> () -&gt; void=0</td></tr>
@@ -168,7 +170,34 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classcommand_1_1InsertModeCommand.html#a8c6e150a9118985b93da01e9eaadaea7">command::InsertModeCommand</a>.</p>
+<p>Implemented in <a class="el" href="classcommand_1_1InsertModeCommand.html#a8c6e150a9118985b93da01e9eaadaea7">command::InsertModeCommand</a>, and <a class="el" href="classcommand_1_1MoveCursorCommand.html#ace4c357196c6caff3fcc9380baca99e6">command::MoveCursorCommand</a>.</p>
+
+</div>
+</div>
+<a id="a6495de043e88fef4d389e1f5e51074de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6495de043e88fef4d389e1f5e51074de">&#9670;&nbsp;</a></span>ResetCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto command::Command::ResetCommand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  void</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classcommand_1_1InsertModeCommand.html#a8f6f5bc0d141752805fa463498687f2c">command::InsertModeCommand</a>.</p>
 
 </div>
 </div>
