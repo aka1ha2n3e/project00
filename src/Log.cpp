@@ -4,12 +4,12 @@
 
 namespace loging
 {
-   LogData::~LogData(){};
     /*
     *  @brief loggerのインスタンスを作成する
     * @return loggerのインスタンス
     */
 
+LogData::~LogData() {};
    /*
    * @todo イテレーターの実装
    */

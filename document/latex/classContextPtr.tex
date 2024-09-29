@@ -7,19 +7,21 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classContextPtr_ac1078291cb76bc56e48d3133d3e048a0}{Context\+Ptr}} (T $\ast$ptr=nullptr)
+\mbox{\hyperlink{classContextPtr_a32c7e8b92bfaa60e9668dda04415a46b}{Context\+Ptr}} ()
+\item 
+\mbox{\hyperlink{classContextPtr_ac3323beefffdb35a9f41a7545bd105c7}{Context\+Ptr}} (T $\ast$ptr)
 \item 
 \mbox{\hyperlink{classContextPtr_a5b1d39348eb6f1f274d9017d85e72bd9}{Context\+Ptr}} (const \mbox{\hyperlink{classContextPtr}{Context\+Ptr}} \&other)=delete
 \item 
 \mbox{\hyperlink{classContextPtr_a35141eaf51df08d693f8d2c61f6c8325}{Context\+Ptr}} (\mbox{\hyperlink{classContextPtr}{Context\+Ptr}} \&\&other) noexcept=default
-\item 
-{\footnotesize template$<$typename U , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+convertible\+\_\+v$<$\+U$\ast$, T$\ast$$>$$>$$>$ }\\\mbox{\hyperlink{classContextPtr_af1b7cfb2a139a4094a73613f6ac7e7a3}{Context\+Ptr}} (\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ U $>$ \&\&other) noexcept
 \item 
 auto \mbox{\hyperlink{classContextPtr_a7cde6f00672cdd0fdd7b8e3515ed5144}{Set\+Ptr}} (T $\ast$ptr) -\/$>$ void
 \item 
 \mbox{\hyperlink{classContextPtr}{Context\+Ptr}} \& \mbox{\hyperlink{classContextPtr_a9de6e7f01ae908cbb85ec7056b64c51c}{operator=}} (const \mbox{\hyperlink{classContextPtr}{Context\+Ptr}} \&other)=delete
 \item 
 \mbox{\hyperlink{classContextPtr}{Context\+Ptr}} \& \mbox{\hyperlink{classContextPtr_a7ce53f2ed254ac81acc29449a2a1dbb7}{operator=}} (\mbox{\hyperlink{classContextPtr}{Context\+Ptr}} \&\&other) noexcept=default
+\item 
+\mbox{\hyperlink{classContextPtr}{Context\+Ptr}} \& \mbox{\hyperlink{classContextPtr_a546bd306610acf7b5c89da407b054c69}{operator=}} (T \&\&other)
 \item 
 void \mbox{\hyperlink{classContextPtr_a21daa0141b3d2057205a224184a7a1c2}{reset}} (T $\ast$ptr=nullptr)
 \item 
@@ -29,42 +31,36 @@ T $\ast$ \mbox{\hyperlink{classContextPtr_ac0413c251149e8dbaeebeb3b25c0dee7}{ope
 \item 
 \mbox{\hyperlink{classContextPtr_a265dfefff594d243ffeb25e78bafd488}{operator bool}} () const
 \end{DoxyCompactItemize}
-\doxysubsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename U $>$ }\\class \mbox{\hyperlink{classContextPtr_a8a48d4d01ac521679cd91120524eca6d}{Context\+Ptr}}
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classContextPtr_ac1078291cb76bc56e48d3133d3e048a0}\label{classContextPtr_ac1078291cb76bc56e48d3133d3e048a0}} 
+\mbox{\Hypertarget{classContextPtr_a32c7e8b92bfaa60e9668dda04415a46b}\label{classContextPtr_a32c7e8b92bfaa60e9668dda04415a46b}} 
 \index{ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}!ContextPtr@{ContextPtr}}
 \index{ContextPtr@{ContextPtr}!ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{ContextPtr()}{ContextPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::\mbox{\hyperlink{classContextPtr}{Context\+Ptr}} (\begin{DoxyParamCaption}\item[{T $\ast$}]{ptr = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::\mbox{\hyperlink{classContextPtr}{Context\+Ptr}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classContextPtr_ac3323beefffdb35a9f41a7545bd105c7}\label{classContextPtr_ac3323beefffdb35a9f41a7545bd105c7}} 
+\index{ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}!ContextPtr@{ContextPtr}}
+\index{ContextPtr@{ContextPtr}!ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ContextPtr()}{ContextPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::\mbox{\hyperlink{classContextPtr}{Context\+Ptr}} (\begin{DoxyParamCaption}\item[{T $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 \mbox{\Hypertarget{classContextPtr_a5b1d39348eb6f1f274d9017d85e72bd9}\label{classContextPtr_a5b1d39348eb6f1f274d9017d85e72bd9}} 
 \index{ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}!ContextPtr@{ContextPtr}}
 \index{ContextPtr@{ContextPtr}!ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{ContextPtr()}{ContextPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{ContextPtr()}{ContextPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::\mbox{\hyperlink{classContextPtr}{Context\+Ptr}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 \mbox{\Hypertarget{classContextPtr_a35141eaf51df08d693f8d2c61f6c8325}\label{classContextPtr_a35141eaf51df08d693f8d2c61f6c8325}} 
 \index{ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}!ContextPtr@{ContextPtr}}
 \index{ContextPtr@{ContextPtr}!ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{ContextPtr()}{ContextPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::\mbox{\hyperlink{classContextPtr}{Context\+Ptr}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$ \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
-
-\mbox{\Hypertarget{classContextPtr_af1b7cfb2a139a4094a73613f6ac7e7a3}\label{classContextPtr_af1b7cfb2a139a4094a73613f6ac7e7a3}} 
-\index{ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}!ContextPtr@{ContextPtr}}
-\index{ContextPtr@{ContextPtr}!ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{ContextPtr()}{ContextPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-template$<$typename U , typename  = std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+convertible\+\_\+v$<$\+U$\ast$, T$\ast$$>$$>$$>$ \\
-\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::\mbox{\hyperlink{classContextPtr}{Context\+Ptr}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ U $>$ \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::\mbox{\hyperlink{classContextPtr}{Context\+Ptr}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$ \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
 
 
 
@@ -93,16 +89,23 @@ T$\ast$ \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::operator-\/
 \mbox{\Hypertarget{classContextPtr_a9de6e7f01ae908cbb85ec7056b64c51c}\label{classContextPtr_a9de6e7f01ae908cbb85ec7056b64c51c}} 
 \index{ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}\& \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 \mbox{\Hypertarget{classContextPtr_a7ce53f2ed254ac81acc29449a2a1dbb7}\label{classContextPtr_a7ce53f2ed254ac81acc29449a2a1dbb7}} 
 \index{ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}\& \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$ \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classContextPtr_a546bd306610acf7b5c89da407b054c69}\label{classContextPtr_a546bd306610acf7b5c89da407b054c69}} 
+\index{ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classContextPtr}{Context\+Ptr}}\& \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{T \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{classContextPtr_a21daa0141b3d2057205a224184a7a1c2}\label{classContextPtr_a21daa0141b3d2057205a224184a7a1c2}} 
 \index{ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}!reset@{reset}}
@@ -117,17 +120,6 @@ void \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::reset (\begin{
 \doxysubsubsection{\texorpdfstring{SetPtr()}{SetPtr()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 auto \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}$<$ T $>$\+::Set\+Ptr (\begin{DoxyParamCaption}\item[{T $\ast$}]{ptr }\end{DoxyParamCaption}) -\/$>$ void   \hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-\doxysubsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{classContextPtr_a8a48d4d01ac521679cd91120524eca6d}\label{classContextPtr_a8a48d4d01ac521679cd91120524eca6d}} 
-\index{ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}!ContextPtr@{ContextPtr}}
-\index{ContextPtr@{ContextPtr}!ContextPtr$<$ T $>$@{ContextPtr$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{ContextPtr}{ContextPtr}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-template$<$typename U $>$ \\
-friend class \mbox{\hyperlink{classContextPtr}{Context\+Ptr}}\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 

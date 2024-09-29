@@ -14,8 +14,16 @@ namespace loging
     {
     public:
         virtual ~LogData() = 0;
+        LogData() : AbstractArray<loging::String>() {};
+
         virtual auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override = 0;
         virtual auto AppendData(loging::String input) -> void = 0;
+
+        auto GetSize() const -> size_t override { return 0; }
+        auto GetItemImpl(int) const -> loging::String& override {
+            static loging::String dummy;
+            return dummy;
+        };
 
     protected:
         std::map<LogLevel, std::vector<loging::String>> data;
@@ -24,6 +32,7 @@ namespace loging
     class UserAction : public LogData
     {
     public:
+        UserAction() : LogData() {};
         auto AppendData(loging::String input) -> void override;
         auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override;
     };
@@ -31,6 +40,7 @@ namespace loging
     class Info : public LogData
     {
     public:
+        Info() : LogData() {};
         auto AppendData(loging::String input) -> void override;
         auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override;
     };
@@ -38,6 +48,7 @@ namespace loging
     class Warning : public LogData
     {
     public:
+        Warning() : LogData() {};
         auto AppendData(loging::String input) -> void override;
         auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override;
     };
@@ -45,6 +56,7 @@ namespace loging
     class Error : public LogData
     {
     public:
+        Error() : LogData() {};
         auto AppendData(loging::String input) -> void override;
         auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override;
 
@@ -53,6 +65,7 @@ namespace loging
     class Debug : public LogData
     {
     public:
+        Debug() : LogData() {};
         auto AppendData(loging::String input) -> void override;
         auto CreateIterator() const -> std::unique_ptr<iterator::Iterator<loging::String>> override;
     };

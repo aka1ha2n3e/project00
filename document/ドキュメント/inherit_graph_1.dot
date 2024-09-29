@@ -6,7 +6,9 @@ digraph "Graphical Class Hierarchy"
   rankdir="LR";
   Node0 [label="command::Command",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcommand_1_1Command.html",tooltip=" "];
   Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="command::InsertModeCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcommand_1_1InsertModeCommand.html",tooltip=" "];
+  Node1 [label="command::CommandWrapper\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcommand_1_1CommandWrapper.html",tooltip=" "];
   Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="command::MoveCursorCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcommand_1_1MoveCursorCommand.html",tooltip=" "];
+  Node2 [label="command::InsertModeCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcommand_1_1InsertModeCommand.html",tooltip=" "];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="command::MoveCursorCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcommand_1_1MoveCursorCommand.html",tooltip=" "];
 }

@@ -25,6 +25,7 @@ namespace fileSystem
   class FileContents
   {
     public:
+      FileContents(T& data) : data(data) {};
       virtual ~FileContents();
       FileName name; /**< ファイル名 */
       Path    path;     /**< パス */
@@ -98,14 +99,13 @@ private:
 template <typename T>
 class ContextPtr {
 public:
-    explicit ContextPtr(T* ptr = nullptr) : curPtr(ptr) {}
+        ContextPtr() : curPtr(nullptr) {};  
+    explicit ContextPtr(T* ptr) : curPtr(ptr) {};
 
     ContextPtr(const ContextPtr& other) = delete;
 
     ContextPtr(ContextPtr&& other) noexcept = default;
 
-      template <typename U, typename = std::enable_if_t<std::is_convertible_v<U*, T*>>>
-    ContextPtr(ContextPtr<U>&& other) noexcept : curPtr(other.curPtr.release()) {}
 
   auto SetPtr(T* ptr) -> void
   {
@@ -115,6 +115,10 @@ public:
 
     ContextPtr& operator=(const ContextPtr& other) = delete;
     ContextPtr& operator=(ContextPtr&& other) noexcept = default;
+    ContextPtr& operator=(T&& other) {
+        curPtr = std::make_unique<T>(std::move(other));
+        return *this;
+    }
 
     void reset(T* ptr = nullptr) {
         curPtr.reset(ptr);
@@ -139,17 +143,10 @@ private:
   /**
    * @brief ポインタを返す.
    */
-  auto GetPtr() const -> T*
-  {
-    return curPtr.get();
-  };
-    template <typename U>
-    friend class ContextPtr;
-};
-
-template <typename T, typename... Args>
-ContextPtr<T> makeContextPtr(Args&&... args) {
-    return ContextPtr<T>(new T(std::forward<Args>(args)...));
+    auto GetPtr() const -> T*
+    {
+      return curPtr.get();
+    };
 };
 
 #endif // GENERALTYPE_HPP

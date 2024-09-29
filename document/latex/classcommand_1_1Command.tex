@@ -13,6 +13,8 @@ Inheritance diagram for command\+::Command\+:
 \item 
 virtual \mbox{\hyperlink{classcommand_1_1Command_a775a6156d64a7e813ea29165825023c2}{$\sim$\+Command}} ()=default
 \item 
+virtual auto \mbox{\hyperlink{classcommand_1_1Command_a6495de043e88fef4d389e1f5e51074de}{Reset\+Command}} () -\/$>$ void=0
+\item 
 virtual auto \mbox{\hyperlink{classcommand_1_1Command_a962387c6d0b2541163591236f7e25567}{Execute}} () -\/$>$ void=0
 \item 
 virtual auto \mbox{\hyperlink{classcommand_1_1Command_a0d8de8a635b176bbdbec81b2ecac0fab}{Undo}} () -\/$>$ void=0
@@ -49,7 +51,17 @@ Implemented in \mbox{\hyperlink{classcommand_1_1InsertModeCommand_ac98802e34a9ba
 
 
 
-Implemented in \mbox{\hyperlink{classcommand_1_1InsertModeCommand_a8c6e150a9118985b93da01e9eaadaea7}{command\+::\+Insert\+Mode\+Command}}.
+Implemented in \mbox{\hyperlink{classcommand_1_1InsertModeCommand_a8c6e150a9118985b93da01e9eaadaea7}{command\+::\+Insert\+Mode\+Command}}, and \mbox{\hyperlink{classcommand_1_1MoveCursorCommand_ace4c357196c6caff3fcc9380baca99e6}{command\+::\+Move\+Cursor\+Command}}.
+
+\mbox{\Hypertarget{classcommand_1_1Command_a6495de043e88fef4d389e1f5e51074de}\label{classcommand_1_1Command_a6495de043e88fef4d389e1f5e51074de}} 
+\index{command::Command@{command::Command}!ResetCommand@{ResetCommand}}
+\index{ResetCommand@{ResetCommand}!command::Command@{command::Command}}
+\doxysubsubsection{\texorpdfstring{ResetCommand()}{ResetCommand()}}
+{\footnotesize\ttfamily virtual auto command\+::\+Command\+::\+Reset\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$  void\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classcommand_1_1InsertModeCommand_a8f6f5bc0d141752805fa463498687f2c}{command\+::\+Insert\+Mode\+Command}}.
 
 \mbox{\Hypertarget{classcommand_1_1Command_a0d8de8a635b176bbdbec81b2ecac0fab}\label{classcommand_1_1Command_a0d8de8a635b176bbdbec81b2ecac0fab}} 
 \index{command::Command@{command::Command}!Undo@{Undo}}

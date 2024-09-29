@@ -15,7 +15,11 @@ Collaboration diagram for command\+::Insert\+Mode\+Command\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classcommand_1_1InsertModeCommand_a45c2ca223745f5444adfcdfa86e131b6}{Insert\+Mode\+Command}} (\mbox{\hyperlink{classtextEditor_1_1TextBuffer}{text\+Editor\+::\+Text\+Buffer}} \&buffer, \mbox{\hyperlink{classinput_1_1EncodedKey}{input\+::\+Encoded\+Key}} key)
+\mbox{\hyperlink{classcommand_1_1InsertModeCommand_a9ad01859a589aca5ac88a417c73e9184}{$\sim$\+Insert\+Mode\+Command}} ()=default
+\item 
+\mbox{\hyperlink{classcommand_1_1InsertModeCommand_a9bb97a3964b334c9806bd3237e93039c}{Insert\+Mode\+Command}} ()
+\item 
+auto \mbox{\hyperlink{classcommand_1_1InsertModeCommand_a8f6f5bc0d141752805fa463498687f2c}{Reset\+Command}} () -\/$>$ void override
 \item 
 auto \mbox{\hyperlink{classcommand_1_1InsertModeCommand_ac98802e34a9ba6c8b3562d7b9edcd2a3}{Execute}} () -\/$>$ void override
 \item 
@@ -26,11 +30,17 @@ auto \mbox{\hyperlink{classcommand_1_1InsertModeCommand_a8c6e150a9118985b93da01e
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classcommand_1_1InsertModeCommand_a45c2ca223745f5444adfcdfa86e131b6}\label{classcommand_1_1InsertModeCommand_a45c2ca223745f5444adfcdfa86e131b6}} 
+\mbox{\Hypertarget{classcommand_1_1InsertModeCommand_a9ad01859a589aca5ac88a417c73e9184}\label{classcommand_1_1InsertModeCommand_a9ad01859a589aca5ac88a417c73e9184}} 
+\index{command::InsertModeCommand@{command::InsertModeCommand}!````~InsertModeCommand@{$\sim$InsertModeCommand}}
+\index{````~InsertModeCommand@{$\sim$InsertModeCommand}!command::InsertModeCommand@{command::InsertModeCommand}}
+\doxysubsubsection{\texorpdfstring{$\sim$InsertModeCommand()}{~InsertModeCommand()}}
+{\footnotesize\ttfamily command\+::\+Insert\+Mode\+Command\+::$\sim$\+Insert\+Mode\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classcommand_1_1InsertModeCommand_a9bb97a3964b334c9806bd3237e93039c}\label{classcommand_1_1InsertModeCommand_a9bb97a3964b334c9806bd3237e93039c}} 
 \index{command::InsertModeCommand@{command::InsertModeCommand}!InsertModeCommand@{InsertModeCommand}}
 \index{InsertModeCommand@{InsertModeCommand}!command::InsertModeCommand@{command::InsertModeCommand}}
 \doxysubsubsection{\texorpdfstring{InsertModeCommand()}{InsertModeCommand()}}
-{\footnotesize\ttfamily command\+::\+Insert\+Mode\+Command\+::\+Insert\+Mode\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtextEditor_1_1TextBuffer}{text\+Editor\+::\+Text\+Buffer}} \&}]{buffer,  }\item[{\mbox{\hyperlink{classinput_1_1EncodedKey}{input\+::\+Encoded\+Key}}}]{key }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily command\+::\+Insert\+Mode\+Command\+::\+Insert\+Mode\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -54,6 +64,16 @@ Implements \mbox{\hyperlink{classcommand_1_1Command_a962387c6d0b2541163591236f7e
 
 
 Implements \mbox{\hyperlink{classcommand_1_1Command_a689092d680cca1040648323a772e5bbb}{command\+::\+Command}}.
+
+\mbox{\Hypertarget{classcommand_1_1InsertModeCommand_a8f6f5bc0d141752805fa463498687f2c}\label{classcommand_1_1InsertModeCommand_a8f6f5bc0d141752805fa463498687f2c}} 
+\index{command::InsertModeCommand@{command::InsertModeCommand}!ResetCommand@{ResetCommand}}
+\index{ResetCommand@{ResetCommand}!command::InsertModeCommand@{command::InsertModeCommand}}
+\doxysubsubsection{\texorpdfstring{ResetCommand()}{ResetCommand()}}
+{\footnotesize\ttfamily auto command\+::\+Insert\+Mode\+Command\+::\+Reset\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) -\/$>$ void\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcommand_1_1Command_a6495de043e88fef4d389e1f5e51074de}{command\+::\+Command}}.
 
 \mbox{\Hypertarget{classcommand_1_1InsertModeCommand_a8cedccd63b6dc6ea14f54e2afd97662a}\label{classcommand_1_1InsertModeCommand_a8cedccd63b6dc6ea14f54e2afd97662a}} 
 \index{command::InsertModeCommand@{command::InsertModeCommand}!Undo@{Undo}}

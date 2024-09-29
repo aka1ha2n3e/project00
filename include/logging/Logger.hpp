@@ -37,7 +37,7 @@ namespace loging {
         Logger()
         {
             getLogger();
-        }
+        };
 
         ~Logger() = default;
 
