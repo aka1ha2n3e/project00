@@ -41,9 +41,6 @@ namespace util
             return true;
         }
 
-/**  
-* @todo チャットGPTが生成したのでロジックを確認する
-*/
     const T& Top() const
         {
             if (stack_.empty())
@@ -63,16 +60,6 @@ namespace util
             value = stack_.top();
             return true;
         }
-    bool Top(T&& value)
-    {
-        if (stack_.empty())
-        {
-            ReportError("スタックが空です");
-            return false;
-        }
-        value = std::move(stack_.top());
-        return true;
-    }
 
         bool Empty() const noexcept
         {

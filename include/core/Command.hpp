@@ -22,6 +22,7 @@ namespace command
     {
     public:
         virtual ~Command() = default;
+        virtual auto ResetCommand() -> void = 0;
         virtual auto Execute() -> void = 0;
         virtual auto Undo() -> void = 0;
         virtual auto Redo() -> void = 0;
@@ -31,8 +32,6 @@ namespace command
     {
     public:
         auto ExecuteCommand(ContextPtr<Command> command) -> void;
-        auto Undo() -> void;
-        auto Redo() -> void;
 
     private:
         util::Stack<ContextPtr<Command>> undoStack;
@@ -42,10 +41,9 @@ namespace command
     class MoveCursorCommand : public Command
     {
     public:
-        MoveCursorCommand(textEditor::TextBuffer& buffer, textEditor::Coordinate newPosition);
-
         auto Execute() -> void override;
         auto Undo() -> void override;
+        auto Redo() -> void override;
 
     private:
         textEditor::TextBuffer& buffer;
@@ -56,60 +54,73 @@ namespace command
     class InsertModeCommand : public Command
     {
     public:
-        InsertModeCommand(textEditor::TextBuffer& buffer, input::EncodedKey key);
-
+        ~InsertModeCommand() = default;  
+        InsertModeCommand(): buffer(std::make_unique<textEditor::TextBuffer>()), key(std::make_unique<input::EncodedKey>()) {};  
+        auto ResetCommand() -> void override;
         auto Execute() -> void override;
         auto Undo() -> void override;
         auto Redo() -> void override;
 
     private:
-        textEditor::TextBuffer& buffer;
-        input::EncodedKey key;
+        auto Reset(textEditor::TextBuffer& buffer, input::EncodedKey key) -> void;
+        std::unique_ptr<textEditor::TextBuffer> buffer;
+        std::unique_ptr<input::EncodedKey> key;
     };
 
-    class CommandBuilder
-    {
-    public:
-        CommandBuilder& SetMode(EDIT_MODE mode) {
-            this->mode = mode;
-            return *this;
-        }
+class InsertModeCommandSingleton {
+public:
+    static ContextPtr<Command>& getInstance(); 
+};
 
-        CommandBuilder& SetKey(input::EncodedKey key) {
-            this->key = key;
-            return *this;
-        }
+class CommandBuilder {
+public:
+    auto SetMode(command::EDIT_MODE mode) -> CommandBuilder&;
+    auto SetKey(input::EncodedKey key) -> CommandBuilder&;
+    auto SetBuffer(textEditor::TextBuffer& buffer) -> CommandBuilder&;
+    auto Build() -> ContextPtr<Command>&;
 
-        CommandBuilder& SetBuffer(textEditor::TextBuffer& buffer) {
-            this->buffer = &buffer;
-            return *this;
-        }
+private:
+    command::EDIT_MODE mode;
+    input::EncodedKey key;
+    textEditor::TextBuffer& buffer;
+};
 
-        CommandBuilder& SetSelectionStart(textEditor::Coordinate start) {
-            this->selectionStart = start;
-            return *this;
-        }
 
-        CommandBuilder& SetSelectionEnd(textEditor::Coordinate end) {
-            this->selectionEnd = end;
-            return *this;
-        }
+class CommandContext {
+public:
+    virtual ContextPtr<Command> CreateCommand(const CommandBuilder& builder) = 0;
+};
 
-/**
-*@todo オプショナルのラップ
-*/
-        auto build() -> ContextPtr<Command>;
-        
+class InsertModeCommandContext : public CommandContext {
+public:
+    auto CreateCommand(const CommandBuilder& builder) -> ContextPtr<Command> override;
+};
 
-    private:
-        std::optional<EDIT_MODE> mode;
-        std::optional<input::EncodedKey> key;
-        std::optional<textEditor::Coordinate> selectionStart;
-        std::optional<textEditor::Coordinate> selectionEnd;
-        textEditor::TextBuffer* buffer = nullptr;
+
+class CommandFactory {
+public:
+    static auto RegisterContext(command::EDIT_MODE mode, ContextPtr<CommandContext> strategy) -> void;
+
+private:
+        static std::map<command::EDIT_MODE, ContextPtr<CommandContext>> strategies;
     };
   
 
+template<typename T>
+class CommandWrapper : public Command {
+public:
+    CommandWrapper(T& command, textEditor::TextBuffer& buffer, input::EncodedKey key)
+        : command(command), buffer(buffer), key(key) {}
+
+    auto execute() -> void override {
+        command.execute(buffer, key);
+    }
+
+private:
+    T& command;
+    textEditor::TextBuffer& buffer;
+        input::EncodedKey key;
+    };
 
 }
 

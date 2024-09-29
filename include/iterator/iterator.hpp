@@ -81,6 +81,7 @@ namespace iterator
   template <typename Item> class AbstractArray : public Iterator<Item>
   {
   public:
+    AbstractArray() : Iterator<Item>(nullptr) {};
     virtual ~AbstractArray() = default;
     
     /**
@@ -88,8 +89,49 @@ namespace iterator
      * @return 作成されたイテレータ
      */
     virtual auto CreateIterator() const -> std::unique_ptr<Iterator<Item>> = 0;
-  };
+      
+     auto Advance() -> Item& override {
+        if (CanAdvance()) {
+            ++this->idx;
+            return CurrentItem();
+        }
+    };
 
-}; // namespace iterator
+     auto Retreat() -> Item& override {
+        if (CanRetreat()) {
+            --this->idx;
+            return CurrentItem();
+        }
+    };
+
+     auto CanAdvance() const -> bool override {
+        return this->idx < static_cast<int>(GetSize()) - 1;
+    };
+
+     auto CanRetreat() const -> bool override {
+        return this->idx > 0;
+    };
+
+ auto CurrentItem() const -> Item& override {
+        return GetItem(this->idx);
+    };
+    
+    /**
+     * @brief 指定されたインデックスの要素を取得
+     * @param index 取得する要素のインデックス
+     * @return 指定されたインデックスの要素への参照
+     */
+ auto GetItem(int index) const -> Item& override {
+        if (index < 0 || index >= static_cast<int>(GetSize())) {
+            throw std::out_of_range("インデックスの範囲外を所得しようとしました．");
+        }
+        return GetItemImpl(index);
+    };
+
+  protected:
+    virtual auto GetSize() const -> size_t = 0;
+    virtual auto GetItemImpl(int index) const -> Item& = 0;
+  };
+} 
 
 #endif // ITERATOR_HPP
