@@ -13,10 +13,10 @@ namespace textEditor
         auto AddData(String Data) -> void;
         auto TakeData() -> String;
         auto GetCursorPosition() const -> int;
-        auto MoveCursor(int position) -> void;
+        auto MoveCursor(Coordinate position) -> void;
         auto InsertText(const String& text) -> void;
-        auto DeleteText(int position) -> void;
-        auto GetText(int position, int length) const -> String;
+        auto DeleteText(Coordinate position) -> void;
+        auto GetText(Coordinate position, int length) const -> String;
 
      private:
         std::vector<String> data; /**< 文字データの保管場所 */
@@ -29,51 +29,37 @@ namespace input{
     class EncodedKey {
 
     public:
-        EncodedKey(unsigned int keyCode = 0) : value(keyCode & KEY_CODE_BITS){};
+        EncodedKey(STD::uint32_t keyCode = 0) : byteData(keyCode & KEY_CODE_BITS){};
 
-    void SetKeyCode(unsigned int keyCode) {
-        value = (value & ~KEY_CODE_BITS) | (keyCode & KEY_CODE_BITS);
-    }
+    auto SetKeyCode(std::uint32_t keyCode) -> void;
 
-    void SetCtrl(bool pressed) {
-        if (pressed) value |= CTRL_BITS;
-        else value &= ~CTRL_BITS;
-    }
+    auto SetCtrl(bool pressed) -> void; 
 
-    void SetShift(bool pressed) {
-        if (pressed) value |= SHIFT_BITS;
-        else value &= ~SHIFT_BITS;
-    }
+    auto SetShift(bool pressed) -> void;
 
-    void SetAlt(bool pressed) {
-        if (pressed) value |= ALT_BITS;
-        else value &= ~ALT_BITS;
-    }
+    auto SetAlt(bool pressed) -> void;
 
-    void SetMeta(bool pressed) {
-        if (pressed) value |= META_BITS;
-        else value &= ~META_BITS;
-    }
+    auto SetMeta(bool pressed) -> void;
 
 
-        unsigned int GetCode() const { return value & KEY_CODE_BITS; }
-        bool CtrlPressed() const { return value & CTRL_BITS; }
-        bool ShiftPressed() const { return value & SHIFT_BITS; }
-        bool AltPressed() const { return value & ALT_BITS; }
-        bool MetaPressed() const { return value & META_BITS; }
+        auto GetCode() const -> std::uint32_t; 
+        auto CtrlPressed() const -> bool;
+        auto ShiftPressed() const -> bool;
+        auto AltPressed() const -> bool;
+        auto MetaPressed() const -> bool;
 
-        bool operator==(const EncodedKey& other) const { return value == other.value; }
-        bool operator!=(const EncodedKey& other) const { return value != other.value; }
+        auto operator==(const EncodedKey& other) const -> bool;
+        auto operator!=(const EncodedKey& other) const -> bool;
 
     private:
-        unsigned int value;
-        static inline constexpr unsigned int KEY_CODE_BITS  = 0x00FFFFFF;
-        static inline constexpr unsigned int CTRL_BITS  = 0x01000000;
-        static inline constexpr unsigned int SHIFT_BITS = 0x02000000;
-        static inline constexpr unsigned int ALT_BITS   = 0x04000000;
-        static inline constexpr unsigned int META_BITS  = 0x08000000;
+        std::uint32_t byteData;
+        static inline constexpr std::uint32_t KEY_CODE_BITS  = 0x00FFFFFF;
+        static inline constexpr std::uint32_t CTRL_BITS  = 0x01000000;
+        static inline constexpr std::uint32_t SHIFT_BITS = 0x02000000;
+        static inline constexpr std::uint32_t ALT_BITS   = 0x04000000;
+        static inline constexpr std::uint32_t META_BITS  = 0x08000000;
 
-        unsigned int MaskKey(unsigned int keyCode, bool ctrlPressed, bool shiftPressed, bool altPressed, bool metaPressed) const;
+        auto MaskKey(std::uint32_t keyCode, bool ctrlPressed, bool shiftPressed, bool altPressed, bool metaPressed) const -> std::uint32_t;
     };
 };
 #endif

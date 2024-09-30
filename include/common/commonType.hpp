@@ -79,8 +79,6 @@ namespace textEditor
   /// @brief 文字列名
   using String = std::string;
   /// @brief ユーザーが入力したデータ
-  using Key = int;
-  /// @brief カーソル
   using Coordinate = int;
   /// @brief 1行のテキスト
   using Line = std::string;
