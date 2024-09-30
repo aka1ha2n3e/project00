@@ -11,28 +11,28 @@ namespace UI
     noecho();
     keypad(stdscr, TRUE);
     refresh();
-  }
+  };
 
   auto NcursesUI::FinalizeUI() -> void
   {
     endwin();
-  }
+  };
 
   auto NcursesUI::ClearScreen() -> void
   {
     clear();
     refresh();
-  }
+  };
 
   auto NcursesUI::DisplayText(const String& text, Coordinate xCoord, Coordinate yCoord) -> void
   {
     mvprintw(yCoord, xCoord, "%s", text.c_str());
     refresh();
-  }
+  };
 
-  auto NcursesUI::GetInput() -> int
+  auto NcursesUI::GetInput() -> textEditor::Key
   {
     return getch();
-  }
+  };
 
 }; // namespace UI

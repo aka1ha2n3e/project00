@@ -2,12 +2,12 @@
 
 namespace input{
 
-auto EncodedKey::MaskKey(unsigned int keyCode, bool ctrlPressed, bool shiftPressed, bool altPressed, bool metaPressed) const -> std::uint32_t{
+auto EncodedKey::MaskKey(textEditor::Key keyCode, bool isPressedCtrl, bool isPressedShift, bool isPressedAlt, bool isPressedMeta) const -> std::uint32_t{
     return (keyCode & KEY_CODE_BITS)
-        | (ctrlPressed()  ? CTRL_BITS : 0)
-        | (shiftPressed() ? SHIFT_BITS : 0)
-        | (altPressed()   ? ALT_BITS : 0)
-        | (metaPressed()  ? META_BITS : 0);
+        | (isPressedCtrl  ? CTRL_BITS : 0)
+        | (isPressedShift ? SHIFT_BITS : 0)
+        | (isPressedAlt   ? ALT_BITS : 0)
+        | (isPressedMeta  ? META_BITS : 0);
 };
 auto EncodedKey::SetKeyCode(std::uint32_t keyCode) -> void {
     byteData = (byteData & ~KEY_CODE_BITS) | (keyCode & KEY_CODE_BITS);

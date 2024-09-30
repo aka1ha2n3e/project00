@@ -9,7 +9,7 @@ using ::testing::_;
 
 class MockNcursesUI : public UI::NcursesUI {
 public:
-    MOCK_METHOD(int, GetInput, (), (override));
+    MOCK_METHOD(textEditor::Key, GetInput, (), (override));
 };
 
 // テスト用のNcursesInputAdapterクラス

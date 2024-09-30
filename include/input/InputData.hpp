@@ -11,12 +11,6 @@ namespace textEditor
     class TextBuffer : public Buffer{
      public:
         auto AddData(String Data) -> void;
-        auto TakeData() -> String;
-        auto GetCursorPosition() const -> int;
-        auto MoveCursor(Coordinate position) -> void;
-        auto InsertText(const String& text) -> void;
-        auto DeleteText(Coordinate position) -> void;
-        auto GetText(Coordinate position, int length) const -> String;
 
      private:
         std::vector<String> data; /**< 文字データの保管場所 */
@@ -29,7 +23,7 @@ namespace input{
     class EncodedKey {
 
     public:
-        EncodedKey(STD::uint32_t keyCode = 0) : byteData(keyCode & KEY_CODE_BITS){};
+        EncodedKey(std::uint32_t keyCode = 0) : byteData(keyCode & KEY_CODE_BITS){};
 
     auto SetKeyCode(std::uint32_t keyCode) -> void;
 
@@ -59,7 +53,7 @@ namespace input{
         static inline constexpr std::uint32_t ALT_BITS   = 0x04000000;
         static inline constexpr std::uint32_t META_BITS  = 0x08000000;
 
-        auto MaskKey(std::uint32_t keyCode, bool ctrlPressed, bool shiftPressed, bool altPressed, bool metaPressed) const -> std::uint32_t;
+        auto MaskKey(textEditor::Key keyCode, bool isPressedCtrl, bool isPressedShift, bool isPressedAlt, bool isPressedMeta) const -> std::uint32_t;
     };
 };
 #endif
