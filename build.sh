@@ -7,13 +7,23 @@ if [ -d $"build/" ]; then
         rm -r build
         mkdir build
         cd build
-        cmake ..
+        if [ -n "$1" ]; then
+            cmake .. -DMAIN_FILE="$1"
+        else
+            cmake ..
+        fi
+        touch .debug
     fi
 else
     mkdir build
     cd build
-    cmake ..
+    if [ -n "$1" ]; then
+        cmake .. -DMAIN_FILE="$1"
+    else
+        cmake ..
+    fi
+    touch .debug
 fi
 make
-touch .debug
+clang-tidy ../src/main.cpp --config-file=../.clang-tidy > tidycheck.txt 2>> tidy-error.txt
 cd ..

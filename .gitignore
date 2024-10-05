@@ -5,6 +5,7 @@ cmp/
 googletest/
 cmake-build-debug/
 .vs/
+.vscode/
 .lsp/
 .clj-kondo/
 # 一時ファイル 
