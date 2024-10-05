@@ -12,7 +12,7 @@ namespace command
         return instance;
     };
 
-    auto InsertModeCommand::ResetCommand() -> void{
+    auto InsertModeCommand::Reset() -> void{
         this->buffer = std::move(buffer);
         this->key = std::move(key);
     };
@@ -25,7 +25,7 @@ namespace command
             switch (mode) {
                 case EDIT_MODE::INSERT:
                     static ContextPtr<Command>& command = InsertModeCommandSingleton::getInstance();
-                    command->ResetCommand();
+                    command->Reset();
                     return command;
                 default:
                     loging::Logger::logError("不正なモードです");
