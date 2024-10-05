@@ -80,5 +80,7 @@
         "xutility": "cpp",
     },
     "clang-format.executable": "/Program Files/LLVM/bin/clang-format.exe",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "backgroundCover.autoStatus": true,
+    "backgroundCover.randomImageFolder": "c:\\VS BG"
 }
