@@ -6,8 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0")
 
-option(MAIN_FILE "メインファイル.デフォルトではリリースファイル" "@exe")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+option(MAIN_FILE "ファイル名")
+message(STATUS "MAIN_FILE: ${MAIN_FILE}")
 
 # インクルードディレクトリ
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -21,7 +22,7 @@ file(GLOB_RECURSE SOURCES
     "${PROJECT_SOURCE_DIR}/src/*.cpp")
 list(REMOVE_ITEM SOURCES "${PROJECT_SOURCE_DIR}/src/main.cpp")
 
-if("${MAIN_FILE}" STREQUAL "@exe")
+if("${MAIN_FILE}" STREQUAL "OFF")
     # メインの実行ファイルを作成
     add_executable(TextEditor "${PROJECT_SOURCE_DIR}/src/main.cpp" ${SOURCES})
     # cursesのリンクをTextEditorターゲットに追加
@@ -36,16 +37,12 @@ else()
     )
     # テスト実行ファイルを作成
     add_executable(Test ${UI_TEST_SOURCES} ${SOURCES})
-
-endif()
-
-if("${MAIN_FILE}" STREQUAL "@exe")
-else()
     # Google Testライブラリのリンク
     target_link_libraries(Test PRIVATE gtest gtest_main pthread ${CURSES_LIBRARIES})
     # テストファイルのためのインクルードディレクトリを追加
     target_link_libraries(Test PRIVATE gtest gmock gtest_main gmock_main)
     target_compile_options(Test PRIVATE -Wall -Wextra -Wpedantic)
+
 endif()
 
 
