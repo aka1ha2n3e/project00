@@ -12,6 +12,7 @@ if [ -n "$1" ]; then
 else
     cmake ..
 fi
+
 make
 
 clang-tidy ../src/main.cpp --config-file=../.clang-tidy > tidycheck.txt 2>> tidy-error.txt
