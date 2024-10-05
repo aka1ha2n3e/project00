@@ -99,19 +99,18 @@ private:
 template <typename T>
 class ContextPtr {
 public:
+    virtual ~ContextPtr() = default;
         ContextPtr() : curPtr(nullptr) {};  
-    explicit ContextPtr(T* ptr) : curPtr(ptr) {};
+    explicit ContextPtr(const T& ref) : curPtr(std::make_unique<T>(ref)) {};
+    explicit ContextPtr(std::unique_ptr<T> ptr) : curPtr(std::move(ptr)) {}
 
-    ContextPtr(const ContextPtr& other) = delete;
+    ContextPtr(ContextPtr& other) = delete;
 
     ContextPtr(ContextPtr&& other) noexcept = default;
-
-
-  auto SetPtr(T* ptr) -> void
-  {
-    curPtr = std::make_unique<T>(*ptr);
-    ptr    = nullptr;
-  };
+    
+    auto SetPtr(std::unique_ptr<T> ptr) -> void {
+        curPtr = std::move(ptr);
+    }
 
     ContextPtr& operator=(const ContextPtr& other) = delete;
     ContextPtr& operator=(ContextPtr&& other) noexcept = default;
