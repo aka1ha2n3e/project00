@@ -82,39 +82,17 @@ namespace command {
     };
 
 
-    class CommandContext {
+    class CommandState : public ContextPtr<Command> {
     public:
-        virtual ContextPtr<Command> CreateCommand(const CommandBuilder &builder) = 0;
+        virtual ContextPtr<Command> CreateCommand(const CommandBuilder &builder);
     };
 
-    class InsertModeCommandContext : public CommandContext {
+    class InsertModeCommandContext : public CommandState {
     public:
         auto CreateCommand(const CommandBuilder &builder) -> ContextPtr<Command> override;
     };
 
 
-    class CommandFactory {
-    public:
-        static auto RegisterContext(command::EDIT_MODE mode, ContextPtr<CommandContext> strategy) -> void;
-
-    private:
-        static std::map<command::EDIT_MODE, ContextPtr<CommandContext>> strategies;
-    };
-
-
-    template<typename T>
-    class CommandWrapper : public Command {
-    public:
-        CommandWrapper(T &command, textEditor::TextBuffer &buffer, input::EncodedKey key) :
-            command(command), buffer(buffer), key(key) {}
-
-        auto execute() -> void override { command.execute(buffer, key); }
-
-    private:
-        T &command;
-        textEditor::TextBuffer &buffer;
-        input::EncodedKey key;
-    };
 
 } // namespace command
 

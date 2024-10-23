@@ -36,6 +36,10 @@ namespace command
     auto InsertModeCommand::Undo() -> void {};
     auto InsertModeCommand::Redo() -> void {};
 
+    auto CommandState::CreateCommand(const CommandBuilder &builder) -> ContextPtr<Command>{
+
+    };
+
     auto CommandManager::ExecuteCommand(ContextPtr<Command> command) -> void
     {
         command->Execute();

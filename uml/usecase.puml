@@ -1,0 +1,120 @@
+@startuml
+
+left to right direction
+
+
+package TextOperation{
+    usecase (コピー) as copy
+    usecase (切り取り) as cut
+    usecase (ペースト) as paste
+
+    usecase (yank) as yank
+    usecase (undo) as undo
+    usecase (redo) as redo
+
+    usecase (置換) as replace
+    usecase (検索) as search
+
+    usecase (編集) as edit
+
+    usecase (ナビゲーション) as navi
+
+    edit <|-- copy
+    edit <|-- cut
+    edit <|-- paste
+    edit <|-- yank
+    edit <|-- undo
+    edit <|-- redo
+    edit <|-- replace
+    edit <|-- search
+
+    usecase (カーソル移動) as moveCursor
+    usecase (選択) as block
+    navi <|-- moveCursor
+    navi <|-- block
+
+
+}
+
+package FileOperation{
+    usecase (ファイル保存) as saveFile
+    usecase (ファイル読み込み) as loadFile
+
+    usecase (上書き保存) as overwriteSave
+    usecase (名前を付けて保存) as saveAs
+
+    usecase (ファイルを開く) as openFile
+    usecase (新規ファイル作成) as newFile
+
+    saveFile <|-- overwriteSave
+    saveFile <|-- saveAs
+
+    loadFile <|-- openFile
+    loadFile <|-- newFile
+}
+
+package Log{
+    usecase (ログの記録) as logRecord
+    usecase (ログの閲覧) as viewLog
+    usecase (ログの検索) as searchLog
+    usecase (ログの出力) as exportLog
+    usecase (ログ設定の変更) as configureLog
+
+    usecase (操作履歴の記録) as operationHistory
+    usecase (エラーの記録) as errorLog
+    usecase (システム情報の記録) as systemInfoLog
+
+    logRecord <|-- operationHistory
+    logRecord <|-- errorLog
+    logRecord <|-- systemInfoLog
+
+    viewLog ..> logRecord : <<include>>
+    searchLog ..> logRecord : <<include>>
+    exportLog ..> logRecord : <<include>>
+}
+
+package UI {
+    (HUDの表示) as HUD
+    (UIの表示) as ui
+    (スクロール) as scroll
+    (ズーム) as zoom
+
+    (ページング) as paging
+
+    paging <|-- scroll
+    paging <|-- zoom
+
+    ui <|-- paging
+    ui <|-- HUD
+}
+
+:user:
+user --> loadFile
+user --> saveFile
+
+user --> edit
+user --> navi
+   
+user --> viewLog
+user --> searchLog
+user --> exportLog
+user --> configureLog
+
+user --> paging
+
+:directory:
+saveFile --> directory
+directory --> openFile
+
+:system:
+system --> logRecord
+system --> configureLog
+
+system <--> ui
+
+:clipbord:
+copy --> clipbord 
+cut --> clipbord 
+clipbord --> paste
+
+@enduml
