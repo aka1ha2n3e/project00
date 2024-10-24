@@ -124,7 +124,7 @@ package UI {
 }
 
 package TextIO {
-        usecase (テキスト入力) as textInput
+    usecase (テキスト入力) as textInput
     usecase (テキスト出力) as textOutput
     
     usecase (キーボード入力) as keyboardInput
@@ -138,6 +138,14 @@ package TextIO {
     
     textOutput <|-- screenOutput
     textOutput <|-- fileOutput
+}
+
+package Formatter {
+    usecase (フォーマッタの適用) as applyFormatter
+    usecase (Tidyの実行) as runTidy
+
+    applyFormatter ..> textOutput : <<include>>
+    runTidy ..> textOutput : <<include>>
 }
 
 :user:
@@ -155,6 +163,9 @@ user --> configureLog
 user --> paging
 
 user --> versionControl
+
+user --> applyFormatter
+user --> runTidy
 
 :directory:
 saveFile --> directory
