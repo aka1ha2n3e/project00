@@ -17,6 +17,23 @@ package EditorMode {
     modeChange <|-- commandMode
 }
 
+package VersionControl {
+    usecase (バージョン管理) as versionControl
+    usecase (コミット) as commit
+    usecase (ブランチ作成) as createBranch
+    usecase (マージ) as merge
+    usecase (履歴表示) as showHistory
+    usecase (差分表示) as showDiff
+    usecase (リビジョン切り替え) as switchRevision
+
+    versionControl <|-- commit
+    versionControl <|-- createBranch
+    versionControl <|-- merge
+    versionControl <|-- showHistory
+    versionControl <|-- showDiff
+    versionControl <|-- switchRevision
+}
+
 package TextOperation{
     usecase (コピー) as copy
     usecase (切り取り) as cut
@@ -49,6 +66,7 @@ package TextOperation{
 
     edit ..> modeChange : <<include>>
     navi ..> modeChange : <<include>>
+    edit ..> showDiff : <<extend>>
 }
 
 package FileOperation{
@@ -69,23 +87,25 @@ package FileOperation{
 }
 
 package Log{
-    usecase (ログの記録) as logRecord
-    usecase (ログの閲覧) as viewLog
+    usecase (システムログの記録) as recordSystemLog
+    usecase (システムログの閲覧) as viewSystemLog
+
+    usecase (ユーザーログの記録) as recordUserLog
+    usecase (ユーザーログの閲覧) as viewUserLog
     usecase (ログの検索) as searchLog
     usecase (ログの出力) as exportLog
     usecase (ログ設定の変更) as configureLog
 
     usecase (操作履歴の記録) as operationHistory
     usecase (エラーの記録) as errorLog
-    usecase (システム情報の記録) as systemInfoLog
+    usecase (システム情報の記録) as infoSystemLog
 
-    logRecord <|-- operationHistory
-    logRecord <|-- errorLog
-    logRecord <|-- systemInfoLog
+    recordSystemLog <|-- operationHistory
+    recordSystemLog <|-- errorLog
+    recordSystemLog <|-- infoSystemLog
 
-    viewLog ..> logRecord : <<include>>
-    searchLog ..> logRecord : <<include>>
-    exportLog ..> logRecord : <<include>>
+    viewSystemLog ..> recordSystemLog : <<include>>
+    viewUserLog ..> recordUserLog : <<include>>
 }
 
 package UI {
@@ -127,27 +147,34 @@ user --> saveFile
 user --> edit
 user --> navi
    
-user --> viewLog
+user --> viewUserLog
 user --> searchLog
 user --> exportLog
 user --> configureLog
 
 user --> paging
 
+user --> versionControl
+
 :directory:
 saveFile --> directory
 directory --> openFile
 
 :data_base:
-data_base <--> logRecord
+data_base <--> recordUserLog
+data_base <--> recordSystemLog
 data_base <--> saveFile
 data_base <--> loadFile
 
+data_base <--> versionControl
+
 :system:
-system --> logRecord
+system --> recordSystemLog
 system --> configureLog
 
 system <--> ui
+
+system <--> versionControl
 
 :clipbord:
 copy --> clipbord 
