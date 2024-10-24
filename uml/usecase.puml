@@ -3,6 +3,20 @@
 left to right direction
 
 
+
+package EditorMode {
+    usecase (モード変更) as modeChange
+    usecase (ノーマルモード) as normalMode
+    usecase (挿入モード) as insertMode
+    usecase (ビジュアルモード) as visualMode
+    usecase (コマンドモード) as commandMode
+
+    modeChange <|-- normalMode
+    modeChange <|-- insertMode
+    modeChange <|-- visualMode
+    modeChange <|-- commandMode
+}
+
 package TextOperation{
     usecase (コピー) as copy
     usecase (切り取り) as cut
@@ -33,7 +47,8 @@ package TextOperation{
     navi <|-- moveCursor
     navi <|-- block
 
-
+    edit ..> modeChange : <<include>>
+    navi ..> modeChange : <<include>>
 }
 
 package FileOperation{
@@ -88,6 +103,23 @@ package UI {
     ui <|-- HUD
 }
 
+package TextIO {
+        usecase (テキスト入力) as textInput
+    usecase (テキスト出力) as textOutput
+    
+    usecase (キーボード入力) as keyboardInput
+    usecase (ファイルからの読み込み) as fileInput
+    
+    usecase (画面表示) as screenOutput
+    usecase (ファイルへの書き込み) as fileOutput
+    
+    textInput <|-- keyboardInput
+    textInput <|-- fileInput
+    
+    textOutput <|-- screenOutput
+    textOutput <|-- fileOutput
+}
+
 :user:
 user --> loadFile
 user --> saveFile
@@ -105,6 +137,11 @@ user --> paging
 :directory:
 saveFile --> directory
 directory --> openFile
+
+:data_base:
+data_base <--> logRecord
+data_base <--> saveFile
+data_base <--> loadFile
 
 :system:
 system --> logRecord
