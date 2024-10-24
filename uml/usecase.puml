@@ -25,6 +25,7 @@ package VersionControl {
     usecase (履歴表示) as showHistory
     usecase (差分表示) as showDiff
     usecase (リビジョン切り替え) as switchRevision
+    usecase (グラフ表示) as showGraph
 
     versionControl <|-- commit
     versionControl <|-- createBranch
@@ -32,6 +33,7 @@ package VersionControl {
     versionControl <|-- showHistory
     versionControl <|-- showDiff
     versionControl <|-- switchRevision
+    versionControl <|-- showGraph
 }
 
 package TextOperation{
@@ -108,6 +110,18 @@ package Log{
     viewUserLog ..> recordUserLog : <<include>>
 }
 
+package ErrorHandling {
+    usecase (エラーの検出) as detectError
+    usecase (エラーメッセージの表示) as showErrorMessage
+    usecase (エラーのログ記録) as logError
+    usecase (リカバリー処理) as recoveryProcess
+
+    detectError ..> showErrorMessage : <<include>>
+    detectError ..> logError : <<include>>
+    detectError ..> recoveryProcess : <<extend>>
+}
+
+
 package UI {
     (HUDの表示) as HUD
     (UIの表示) as ui
@@ -148,6 +162,19 @@ package Formatter {
     runTidy ..> textOutput : <<include>>
 }
 
+package Debug {
+    usecase (デバッグ開始) as startDebug
+    usecase (ブレークポイント設定) as setBreakpoint
+    usecase (ステップ実行) as stepExecution
+    usecase (変数の監視) as watchVariable
+    usecase (コールスタックの表示) as showCallStack
+
+    startDebug <|-- setBreakpoint
+    startDebug <|-- stepExecution
+    startDebug <|-- watchVariable
+    startDebug <|-- showCallStack
+}
+
 :user:
 user --> loadFile
 user --> saveFile
@@ -171,13 +198,13 @@ user --> runTidy
 saveFile --> directory
 directory --> openFile
 
-:data_base:
-data_base <--> recordUserLog
-data_base <--> recordSystemLog
-data_base <--> saveFile
-data_base <--> loadFile
+:SQL:
+SQL <--> recordUserLog
+SQL <--> recordSystemLog
+SQL <--> saveFile
+SQL <--> loadFile
 
-data_base <--> versionControl
+SQL <--> versionControl
 
 :system:
 system --> recordSystemLog
