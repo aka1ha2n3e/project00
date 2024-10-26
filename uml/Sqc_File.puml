@@ -1,0 +1,124 @@
+@startuml
+
+actor User as "ユーザー"
+participant "ユーザーインターフェース" as UI
+participant "ファイル操作" as FileOperation
+participant "ファイルからの読み込み" as FileInput
+participant "ファイルへの書き込み" as FileOutput
+participant "ディレクトリ" as Directory
+participant "ログ" as Log
+
+== 新規ファイル作成 ==
+User -> UI : 新規ファイル作成ボタンをクリック
+activate UI
+
+UI -> FileOperation : 新規ファイル作成要求
+activate FileOperation
+
+FileOperation -> Directory : 新しいファイル名確認
+activate Directory
+
+Directory --> FileOperation : 新しいファイル名確認完了
+deactivate Directory
+
+FileOperation --> UI : 新規ファイル作成完了メッセージを表示
+deactivate FileOperation
+
+UI --> User : 新規ファイル作成完了メッセージを表示
+deactivate UI
+
+== ファイルの読み込み ==
+User -> UI : ファイルからの読み込み要求
+activate UI
+
+UI -> FileInput : 読み込み要求
+activate FileInput
+
+FileInput -> Directory : ファイルの存在確認
+activate Directory
+
+Directory --> FileInput : ファイルが存在
+deactivate Directory
+
+FileInput --> FileOperation : ファイル内容を取得
+deactivate FileInput
+
+FileOperation --> UI : 読み込んだテキストを表示
+deactivate UI
+
+== ファイルの保存 ==
+User -> UI : 保存ボタンをクリック
+activate UI
+
+UI -> FileOutput : ファイル保存要求
+activate FileOutput
+
+FileOutput -> Directory : 保存先確認
+activate Directory
+
+Directory --> FileOutput : 保存先確認完了
+deactivate Directory
+
+FileOutput -> Log : 操作ログ記録
+activate Log
+
+Log --> FileOutput : ログ記録完了
+deactivate Log
+
+FileOutput --> UI : 保存完了メッセージを表示
+deactivate FileOutput
+
+UI --> User : 保存完了メッセージを表示
+deactivate UI
+
+== 上書き保存 ==
+User -> UI : 上書き保存ボタンをクリック
+activate UI
+
+UI -> FileOutput : 上書き保存要求
+activate FileOutput
+
+FileOutput -> Directory : 上書き保存先確認
+activate Directory
+
+Directory --> FileOutput : 上書き保存先確認完了
+deactivate Directory
+
+FileOutput -> Log : 上書き保存ログ記録
+activate Log
+
+Log --> FileOutput : 上書き保存ログ記録完了
+deactivate Log
+
+FileOutput --> UI : 上書き保存完了メッセージを表示
+deactivate FileOutput
+
+UI --> User : 上書き保存完了メッセージを表示
+deactivate UI
+
+== 名前を付けて保存 ==
+User -> UI : 名前を付けて保存ボタンをクリック
+activate UI
+
+UI -> FileOutput : 名前を付けて保存要求
+activate FileOutput
+
+FileOutput -> Directory : 新しいファイル名確認
+activate Directory
+
+Directory --> FileOutput : 新しいファイル名確認完了
+deactivate Directory
+
+FileOutput -> Log : 名前を付けて保存ログ記録
+activate Log
+
+Log --> FileOutput : 名前を付けて保存ログ記録完了
+deactivate Log
+
+FileOutput --> UI : 名前を付けて保存完了メッセージを表示
+deactivate FileOutput
+
+UI --> User : 名前を付けて保存完了メッセージを表示
+deactivate UI
+
+@enduml

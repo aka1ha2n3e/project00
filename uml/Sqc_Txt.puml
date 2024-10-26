@@ -1,0 +1,120 @@
+@startuml
+
+actor User as "ユーザー"
+actor Clipboard as "クリップボード"
+participant "ユーザーインターフェース" as UI
+participant "データモデル" as DataModel
+participant "テキスト編集" as TextEditor
+participant "テキスト入出力" as TextIO
+participant "検索" as Search
+participant "置換" as Replace
+participant "フォーマッタ" as Formatter
+participant "インテリ機能" as IntelliFeature
+
+== テキストの入力 ==
+User -> UI : テキストを入力
+activate UI
+
+UI -> DataModel : 入力されたテキストを更新  // データバインディング
+activate DataModel
+
+DataModel --> UI : 更新完了
+deactivate DataModel
+
+UI --> User : 入力完了メッセージを表示
+deactivate UI
+
+== テキストの出力 ==
+User -> UI : テキストを出力要求
+activate UI
+
+UI -> TextIO : テキスト出力要求
+activate TextIO
+
+TextIO --> UI : テキスト出力完了
+deactivate TextIO
+
+UI --> User : テキスト出力完了メッセージを表示
+deactivate UI
+
+== テキストの検索 ==
+User -> UI : 検索キー
+activate UI
+
+UI -> Search : 検索キーワードを送信
+activate Search
+
+Search --> UI : 検索結果を返す
+deactivate Search
+
+UI --> User : 検索結果にカーソルを移動
+deactivate UI
+
+== テキストの置換 ==
+User -> UI : 置換キー
+activate UI
+
+UI -> Replace : 置換要求
+activate Replace
+
+Replace --> DataModel : データの更新  
+activate DataModel
+
+DataModel --> UI : 更新完了
+deactivate DataModel
+
+UI --> User : 表示を更新
+deactivate UI
+
+== テキストのフォーマット ==
+User -> UI : 保存
+activate UI
+
+UI -> Formatter : フォーマット要求
+activate Formatter
+
+Formatter --> UI : フォーマット完了メッセージを返す
+deactivate Formatter
+
+UI --> User : フォーマット完了メッセージを表示
+deactivate UI
+
+== インテリ機能 ==
+User -> UI : テキストを入力中
+activate UI
+
+UI -> IntelliFeature : インテリジェント提案要求
+activate IntelliFeature
+
+IntelliFeature --> UI : 提案を返す
+deactivate IntelliFeature
+
+UI --> User : インテリジェント提案を表示
+deactivate UI
+
+== クリップボード操作 ==
+User -> UI : コピーを選択
+activate UI
+
+UI -> Clipboard : コピー要求
+activate Clipboard
+
+Clipboard --> UI : コピー完了
+deactivate Clipboard
+
+UI --> User : コピー完了メッセージを表示
+deactivate UI
+
+User -> UI : ペーストを選択
+activate UI
+
+UI -> Clipboard : ペースト要求
+activate Clipboard
+
+Clipboard --> UI : ペースト完了
+deactivate Clipboard
+
+UI --> User : ペースト完了メッセージを表示
+deactivate UI
+
+@enduml

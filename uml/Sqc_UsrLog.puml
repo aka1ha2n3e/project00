@@ -1,0 +1,46 @@
+@startuml
+
+actor User as "ユーザー"
+participant "ユーザーインターフェース" as UI
+participant "ログ管理" as LogManager
+participant "ユーザーログ" as UserLog
+
+== ユーザー操作の記録 ==
+User -> UI : 操作を実行
+activate UI
+
+UI -> LogManager : 操作ログ記録要求
+activate LogManager
+
+LogManager -> UserLog : ユーザーログに記録
+activate UserLog
+
+UserLog --> LogManager : 記録完了
+deactivate UserLog
+
+LogManager --> UI : 操作ログ記録完了
+deactivate LogManager
+
+UI --> User : 操作完了メッセージを表示
+deactivate UI
+
+== ユーザーログの閲覧 ==
+User -> UI : ユーザーログを表示要求
+activate UI
+
+UI -> LogManager : ユーザーログ取得要求
+activate LogManager
+
+LogManager -> UserLog : ユーザーログを取得
+activate UserLog
+
+UserLog --> LogManager : ユーザーログデータ
+deactivate UserLog
+
+LogManager --> UI : ユーザーログを表示
+deactivate LogManager
+
+UI --> User : ユーザーログを表示
+deactivate UI
+
+@enduml

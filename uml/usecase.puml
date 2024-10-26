@@ -2,8 +2,6 @@
 
 left to right direction
 
-
-
 package EditorMode {
     usecase (モード変更) as modeChange
     usecase (ノーマルモード) as normalMode
@@ -36,7 +34,7 @@ package VersionControl {
     versionControl <|-- showGraph
 }
 
-package TextOperation{
+package TextOperation {
     usecase (コピー) as copy
     usecase (切り取り) as cut
     usecase (ペースト) as paste
@@ -71,7 +69,7 @@ package TextOperation{
     edit ..> showDiff : <<extend>>
 }
 
-package FileOperation{
+package FileOperation {
     usecase (ファイル保存) as saveFile
     usecase (ファイル読み込み) as loadFile
 
@@ -88,7 +86,7 @@ package FileOperation{
     loadFile <|-- newFile
 }
 
-package Log{
+package Log {
     usecase (システムログの記録) as recordSystemLog
     usecase (システムログの閲覧) as viewSystemLog
 
@@ -118,9 +116,7 @@ package ErrorHandling {
 
     detectError ..> showErrorMessage : <<include>>
     detectError ..> logError : <<include>>
-    detectError ..> recoveryProcess : <<extend>>
 }
-
 
 package UI {
     (HUDの表示) as HUD
@@ -175,22 +171,30 @@ package Debug {
     startDebug <|-- showCallStack
 }
 
+package CSVOperation {
+    usecase (CSVの読み込み) as readCSV
+    usecase (CSVの書き込み) as writeCSV
+    usecase (オムニ候補の登録) as registerOmniCandidates
+
+    readCSV --> writeCSV
+    readCSV --> registerOmniCandidates
+}
+
 :user:
+user --> readCSV
+user --> writeCSV
+user --> registerOmniCandidates
+
 user --> loadFile
 user --> saveFile
-
 user --> edit
 user --> navi
-   
 user --> viewUserLog
 user --> searchLog
 user --> exportLog
 user --> configureLog
-
 user --> paging
-
 user --> versionControl
-
 user --> applyFormatter
 user --> runTidy
 
