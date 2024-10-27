@@ -7,6 +7,7 @@ participant "ファイルからの読み込み" as FileInput
 participant "ファイルへの書き込み" as FileOutput
 participant "ディレクトリ" as Directory
 participant "ログ" as Log
+participant "データモデル" as TempStorage
 
 == 新規ファイル作成 ==
 User -> UI : 新規ファイル作成ボタンをクリック
@@ -42,9 +43,17 @@ deactivate Directory
 
 FileInput --> FileOperation : ファイル内容を取得
 deactivate FileInput
+activate FileOperation
+
+FileOperation --> TempStorage : 読み込んだデータを一時保存 
+activate TempStorage 
+
+TempStorage --> FileOperation : 一時保存完了
+deactivate TempStorage 
 
 FileOperation --> UI : 読み込んだテキストを表示
 deactivate UI
+deactivate FileOperation
 
 == ファイルの保存 ==
 User -> UI : 保存ボタンをクリック
@@ -75,7 +84,19 @@ deactivate UI
 User -> UI : 上書き保存ボタンをクリック
 activate UI
 
-UI -> FileOutput : 上書き保存要求
+UI -> DataModel : 上書き保存するデータを取得
+activate DataModel
+
+DataModel --> UI : データを返す
+deactivate DataModel
+
+UI -> Formatter : フォーマット要求 (データを含む)
+activate Formatter
+
+Formatter --> UI : フォーマットされたデータを返す
+deactivate Formatter
+
+UI -> FileOutput : 上書き保存要求 (フォーマットされたデータ)
 activate FileOutput
 
 FileOutput -> Directory : 上書き保存先確認
@@ -90,10 +111,9 @@ activate Log
 Log --> FileOutput : 上書き保存ログ記録完了
 deactivate Log
 
-FileOutput --> UI : 上書き保存完了メッセージを表示
+FileOutput --> UI : 上書き保存完了
 deactivate FileOutput
 
-UI --> User : 上書き保存完了メッセージを表示
 deactivate UI
 
 == 名前を付けて保存 ==

@@ -4,7 +4,6 @@ actor User as "ユーザー"
 actor Clipboard as "クリップボード"
 participant "ユーザーインターフェース" as UI
 participant "データモデル" as DataModel
-participant "テキスト編集" as TextEditor
 participant "テキスト入出力" as TextIO
 participant "検索" as Search
 participant "置換" as Replace
@@ -28,11 +27,29 @@ deactivate UI
 User -> UI : テキストを出力要求
 activate UI
 
-UI -> TextIO : テキスト出力要求
+UI -> DataModel : 出力するデータを取得
+activate DataModel
+
+DataModel --> UI : データを返す
+deactivate DataModel
+
+UI -> Formatter : フォーマット要求 (データを含む)
+activate Formatter
+
+Formatter --> UI : フォーマットされたデータを返す
+deactivate Formatter
+
+UI -> TextIO : テキスト出力要求 (フォーマットされたデータ)
 activate TextIO
 
 TextIO --> UI : テキスト出力完了
 deactivate TextIO
+
+UI -> DataModel : 最新のデータを更新
+activate DataModel
+
+DataModel --> UI : 更新完了メッセージを返す
+deactivate DataModel
 
 UI --> User : テキスト出力完了メッセージを表示
 deactivate UI
@@ -58,6 +75,7 @@ UI -> Replace : 置換要求
 activate Replace
 
 Replace --> DataModel : データの更新  
+deactivate Replace
 activate DataModel
 
 DataModel --> UI : 更新完了
@@ -73,11 +91,16 @@ activate UI
 UI -> Formatter : フォーマット要求
 activate Formatter
 
-Formatter --> UI : フォーマット完了メッセージを返す
+Formatter -> DataModel : フォーマットされたデータを保存
 deactivate Formatter
+activate DataModel
 
-UI --> User : フォーマット完了メッセージを表示
+DataModel --> UI : フォーマットされたデータを返す
+deactivate DataModel
+
+UI --> User : フォーマットされたデータを表示
 deactivate UI
+
 
 == インテリ機能 ==
 User -> UI : テキストを入力中
@@ -90,6 +113,19 @@ IntelliFeature --> UI : 提案を返す
 deactivate IntelliFeature
 
 UI --> User : インテリジェント提案を表示
+activate UI
+
+User -> UI : 提案を受け入れる/拒否する
+deactivate UI
+
+alt 提案を受け入れる
+    UI -> DataModel : 提案を保存
+    activate DataModel
+    DataModel --> UI : 保存完了
+    deactivate DataModel
+else 提案を拒否する
+end
+
 deactivate UI
 
 == クリップボード操作 ==
