@@ -113,9 +113,11 @@ package ErrorHandling {
     usecase (エラーメッセージの表示) as showErrorMessage
     usecase (エラーのログ記録) as logError
     usecase (リカバリー処理) as recoveryProcess
+    usecase (ユーザーエラーのカウント) as countUserError
 
     detectError ..> showErrorMessage : <<include>>
     detectError ..> logError : <<include>>
+    countUserError ..> detectError : <<include>>
 }
 
 package UI {
@@ -180,6 +182,13 @@ package CSVOperation {
     readCSV --> registerOmniCandidates
 }
 
+package Notification {
+    usecase (通知の生成) as generateNotification
+    usecase (ユーザーの応答) as userResponse
+
+    generateNotification ..> userResponse : <<include>>
+}
+
 :user:
 user --> readCSV
 user --> writeCSV
@@ -197,6 +206,8 @@ user --> paging
 user --> versionControl
 user --> applyFormatter
 user --> runTidy
+user --> generateNotification
+user --> userResponse
 
 :directory:
 saveFile --> directory
