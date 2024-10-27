@@ -1,0 +1,33 @@
+@startuml
+
+actor User as "ユーザー"
+participant "ユーザーインターフェース" as UI
+participant "通知管理" as NotificationManager
+
+== 通知の生成 ==
+User -> UI : 操作を実行
+activate UI
+
+UI -> NotificationManager : 通知生成要求
+activate NotificationManager
+
+NotificationManager --> UI : 通知を生成
+deactivate NotificationManager
+
+UI --> User : 通知を表示
+deactivate UI
+
+== ユーザーの応答 ==
+User -> UI : 応答を選択
+activate UI
+
+UI -> NotificationManager : ユーザーの応答を送信
+activate NotificationManager
+
+NotificationManager --> UI : 応答処理完了
+deactivate NotificationManager
+
+UI --> User : 処理完了メッセージを表示
+deactivate UI
+
+@enduml

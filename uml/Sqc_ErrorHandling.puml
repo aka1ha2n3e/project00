@@ -1,0 +1,84 @@
+@startuml
+
+actor User as "ユーザー"
+participant "ユーザーインターフェース" as UI
+participant "エラー処理" as ErrorHandler
+participant "エラーカウンター" as ErrorCounter
+participant "ログ管理" as LogManager
+participant "エラーログ" as ErrorLog
+
+== ユーザーエラーのカウント ==
+User -> UI : 操作を実行
+activate UI
+
+UI -> ErrorHandler : ユーザーエラー検出要求
+activate ErrorHandler
+
+ErrorHandler -> ErrorCounter : ユーザーエラーをカウント
+activate ErrorCounter
+
+ErrorCounter --> ErrorHandler : カウント更新完了
+deactivate ErrorCounter
+
+ErrorHandler --> UI : ユーザーエラーをカウント
+deactivate ErrorHandler
+
+== 正常な動作 ==
+User -> UI : 正常な操作を実行
+activate UI
+
+UI -> ErrorHandler : 正常な動作の通知
+activate ErrorHandler
+
+ErrorHandler -> ErrorCounter : カウントを減少
+activate ErrorCounter
+
+ErrorCounter --> ErrorHandler : カウント減少完了
+deactivate ErrorCounter
+
+ErrorHandler --> UI : カウントを減少
+deactivate ErrorHandler
+
+deactivate UI
+
+== カウントチェック ==
+ErrorHandler -> ErrorCounter : カウントが一定値に達したか確認
+activate ErrorCounter
+
+ErrorCounter --> ErrorHandler : カウントの確認結果
+deactivate ErrorCounter
+
+alt カウントが閾値に達した
+    ErrorHandler --> UI : エラーが発生
+    deactivate ErrorHandler
+
+    == エラーメッセージの表示 ==
+    UI -> UI : エラーメッセージを表示
+    deactivate UI
+
+    == エラーのログ記録 ==
+    UI -> LogManager : エラー記録要求
+    activate LogManager
+
+    LogManager -> ErrorLog : エラーログに記録
+    activate ErrorLog
+
+    ErrorLog --> LogManager : 記録完了
+    deactivate ErrorLog
+
+    LogManager --> UI : エラー記録完了
+    deactivate LogManager
+
+    == リカバリー処理 ==
+    UI -> ErrorHandler : リカバリー処理要求
+    activate ErrorHandler
+
+    ErrorHandler --> UI : リカバリー処理完了
+    deactivate ErrorHandler
+
+    UI --> User : リカバリー完了メッセージを表示
+else カウントが閾値に達していない
+    deactivate ErrorHandler
+end
+
+@enduml

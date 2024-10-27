@@ -27,14 +27,14 @@ deactivate UI
 User -> UI : テキストを出力要求
 activate UI
 
-UI -> DataModel : 出力するデータを取得
-activate DataModel
-
-DataModel --> UI : データを返す
-deactivate DataModel
-
 UI -> Formatter : フォーマット要求 (データを含む)
 activate Formatter
+
+Formatter -> DataModel : 出力するデータを取得と最新のデータを更新
+activate DataModel
+
+DataModel --> Formatter : データを返す
+deactivate DataModel
 
 Formatter --> UI : フォーマットされたデータを返す
 deactivate Formatter
@@ -44,12 +44,6 @@ activate TextIO
 
 TextIO --> UI : テキスト出力完了
 deactivate TextIO
-
-UI -> DataModel : 最新のデータを更新
-activate DataModel
-
-DataModel --> UI : 更新完了メッセージを返す
-deactivate DataModel
 
 UI --> User : テキスト出力完了メッセージを表示
 deactivate UI

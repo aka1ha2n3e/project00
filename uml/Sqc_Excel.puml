@@ -1,0 +1,35 @@
+@startuml
+== CSV操作 ==
+User -> UI : 補完候補を指定
+activate UI
+
+UI -> CSVReader : 補完候補を取得
+activate CSVReader
+
+UI -> CSVReader : 指定された列の内容を取得
+activate CSVReader
+
+CSVReader --> CSVUpdater : 補完候補の更新要求
+deactivate CSVReader
+
+CSVUpdater --> UI : 更新完了メッセージを返す
+deactivate CSVUpdater
+
+UI -> CSVDiffer : 差分を出力要求
+activate CSVDiffer
+
+CSVDiffer --> UI : 差分を返す
+deactivate CSVDiffer
+
+UI -> User : 差分を表示
+deactivate UI
+
+UI -> CSVValidator : 整合性チェック要求
+activate CSVValidator
+
+CSVValidator --> UI : 整合性結果を返す
+deactivate CSVValidator
+
+UI -> User : CSVファイルとの整合性を表示
+deactivate UI
+@enduml

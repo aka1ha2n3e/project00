@@ -80,10 +80,8 @@ activate UI
 UI -> FileResolver : ファイル名解決要求
 activate FileResolver
 
-FileResolver --> UI : ファイルのパスを返す
+FileResolver -> FileViewer : ファイルを開く要求
 deactivate FileResolver
-
-UI -> FileViewer : ファイルを開く要求
 activate FileViewer
 
 FileViewer --> UI : ファイル表示完了
