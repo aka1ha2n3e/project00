@@ -1,0 +1,94 @@
+@startuml
+
+== タグジャンプ ==
+User -> UI : タグを選択
+activate UI
+
+UI -> TagHandler : タグジャンプ要求
+activate TagHandler
+
+TagHandler --> UI : タグの位置を返す
+deactivate TagHandler
+
+UI --> User : タグの位置にジャンプ
+deactivate UI
+
+== 関数検索 ==
+User -> UI : 関数名を入力
+activate UI
+
+UI -> FunctionSearch : 関数検索要求
+activate FunctionSearch
+
+FunctionSearch --> UI : 関数の存在するファイルを返す
+deactivate FunctionSearch
+
+UI --> User : 関数検索結果を表示
+
+User -> UI : 検索結果からファイルを選択
+
+UI -> FileResolver : 選択したファイルのパスを解決
+activate FileResolver
+
+FileResolver --> UI : ファイルのパスを返す
+deactivate FileResolver
+
+UI -> FileViewer : ファイルを開く要求
+activate FileViewer
+
+FileViewer --> UI : ファイル表示完了
+deactivate FileViewer
+
+UI --> User : ファイルを表示
+deactivate UI
+
+== ファイル検索 ==
+User -> UI : ファイル名を入力
+activate UI
+
+UI -> FileSearch : ファイル検索要求
+activate FileSearch
+
+FileSearch --> UI : ファイル検索結果を返す
+deactivate FileSearch
+
+UI --> User : ファイル検索結果を表示
+activate UI
+
+User -> UI : 検索結果からファイルを選択
+deactivate UI
+
+UI -> FileResolver : 選択したファイルのパスを解決
+activate FileResolver
+
+FileResolver --> UI : ファイルのパスを返す
+deactivate FileResolver
+
+UI -> FileViewer : ファイルを開く要求
+activate FileViewer
+
+FileViewer --> UI : ファイル表示完了
+deactivate FileViewer
+
+UI --> User : ファイルを表示
+deactivate UI
+
+== gf機能 ==
+User -> UI : カーソル下のファイル名を選択
+activate UI
+
+UI -> FileResolver : ファイル名解決要求
+activate FileResolver
+
+FileResolver --> UI : ファイルのパスを返す
+deactivate FileResolver
+
+UI -> FileViewer : ファイルを開く要求
+activate FileViewer
+
+FileViewer --> UI : ファイル表示完了
+deactivate FileViewer
+
+UI --> User : ファイルを表示
+deactivate UI
+@enduml
