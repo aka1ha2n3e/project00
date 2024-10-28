@@ -173,13 +173,13 @@ package Debug {
     startDebug <|-- showCallStack
 }
 
-package CSVOperation {
-    usecase (CSVの読み込み) as readCSV
-    usecase (CSVの書き込み) as writeCSV
+package SpecificationsOperation {
+    usecase (仕様書の読み込み) as readSpecifications
+    usecase (仕様書の書き込み) as writeSpecifications
     usecase (オムニ候補の登録) as registerOmniCandidates
 
-    readCSV --> writeCSV
-    readCSV --> registerOmniCandidates
+    readSpecifications --> writeSpecifications
+    readSpecifications --> registerOmniCandidates
 }
 
 package Notification {
@@ -190,8 +190,8 @@ package Notification {
 }
 
 :user:
-user --> readCSV
-user --> writeCSV
+user --> readSpecifications
+user --> writeSpecifications
 user --> registerOmniCandidates
 
 user --> loadFile
@@ -213,13 +213,13 @@ user --> userResponse
 saveFile --> directory
 directory --> openFile
 
-:SQL:
-SQL <--> recordUserLog
-SQL <--> recordSystemLog
-SQL <--> saveFile
-SQL <--> loadFile
+:database:
+database <--> recordUserLog
+database <--> recordSystemLog
+database <--> saveFile
+database <--> loadFile
 
-SQL <--> versionControl
+database <--> versionControl
 
 :system:
 system --> recordSystemLog

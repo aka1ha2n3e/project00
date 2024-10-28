@@ -1,0 +1,35 @@
+@startuml
+== 仕様書操作 ==
+User -> UI : 補完候補を指定
+activate UI
+
+UI -> SpecificationsReader : 補完候補を取得
+activate SpecificationsReader
+
+UI -> SpecificationsReader : 指定された列の内容を取得
+activate SpecificationsReader
+
+SpecificationsReader --> SpecificationsUpdater : 補完候補の更新要求
+deactivate SpecificationsReader
+
+SpecificationsUpdater --> UI : 更新完了メッセージを返す
+deactivate SpecificationsUpdater
+
+UI -> SpecificationsDiffer : 差分を出力要求
+activate SpecificationsDiffer
+
+SpecificationsDiffer --> UI : 差分を返す
+deactivate SpecificationsDiffer
+
+UI -> User : 差分を表示
+deactivate UI
+
+UI -> SpecificationsValidator : 整合性チェック要求
+activate SpecificationsValidator
+
+SpecificationsValidator --> UI : 整合性結果を返す
+deactivate SpecificationsValidator
+
+UI -> User : 仕様書との整合性を表示
+deactivate UI
+@enduml
