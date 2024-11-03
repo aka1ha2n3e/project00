@@ -1,0 +1,101 @@
+@startuml
+
+actor User as "ユーザー"
+
+== ツールバーの操作 ==
+User -> ToolBar : エクスプローラーを選択
+activate ToolBar
+
+ToolBar -> Explorer : エクスプローラーを表示
+activate Explorer
+
+Explorer --> UI : エクスプローラーの内容を表示
+deactivate Explorer
+
+UI --> User : エクスプローラーを表示
+deactivate ToolBar
+
+User -> ToolBar : 検索を選択
+activate ToolBar
+
+ToolBar -> Search : 検索画面を表示
+activate Search
+
+Search --> UI : 検索結果を表示
+deactivate Search
+
+UI --> User : 検索画面を表示
+deactivate ToolBar
+
+User -> ToolBar : バージョン管理を選択
+activate ToolBar
+
+ToolBar -> VersionControl : バージョン管理画面を表示
+activate VersionControl
+
+VersionControl --> UI : バージョン管理の内容を表示
+deactivate VersionControl
+
+UI --> User : バージョン管理画面を表示
+deactivate ToolBar
+
+== メニューバーの操作 ==
+User -> MenuBar : Fileメニューをクリック
+activate MenuBar
+
+MenuBar -> UI : Fileオプションを表示
+deactivate MenuBar
+
+User -> MenuBar : Editメニューをクリック
+activate MenuBar
+
+MenuBar -> UI : Editオプションを表示
+deactivate MenuBar
+
+User -> MenuBar : Terminalメニューをクリック
+activate MenuBar
+
+MenuBar -> UI : Terminalオプションを表示
+deactivate MenuBar
+
+User -> MenuBar : Helpメニューをクリック
+activate MenuBar
+
+MenuBar -> UI : Helpオプションを表示
+deactivate MenuBar
+
+== ターミナルバーの操作 ==
+User -> TerminalBar : コマンドを入力
+activate TerminalBar
+
+TerminalBar -> UI : コマンドを実行
+deactivate TerminalBar
+
+UI -> TerminalBar : 実行結果を表示
+activate TerminalBar
+
+TerminalBar --> User : 結果を返す
+deactivate TerminalBar
+
+== 編集画面の操作 ==
+User -> Editor : テキストを入力
+activate Editor
+
+Editor --> UI : 入力内容を更新
+deactivate Editor
+
+== タブ操作 ==
+User -> TabBar : タブを選択
+activate TabBar
+
+TabBar --> UI : 選択したタブの内容を表示
+deactivate TabBar
+
+== 通知画面の表示 ==
+UI -> Notification : 通知を表示
+activate Notification
+
+Notification --> User : 通知メッセージを表示
+deactivate Notification
+
+@enduml

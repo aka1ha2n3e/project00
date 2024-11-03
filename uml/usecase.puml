@@ -2,8 +2,39 @@
 
 left to right direction
 
+package EditorMode {
+    usecase (モード変更) as modeChange
+    usecase (ノーマルモード) as normalMode
+    usecase (挿入モード) as insertMode
+    usecase (ビジュアルモード) as visualMode
+    usecase (コマンドモード) as commandMode
 
-package TextOperation{
+    modeChange <|-- normalMode
+    modeChange <|-- insertMode
+    modeChange <|-- visualMode
+    modeChange <|-- commandMode
+}
+
+package VersionControl {
+    usecase (バージョン管理) as versionControl
+    usecase (コミット) as commit
+    usecase (ブランチ作成) as createBranch
+    usecase (マージ) as merge
+    usecase (履歴表示) as showHistory
+    usecase (差分表示) as showDiff
+    usecase (リビジョン切り替え) as switchRevision
+    usecase (グラフ表示) as showGraph
+
+    versionControl <|-- commit
+    versionControl <|-- createBranch
+    versionControl <|-- merge
+    versionControl <|-- showHistory
+    versionControl <|-- showDiff
+    versionControl <|-- switchRevision
+    versionControl <|-- showGraph
+}
+
+package TextOperation {
     usecase (コピー) as copy
     usecase (切り取り) as cut
     usecase (ペースト) as paste
@@ -33,10 +64,12 @@ package TextOperation{
     navi <|-- moveCursor
     navi <|-- block
 
-
+    edit ..> modeChange : <<include>>
+    navi ..> modeChange : <<include>>
+    edit ..> showDiff : <<extend>>
 }
 
-package FileOperation{
+package FileOperation {
     usecase (ファイル保存) as saveFile
     usecase (ファイル読み込み) as loadFile
 
@@ -53,24 +86,38 @@ package FileOperation{
     loadFile <|-- newFile
 }
 
-package Log{
-    usecase (ログの記録) as logRecord
-    usecase (ログの閲覧) as viewLog
+package Log {
+    usecase (システムログの記録) as recordSystemLog
+    usecase (システムログの閲覧) as viewSystemLog
+
+    usecase (ユーザーログの記録) as recordUserLog
+    usecase (ユーザーログの閲覧) as viewUserLog
     usecase (ログの検索) as searchLog
     usecase (ログの出力) as exportLog
     usecase (ログ設定の変更) as configureLog
 
     usecase (操作履歴の記録) as operationHistory
     usecase (エラーの記録) as errorLog
-    usecase (システム情報の記録) as systemInfoLog
+    usecase (システム情報の記録) as infoSystemLog
 
-    logRecord <|-- operationHistory
-    logRecord <|-- errorLog
-    logRecord <|-- systemInfoLog
+    recordSystemLog <|-- operationHistory
+    recordSystemLog <|-- errorLog
+    recordSystemLog <|-- infoSystemLog
 
-    viewLog ..> logRecord : <<include>>
-    searchLog ..> logRecord : <<include>>
-    exportLog ..> logRecord : <<include>>
+    viewSystemLog ..> recordSystemLog : <<include>>
+    viewUserLog ..> recordUserLog : <<include>>
+}
+
+package ErrorHandling {
+    usecase (エラーの検出) as detectError
+    usecase (エラーメッセージの表示) as showErrorMessage
+    usecase (エラーのログ記録) as logError
+    usecase (リカバリー処理) as recoveryProcess
+    usecase (ユーザーエラーのカウント) as countUserError
+
+    detectError ..> showErrorMessage : <<include>>
+    detectError ..> logError : <<include>>
+    countUserError ..> detectError : <<include>>
 }
 
 package UI {
@@ -88,29 +135,99 @@ package UI {
     ui <|-- HUD
 }
 
+package TextIO {
+    usecase (テキスト入力) as textInput
+    usecase (テキスト出力) as textOutput
+    
+    usecase (キーボード入力) as keyboardInput
+    usecase (ファイルからの読み込み) as fileInput
+    
+    usecase (画面表示) as screenOutput
+    usecase (ファイルへの書き込み) as fileOutput
+    
+    textInput <|-- keyboardInput
+    textInput <|-- fileInput
+    
+    textOutput <|-- screenOutput
+    textOutput <|-- fileOutput
+}
+
+package Formatter {
+    usecase (フォーマッタの適用) as applyFormatter
+    usecase (Tidyの実行) as runTidy
+
+    applyFormatter ..> textOutput : <<include>>
+    runTidy ..> textOutput : <<include>>
+}
+
+package Debug {
+    usecase (デバッグ開始) as startDebug
+    usecase (ブレークポイント設定) as setBreakpoint
+    usecase (ステップ実行) as stepExecution
+    usecase (変数の監視) as watchVariable
+    usecase (コールスタックの表示) as showCallStack
+
+    startDebug <|-- setBreakpoint
+    startDebug <|-- stepExecution
+    startDebug <|-- watchVariable
+    startDebug <|-- showCallStack
+}
+
+package SpecificationsOperation {
+    usecase (仕様書の読み込み) as readSpecifications
+    usecase (仕様書の書き込み) as writeSpecifications
+    usecase (オムニ候補の登録) as registerOmniCandidates
+
+    readSpecifications --> writeSpecifications
+    readSpecifications --> registerOmniCandidates
+}
+
+package Notification {
+    usecase (通知の生成) as generateNotification
+    usecase (ユーザーの応答) as userResponse
+
+    generateNotification ..> userResponse : <<include>>
+}
+
 :user:
+user --> readSpecifications
+user --> writeSpecifications
+user --> registerOmniCandidates
+
 user --> loadFile
 user --> saveFile
-
 user --> edit
 user --> navi
-   
-user --> viewLog
+user --> viewUserLog
 user --> searchLog
 user --> exportLog
 user --> configureLog
-
 user --> paging
+user --> versionControl
+user --> applyFormatter
+user --> runTidy
+user --> generateNotification
+user --> userResponse
 
 :directory:
 saveFile --> directory
 directory --> openFile
 
+:database:
+database <--> recordUserLog
+database <--> recordSystemLog
+database <--> saveFile
+database <--> loadFile
+
+database <--> versionControl
+
 :system:
-system --> logRecord
+system --> recordSystemLog
 system --> configureLog
 
 system <--> ui
+
+system <--> versionControl
 
 :clipbord:
 copy --> clipbord 

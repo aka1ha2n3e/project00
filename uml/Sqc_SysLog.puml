@@ -1,0 +1,61 @@
+@startuml
+
+actor SystemAdmin as "システム管理者"
+participant "ログ管理" as LogManager
+participant "システムログ" as SystemLog
+participant "エラーログ" as ErrorLog
+participant "操作履歴" as OperationHistory
+
+== システムログの記録 ==
+SystemAdmin -> LogManager : 操作を実行
+activate LogManager
+
+LogManager -> SystemLog : システムログに記録
+activate SystemLog
+
+SystemLog --> LogManager : 記録完了
+deactivate SystemLog
+
+LogManager --> SystemAdmin : 操作ログ記録完了
+deactivate LogManager
+
+== システムログの閲覧 ==
+SystemAdmin -> LogManager : システムログ取得要求
+activate LogManager
+
+LogManager -> SystemLog : システムログを取得
+activate SystemLog
+
+SystemLog --> LogManager : システムログデータ
+deactivate SystemLog
+
+LogManager --> SystemAdmin : システムログを表示
+deactivate LogManager
+
+== エラーログの記録 ==
+SystemAdmin -> LogManager : エラーログ記録要求
+activate LogManager
+
+LogManager -> ErrorLog : エラーログに記録
+activate ErrorLog
+
+ErrorLog --> LogManager : エラーログ記録完了
+deactivate ErrorLog
+
+LogManager --> SystemAdmin : エラーログ記録完了
+deactivate LogManager
+
+== 操作履歴の記録 ==
+SystemAdmin -> LogManager : 操作履歴記録要求
+activate LogManager
+
+LogManager -> OperationHistory : 操作履歴に記録
+activate OperationHistory
+
+OperationHistory --> LogManager : 操作履歴記録完了
+deactivate OperationHistory
+
+LogManager --> SystemAdmin : 操作履歴記録完了
+deactivate LogManager
+
+@enduml

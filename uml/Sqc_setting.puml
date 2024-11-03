@@ -1,0 +1,75 @@
+@startuml
+
+actor User as "ユーザー"
+participant "ユーザーインターフェース" as UI
+participant "設定管理" as SettingsManager
+participant "設定ストレージ" as SettingsStorage
+
+== アプリケーション起動時の設定読み込み ==
+UI -> SettingsManager : 起動時に設定を取得要求
+activate SettingsManager
+
+SettingsManager -> SettingsStorage : 設定データを取得
+activate SettingsStorage
+
+SettingsStorage --> SettingsManager : 設定データを返す
+deactivate SettingsStorage
+
+SettingsManager --> UI : 設定データを返す
+deactivate SettingsManager
+
+UI --> User : 設定を表示
+deactivate UI
+
+== 設定の取得 ==
+User -> UI : 設定を表示要求
+activate UI
+
+UI -> SettingsManager : 設定取得要求
+activate SettingsManager
+
+SettingsManager -> SettingsStorage : 設定データを取得
+activate SettingsStorage
+
+SettingsStorage --> SettingsManager : 設定データを返す
+deactivate SettingsStorage
+
+SettingsManager --> UI : 設定データを返す
+deactivate SettingsManager
+
+UI --> User : 設定を表示
+deactivate UI
+
+== 設定の変更 ==
+User -> UI : 設定を変更
+activate UI
+
+UI -> SettingsManager : 設定変更要求
+activate SettingsManager
+
+SettingsManager --> UI : 変更完了メッセージを返す
+deactivate SettingsManager
+
+UI --> User : 設定変更完了メッセージを表示
+deactivate UI
+
+== 設定の保存 ==
+User -> UI : 設定を保存要求
+activate UI
+
+UI -> SettingsManager : 設定保存要求
+activate SettingsManager
+
+SettingsManager -> SettingsStorage : 設定データを保存
+activate SettingsStorage
+
+SettingsStorage --> SettingsManager : 保存完了
+deactivate SettingsStorage
+
+SettingsManager --> UI : 保存完了メッセージを返す
+deactivate SettingsManager
+
+UI --> User : 設定保存完了メッセージを表示
+deactivate UI
+
+@enduml
