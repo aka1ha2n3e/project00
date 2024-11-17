@@ -1,0 +1,3 @@
+/mnt/c/study/project/CMakeFiles/TextEditor.dir
+/mnt/c/study/project/CMakeFiles/edit_cache.dir
+/mnt/c/study/project/CMakeFiles/rebuild_cache.dir
