@@ -15,7 +15,10 @@ cmake-build-debug/
 # バイナリファイル 
 *.exe 
 *.out
-# 資料
-*.md
 # 専用ツール
 .ycm_extra_conf.py
+ツール/
+# 個別
+参考/
+# その他
+ignore/

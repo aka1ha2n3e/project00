@@ -1,0 +1,67 @@
+[
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/main.cpp.o -c /mnt/c/study/project/src/main.cpp",
+  "file": "/mnt/c/study/project/src/main.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/Command.cpp.o -c /mnt/c/study/project/src/Command.cpp",
+  "file": "/mnt/c/study/project/src/Command.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/FileDriver.cpp.o -c /mnt/c/study/project/src/FileDriver.cpp",
+  "file": "/mnt/c/study/project/src/FileDriver.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/InputData.cpp.o -c /mnt/c/study/project/src/InputData.cpp",
+  "file": "/mnt/c/study/project/src/InputData.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/InputHandler.cpp.o -c /mnt/c/study/project/src/InputHandler.cpp",
+  "file": "/mnt/c/study/project/src/InputHandler.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/InputManager.cpp.o -c /mnt/c/study/project/src/InputManager.cpp",
+  "file": "/mnt/c/study/project/src/InputManager.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/Log.cpp.o -c /mnt/c/study/project/src/Log.cpp",
+  "file": "/mnt/c/study/project/src/Log.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/SampleClass.cpp.o -c /mnt/c/study/project/src/SampleClass.cpp",
+  "file": "/mnt/c/study/project/src/SampleClass.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/StateEditor.cpp.o -c /mnt/c/study/project/src/StateEditor.cpp",
+  "file": "/mnt/c/study/project/src/StateEditor.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/TextBuffer.cpp.o -c /mnt/c/study/project/src/TextBuffer.cpp",
+  "file": "/mnt/c/study/project/src/TextBuffer.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/UI.cpp.o -c /mnt/c/study/project/src/UI.cpp",
+  "file": "/mnt/c/study/project/src/UI.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/iterator.cpp.o -c /mnt/c/study/project/src/iterator.cpp",
+  "file": "/mnt/c/study/project/src/iterator.cpp"
+},
+{
+  "directory": "/mnt/c/study/project",
+  "command": "/usr/bin/c++  -I/mnt/c/study/project/include  -O0 -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/TextEditor.dir/src/type.cpp.o -c /mnt/c/study/project/src/type.cpp",
+  "file": "/mnt/c/study/project/src/type.cpp"
+}
+]
