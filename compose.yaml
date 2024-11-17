@@ -1,0 +1,6 @@
+services:
+  project00: .
+    volumes:
+      - $(pwd):/workspace
+    working_dir: /workspace
+
